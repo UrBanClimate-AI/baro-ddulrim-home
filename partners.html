@@ -167,7 +167,7 @@
     .s-접수 { background: var(--blue-soft); color: var(--blue-deep); }
     .s-검토중 { background: #fff6dd; color: var(--orange); }
     .s-상담예정 { background: #ede7ff; color: #5b3fc4; }
-    .s-협력확정 { background: #e9f9f2; color: var(--green); }
+    .s-협력업체 { background: #e9f9f2; color: var(--green); }
     .s-보류 { background: #f0f4f7; color: #7c8f9e; }
     .board-empty { padding: 56px 24px; text-align: center; color: var(--muted); font-size: 15px; }
     .board-note { margin-top: 16px; font-size: 13px; color: var(--muted); position: relative; z-index: 1; }
@@ -360,7 +360,7 @@
         <div class="board-stats">
           <div class="bstat"><b id="statTotal">–</b><span>누적 접수</span></div>
           <div class="bstat"><b id="statReview">–</b><span>검토 중</span></div>
-          <div class="bstat"><b id="statDone">–</b><span>협력 확정</span></div>
+          <div class="bstat"><b id="statDone">–</b><span>협력 업체</span></div>
         </div>
       </div>
 
@@ -497,7 +497,7 @@
   function renderStats(items) {
     const total = items.length;
     const review = items.filter((r) => r.status === "검토중" || r.status === "상담예정").length;
-    const done = items.filter((r) => r.status === "협력확정").length;
+    const done = items.filter((r) => r.status === "협력업체").length;
     document.getElementById("statTotal").textContent = total;
     document.getElementById("statReview").textContent = review;
     document.getElementById("statDone").textContent = done;
