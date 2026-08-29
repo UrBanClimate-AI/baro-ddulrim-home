@@ -1,16 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>바로 뚫림 — 막힌 배수, 신고 한 번에</title>
-  <meta name="description" content="배수구 막힘·역류·침수·악취, 회원가입 없이 1분 신고. AI가 정리하고 검증된 우리 동네 업체가 입찰로 찾아옵니다." />
-  <link rel="icon" href="assets/logo-icon.png" />
-  <link rel="canonical" href="https://hasugulab.com/" />
-  <meta property="og:title" content="바로 뚫림 — 막힌 배수, 신고 한 번에" />
-  <meta property="og:description" content="배수 문제 신고부터 업체 배정, 처리 완료 기록까지. 전 과정이 투명하게 남는 배수 문제 해결 플랫폼." />
-  <meta property="og:image" content="assets/character.png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <meta name="description" content="배수구 막힘·역류·침수·악취, 회원가입 없이 1분 신고. AI가 정리하고 검증된 우리 동네 업체가 입찰로 찾아옵니다.">
+  <link rel="icon" href="assets/logo-icon.png">
+  <link rel="canonical" href="https://hasugulab.com/">
+  <meta property="og:title" content="바로 뚫림 — 막힌 배수, 신고 한 번에">
+  <meta property="og:description" content="배수 문제 신고부터 업체 배정, 처리 완료 기록까지. 전 과정이 투명하게 남는 배수 문제 해결 플랫폼.">
+  <meta property="og:image" content="assets/character.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <style>
     :root {
       --blue: #1e9bd7;
@@ -58,14 +58,12 @@
       transition: box-shadow .3s;
     }
     .nav.scrolled { box-shadow: 0 8px 30px -12px rgba(8, 62, 100, .16); }
-    .nav-inner {
-      display: flex; align-items: center; gap: 28px;
-      height: 68px;
-    }
+    .nav-inner { display: flex; align-items: center; gap: 28px; height: 68px; }
     .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; }
     .nav-logo img { height: 34px; width: auto; }
-    .nav-links { display: flex; gap: 26px; margin-left: auto; font-size: 15px; font-weight: 600; color: var(--muted); }
+    .nav-links { display: flex; gap: 24px; margin-left: auto; font-size: 15px; font-weight: 600; color: var(--muted); }
     .nav-links a:hover { color: var(--blue-deep); }
+    .nav-links a.on { color: var(--blue-deep); font-weight: 800; }
     .nav-cta {
       margin-left: 8px;
       background: linear-gradient(135deg, var(--blue), var(--blue-deep));
@@ -73,9 +71,10 @@
       padding: 10px 20px; border-radius: 999px;
       box-shadow: 0 10px 24px -8px rgba(30, 155, 215, .55);
       transition: transform .2s, box-shadow .2s;
+      white-space: nowrap;
     }
     .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -8px rgba(30, 155, 215, .6); }
-    @media (max-width: 860px) { .nav-links { display: none; } .nav-cta { margin-left: auto; } }
+    @media (max-width: 940px) { .nav-links { display: none; } .nav-cta { margin-left: auto; } }
 
     /* ---------- hero ---------- */
     .hero { padding: 172px 0 96px; overflow: visible; }
@@ -100,10 +99,7 @@
       background: linear-gradient(120deg, var(--blue) 10%, var(--blue-deep) 60%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .hero p.lead {
-      margin: 22px 0 34px; font-size: clamp(16px, 1.7vw, 19px);
-      color: var(--muted); max-width: 34em;
-    }
+    .hero p.lead { margin: 22px 0 34px; font-size: clamp(16px, 1.7vw, 19px); color: var(--muted); max-width: 34em; }
     .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
@@ -111,10 +107,7 @@
       padding: 16px 28px; transition: transform .2s, box-shadow .2s;
     }
     .btn:hover { transform: translateY(-3px); }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--blue), var(--blue-deep));
-      color: #fff; box-shadow: 0 18px 34px -12px rgba(30, 155, 215, .6);
-    }
+    .btn-primary { background: linear-gradient(135deg, var(--blue), var(--blue-deep)); color: #fff; box-shadow: 0 18px 34px -12px rgba(30, 155, 215, .6); }
     .btn-ghost { background: #fff; color: var(--blue-deep); border: 1.5px solid var(--line); box-shadow: 0 10px 24px -14px rgba(8,62,100,.25); }
     .hero-stats { display: flex; gap: 34px; margin-top: 44px; }
     .hero-stats .stat b { display: block; font-size: 24px; font-weight: 850; letter-spacing: -0.02em; }
@@ -181,18 +174,12 @@
     .pain .sec-head h2 { color: #fff; }
     .pain .sec-head p { color: #9db8ca; }
     .pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; position: relative; z-index: 1; }
-    .pain-card {
-      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
-      border-radius: 20px; padding: 26px 22px; transition: transform .25s, background .25s;
-    }
+    .pain-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 26px 22px; transition: transform .25s, background .25s; }
     .pain-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.09); }
     .pain-card .emo { font-size: 30px; }
     .pain-card h3 { margin: 14px 0 8px; font-size: 17px; font-weight: 800; color: #fff; }
     .pain-card p { font-size: 14px; color: #9db8ca; }
-    .pain-answer {
-      margin-top: 44px; text-align: center; font-size: clamp(19px, 2.4vw, 24px);
-      font-weight: 800; color: #fff; position: relative; z-index: 1;
-    }
+    .pain-answer { margin-top: 44px; text-align: center; font-size: clamp(19px, 2.4vw, 24px); font-weight: 800; color: #fff; position: relative; z-index: 1; }
     .pain-answer .grad { background: linear-gradient(120deg, #56c2f0, #9fe0ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
     @media (max-width: 920px) { .pain-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 540px) { .pain-grid { grid-template-columns: 1fr; } }
@@ -200,16 +187,9 @@
     /* ---------- steps ---------- */
     .steps .blob.b1 { width: 460px; height: 460px; background: #cdeafc; top: 40px; right: -200px; }
     .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; position: relative; z-index: 1; }
-    .step-card {
-      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 30px 24px; position: relative; overflow: hidden;
-      transition: transform .25s, box-shadow .25s;
-    }
+    .step-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 24px; position: relative; overflow: hidden; transition: transform .25s, box-shadow .25s; }
     .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-    .step-num {
-      position: absolute; top: 14px; right: 18px; font-size: 56px; font-weight: 900;
-      color: var(--blue); opacity: .09; letter-spacing: -0.05em;
-    }
+    .step-num { position: absolute; top: 14px; right: 18px; font-size: 56px; font-weight: 900; color: var(--blue); opacity: .09; letter-spacing: -0.05em; }
     .step-ico { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-size: 25px; background: var(--blue-soft); margin-bottom: 18px; }
     .step-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
     .step-card p { font-size: 14.5px; color: var(--muted); }
@@ -229,10 +209,7 @@
     .cell h3 { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; }
     .cell > p { font-size: 14.5px; color: var(--muted); }
     .cell .tag { font-size: 12px; font-weight: 800; color: var(--blue-deep); letter-spacing: .05em; }
-    .cell .shot {
-      margin-top: auto; border-radius: 14px; overflow: hidden;
-      border: 1px solid var(--line); box-shadow: 0 14px 34px -18px rgba(8,62,100,.35);
-    }
+    .cell .shot { margin-top: auto; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 14px 34px -18px rgba(8,62,100,.35); }
     .c-report { grid-column: span 4; }
     .c-report .shot { margin: 18px -60px -80px 0; border-radius: 14px 0 0 0; }
     .c-ai { grid-column: span 2; }
@@ -251,27 +228,15 @@
 
     /* AI mock */
     .ai-mock { margin-top: auto; display: flex; flex-direction: column; gap: 10px; font-size: 13px; }
-    .ai-bubble {
-      background: #fff; border: 1px solid var(--line); border-radius: 14px 14px 14px 4px;
-      padding: 10px 14px; color: var(--ink); font-weight: 600;
-      box-shadow: 0 8px 20px -14px rgba(8,62,100,.4); max-width: 95%;
-    }
+    .ai-bubble { background: #fff; border: 1px solid var(--line); border-radius: 14px 14px 14px 4px; padding: 10px 14px; color: var(--ink); font-weight: 600; box-shadow: 0 8px 20px -14px rgba(8,62,100,.4); max-width: 95%; }
     .ai-bubble.user { align-self: flex-end; border-radius: 14px 14px 4px 14px; background: var(--blue); color: #fff; border: 0; }
     .ai-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .ai-tags b {
-      font-size: 11.5px; font-weight: 800; padding: 5px 10px; border-radius: 999px;
-      background: var(--blue-soft); color: var(--blue-deep);
-    }
+    .ai-tags b { font-size: 11.5px; font-weight: 800; padding: 5px 10px; border-radius: 999px; background: var(--blue-soft); color: var(--blue-deep); }
     .ai-tags b.warn { background: #fdeaea; color: var(--red); }
 
     /* bid mock */
     .bid-mock { margin-top: auto; display: flex; flex-direction: column; gap: 8px; }
-    .bid-row {
-      display: flex; align-items: center; gap: 10px; background: #fff;
-      border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px;
-      font-size: 13px; font-weight: 700;
-      box-shadow: 0 8px 20px -14px rgba(8,62,100,.35);
-    }
+    .bid-row { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; font-size: 13px; font-weight: 700; box-shadow: 0 8px 20px -14px rgba(8,62,100,.35); }
     .bid-row .avatar { width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; background: var(--blue-soft); font-size: 15px; flex: none; }
     .bid-row small { display: block; color: var(--muted); font-weight: 600; font-size: 11px; }
     .bid-row .state { margin-left: auto; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: #e9f9f2; color: var(--green); flex: none; }
@@ -279,33 +244,39 @@
     .bid-row.win .state { background: var(--blue); color: #fff; }
 
     /* log mock */
-    .log-mock { margin-top: 6px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; counter-reset: log; }
+    .log-mock { margin-top: 6px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
     .log-step { position: relative; text-align: center; font-size: 12.5px; font-weight: 700; color: var(--muted); padding-top: 26px; }
-    .log-step::before {
-      content: ""; position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
-      width: 14px; height: 14px; border-radius: 50%; background: #fff;
-      border: 3.5px solid var(--blue); z-index: 1;
-    }
-    .log-step::after {
-      content: ""; position: absolute; top: 14px; left: calc(50% + 10px); right: calc(-50% + 10px);
-      height: 2.5px; background: linear-gradient(90deg, var(--blue), #bfe6fa);
-    }
+    .log-step::before { content: ""; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3.5px solid var(--blue); z-index: 1; }
+    .log-step::after { content: ""; position: absolute; top: 14px; left: calc(50% + 10px); right: calc(-50% + 10px); height: 2.5px; background: linear-gradient(90deg, var(--blue), #bfe6fa); }
     .log-step:last-child::after { display: none; }
     .log-step.done { color: var(--ink); }
     @media (max-width: 540px) { .log-mock { grid-template-columns: repeat(3, 1fr); row-gap: 20px; } .log-step:nth-child(3)::after { display:none; } }
 
-    /* ---------- partner ---------- */
-    .partner .blob.b1 { width: 480px; height: 480px; background: #ffeeba; bottom: -180px; left: -200px; opacity: .5; }
-    .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; position: relative; z-index: 1; }
-    .partner-shot { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); transform: rotate(-1.5deg); }
-    .partner h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 850; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 14px; }
-    .partner .desc { color: var(--muted); font-size: 16.5px; margin-bottom: 26px; }
-    .perk { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
-    .perk:last-of-type { border-bottom: 0; margin-bottom: 8px; }
-    .perk .ico { width: 42px; height: 42px; flex: none; border-radius: 13px; background: var(--blue-soft); display: grid; place-items: center; font-size: 20px; }
-    .perk b { font-size: 15.5px; font-weight: 800; display: block; }
-    .perk span { font-size: 14px; color: var(--muted); }
-    @media (max-width: 920px) { .partner-grid { grid-template-columns: 1fr; } .partner-shot { order: 2; } }
+    /* ---------- doors (티저) ---------- */
+    .doors { background: #fff; padding: 92px 0; }
+    .doors .blob.b1 { width: 420px; height: 420px; background: #d8f0ff; top: -80px; left: -180px; opacity: .5; }
+    .door-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 1; }
+    .door {
+      display: block; border-radius: var(--radius); padding: 36px 34px;
+      border: 1px solid var(--line); background: var(--bg);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      position: relative; overflow: hidden;
+    }
+    .door:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: #bfe6fa; }
+    .door .ico { width: 54px; height: 54px; border-radius: 17px; display: grid; place-items: center; font-size: 26px; background: var(--blue-soft); margin-bottom: 18px; }
+    .door.gold .ico { background: #fff6dd; }
+    .door .kicker { font-size: 12.5px; font-weight: 900; letter-spacing: .06em; color: var(--blue-deep); }
+    .door.gold .kicker { color: var(--orange); }
+    .door h3 { margin: 8px 0 10px; font-size: 22px; font-weight: 850; letter-spacing: -0.02em; line-height: 1.35; }
+    .door p { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+    .door ul { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-bottom: 22px; }
+    .door li { position: relative; padding-left: 17px; font-size: 14px; color: var(--muted); font-weight: 600; }
+    .door li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+    .door.gold li::before { background: var(--yellow); }
+    .door .go { font-size: 15.5px; font-weight: 850; color: var(--blue-deep); display: inline-flex; align-items: center; gap: 7px; }
+    .door.gold .go { color: var(--orange); }
+    .door:hover .go { gap: 12px; }
+    @media (max-width: 860px) { .door-grid { grid-template-columns: 1fr; } }
 
     /* ---------- final CTA ---------- */
     .final { padding: 120px 0; }
@@ -316,10 +287,7 @@
       color: #fff; text-align: center;
       box-shadow: 0 40px 80px -30px rgba(8, 62, 100, .55);
     }
-    .final-card::before, .final-card::after {
-      content: ""; position: absolute; border-radius: 50%;
-      background: rgba(255,255,255,.12); filter: blur(2px);
-    }
+    .final-card::before, .final-card::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,.12); filter: blur(2px); }
     .final-card::before { width: 300px; height: 300px; top: -140px; right: -80px; }
     .final-card::after { width: 220px; height: 220px; bottom: -120px; left: -60px; }
     .final-card img.char { width: 96px; margin: 0 auto 18px; animation: floaty 5s ease-in-out infinite; }
@@ -333,7 +301,7 @@
     footer { border-top: 1px solid var(--line); background: #fff; padding: 40px 0 48px; }
     .foot { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
     .foot img { height: 30px; }
-    .foot .links { display: flex; gap: 20px; font-size: 14px; font-weight: 600; color: var(--muted); }
+    .foot .links { display: flex; gap: 20px; font-size: 14px; font-weight: 600; color: var(--muted); flex-wrap: wrap; }
     .foot .copy { margin-left: auto; font-size: 13px; color: #94a9ba; }
     .biz-info { margin-top: 18px; font-size: 13px; color: var(--muted); line-height: 1.9; }
     .biz-info b { color: var(--ink); font-weight: 700; }
@@ -354,14 +322,15 @@
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="wrap nav-inner">
-      <a class="nav-logo" href="#top">
-        <img src="assets/logo-icon.png" alt="바로 뚫림 로고" />
+      <a class="nav-logo" href="index.html">
+        <img src="assets/logo-icon.png" alt="바로 뚫림 로고">
         바로 뚫림
       </a>
       <nav class="nav-links">
         <a href="#how">이용 방법</a>
         <a href="#features">주요 기능</a>
-        <a href="#partner">업체 파트너</a>
+        <a href="public.html">공공·지자체</a>
+        <a href="partners.html">협력사 모집</a>
       </nav>
       <a class="nav-cta" href="https://report.hasugulab.com">지금 신고하기</a>
     </div>
@@ -373,7 +342,7 @@
     <div class="wrap hero-grid">
       <div>
         <span class="badge"><span class="dot"></span>배수 문제 해결 중계 플랫폼</span>
-        <h1>막힌 배수,<br />신고 한 번에 <span class="grad">바로 뚫림</span></h1>
+        <h1>막힌 배수,<br>신고 한 번에 <span class="grad">바로 뚫림</span></h1>
         <p class="lead">
           배수구 막힘·역류·침수·악취 — 회원가입 없이 1분이면 접수 끝.
           AI가 신고를 정리하고, 관리자 검수를 거쳐 검증된 우리 동네 업체가
@@ -390,10 +359,10 @@
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-char" src="assets/character.png" alt="바로 뚫림 마스코트" />
+        <img class="hero-char" src="assets/character.png" alt="바로 뚫림 마스코트">
         <div class="phone">
           <div class="phone-screen">
-            <img src="assets/web-home-mobile.png" alt="바로 뚫림 모바일 신고 화면" />
+            <img src="assets/web-home-mobile.png" alt="바로 뚫림 모바일 신고 화면">
           </div>
         </div>
         <div class="float-card fc1"><span class="ico">🤖</span><span>AI 분석 완료<small>침수 · 긴급으로 분류</small></span></div>
@@ -423,7 +392,7 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="chip">WHY 바로 뚫림</span>
-        <h2>배수 업체 부르기,<br />늘 이런 게 불안하셨죠?</h2>
+        <h2>배수 업체 부르기,<br>늘 이런 게 불안하셨죠?</h2>
       </div>
       <div class="pain-grid">
         <div class="pain-card reveal"><span class="emo">🤷</span><h3>어디가 잘하는지 모름</h3><p>검색해도 광고뿐. 어떤 업체가 실력 있는지 알 길이 없어요.</p></div>
@@ -466,7 +435,7 @@
         <div class="step-card reveal">
           <span class="step-num">04</span>
           <div class="step-ico">🏁</div>
-          <h3>처리 & 기록</h3>
+          <h3>처리 &amp; 기록</h3>
           <p>작업 진행과 완료 내역이 남고, 접수번호로 언제든 확인 가능해요.</p>
         </div>
       </div>
@@ -487,7 +456,7 @@
           <span class="tag">REPORT</span>
           <h3>회원가입 없는 1분 신고</h3>
           <p>연락처와 위치, 증상만 적으면 끝. 긴급도(보통·급함·긴급)를 고르고 사진·영상을 첨부하면 더 정확하게 배정됩니다.</p>
-          <div class="shot"><img src="assets/web-home.png" alt="배수 문제 신고 화면" loading="lazy" /></div>
+          <div class="shot"><img src="assets/web-home.png" alt="배수 문제 신고 화면" loading="lazy"></div>
         </div>
 
         <div class="cell c-ai reveal">
@@ -505,14 +474,14 @@
           <span class="tag">LIVE MAP</span>
           <h3>우리 동네 신고 현황 지도</h3>
           <p>동네에서 접수된 배수 신고와 처리 현황을 지도에서 투명하게 확인할 수 있어요. 긴급·급함·일반·완료가 색상으로 구분됩니다.</p>
-          <div class="shot"><img src="assets/web-map.jpg" alt="지도 기반 신고 현황 화면" loading="lazy" /></div>
+          <div class="shot"><img src="assets/web-map.jpg" alt="지도 기반 신고 현황 화면" loading="lazy"></div>
         </div>
 
         <div class="cell c-look reveal">
           <span class="tag">TRACKING</span>
           <h3>접수번호로 언제든 조회</h3>
           <p>연락처 또는 접수번호+확인번호만으로 내 신고의 진행 상태를 확인합니다. 로그인은 필요 없어요.</p>
-          <div class="shot"><img src="assets/web-lookup.png" alt="내 신고 확인 화면" loading="lazy" /></div>
+          <div class="shot"><img src="assets/web-lookup.png" alt="내 신고 확인 화면" loading="lazy"></div>
         </div>
 
         <div class="cell c-bid reveal">
@@ -543,24 +512,42 @@
     </div>
   </section>
 
-  <!-- PARTNER -->
-  <section class="partner" id="partner">
+  <!-- DOORS : 다른 두 독자를 위한 입구 -->
+  <section class="doors">
     <div class="blob b1"></div>
-    <div class="wrap partner-grid">
-      <div class="partner-shot reveal">
-        <img src="assets/partner-login.png" alt="업체 파트너 로그인 화면" loading="lazy" />
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="chip">MORE</span>
+        <h2>시민 신고만 하는 곳이 아닙니다</h2>
+        <p>「바로 뚫림」은 의정부를 시작으로 경기 전역, 나아가 전국의 생활배수를 예방형으로 관리합니다.</p>
       </div>
-      <div class="reveal">
-        <span class="chip">FOR PARTNERS</span>
-        <h2>배수 업체 사장님,<br />일감이 동네에서 알아서 찾아옵니다</h2>
-        <p class="desc">영업 없이도 검수된 신고가 지역 기준으로 공개됩니다. 카카오·구글 계정으로 간편하게 시작하세요.</p>
-        <div class="perk"><span class="ico">📍</span><div><b>지역 기반 신고 공개</b><span>내 활동 지역의 검수된 신고만 골라 확인</span></div></div>
-        <div class="perk"><span class="ico">⚖️</span><div><b>공정한 입찰 수주</b><span>광고비 경쟁이 아닌 입찰로 투명하게 배정</span></div></div>
-        <div class="perk"><span class="ico">🗂️</span><div><b>작업 이력 관리</b><span>배정·진행·완료 기록이 자동으로 쌓여 신뢰 자산으로</span></div></div>
-        <div class="cta-row" style="margin-top:22px">
-          <a class="btn btn-primary" href="https://partner.hasugulab.com/signup">업체 회원가입</a>
-          <a class="btn btn-ghost" href="https://partner.hasugulab.com/login">업체 로그인</a>
-        </div>
+
+      <div class="door-grid">
+        <a class="door reveal" href="public.html">
+          <div class="ico">🏛️</div>
+          <span class="kicker">FOR PUBLIC SECTOR</span>
+          <h3>지자체·공공기관<br>담당자이신가요?</h3>
+          <p>막힌 뒤 부르는 사후 수리가 아니라, 우기 전에 어디를 먼저 봐야 할지 알려주는 예방형 관리 체계입니다.</p>
+          <ul>
+            <li>QR 자산화 · 내시경 사전진단 · 배수건전성 카드</li>
+            <li>연간 예방관리 계약과 관리자 대시보드</li>
+            <li>의정부 공공시설 실증 추진 중 · 경기 전역 확산</li>
+          </ul>
+          <span class="go">공공·지자체 안내 보기 →</span>
+        </a>
+
+        <a class="door gold reveal" href="partners.html">
+          <div class="ico">🔧</div>
+          <span class="kicker">FOR PARTNERS</span>
+          <h3>배수·설비 업체<br>사장님이신가요?</h3>
+          <p>전국에서 함께 일할 지역 파트너사를 찾고 있습니다. 제안은 비공개로 접수되어 대표이사가 직접 검토합니다.</p>
+          <ul>
+            <li>광고비 경쟁이 아닌 지역 기반 일감 배정</li>
+            <li>단발 출동이 아닌 연간 예방관리 반복 매출</li>
+            <li>작업 이력이 쌓여 공공 입찰 레퍼런스로</li>
+          </ul>
+          <span class="go">협력사 모집 안내 보기 →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -569,8 +556,8 @@
   <section class="final">
     <div class="wrap">
       <div class="final-card reveal">
-        <img class="char" src="assets/character.png" alt="" />
-        <h2>물이 안 내려가나요?<br />지금 바로 신고하세요</h2>
+        <img class="char" src="assets/character.png" alt="">
+        <h2>물이 안 내려가나요?<br>지금 바로 신고하세요</h2>
         <p>1분 신고면 충분합니다. AI 분석과 관리자 검수를 거쳐 검증된 동네 업체가 연락드려요.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://report.hasugulab.com">배수 문제 신고하기 →</a>
@@ -585,17 +572,20 @@
   <!-- FOOTER -->
   <footer>
     <div class="wrap foot">
-      <img src="assets/logo-text.png" alt="바로 뚫림" />
+      <img src="assets/logo-text.png" alt="바로 뚫림">
       <div class="links">
         <a href="https://report.hasugulab.com">신고하기</a>
         <a href="https://report.hasugulab.com/report/lookup">신고 조회</a>
         <!-- 비노출 유지: 지도 현황 <a href="https://report.hasugulab.com/map">지도 현황</a> -->
+        <a href="public.html">공공·지자체</a>
+        <a href="partners.html">협력사 모집</a>
         <a href="https://partner.hasugulab.com/login">업체 파트너</a>
       </div>
-      <span class="copy">© 2026 어반클라이밋에이아이. All rights reserved.</span>
+      <span class="copy">© 2026 주식회사 어반클라이밋에이아이. All rights reserved.</span>
     </div>
     <div class="wrap biz-info">
-      <b>어반클라이밋에이아이</b><span class="sep">|</span>대표 이재욱<span class="sep">|</span>사업자등록번호 508-09-73577
+      <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
+      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0260830020">02-6083-0020</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
     </div>
   </footer>
 
@@ -617,5 +607,6 @@
       io.observe(el);
     });
   </script>
+
 </body>
 </html>
