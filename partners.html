@@ -163,12 +163,19 @@
     td.no { font-weight: 800; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
     td.co { font-weight: 800; }
     td.date { color: var(--muted); font-size: 13.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
-    .stat-pill { display: inline-block; font-size: 12px; font-weight: 800; padding: 5px 12px; border-radius: 999px; white-space: nowrap; }
-    .s-접수 { background: var(--blue-soft); color: var(--blue-deep); }
-    .s-검토중 { background: #fff6dd; color: var(--orange); }
-    .s-상담예정 { background: #ede7ff; color: #5b3fc4; }
-    .s-협력업체 { background: #e9f9f2; color: var(--green); }
-    .s-보류 { background: #f0f4f7; color: #7c8f9e; }
+    .stat-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 800; padding: 5px 13px 5px 11px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; }
+    .stat-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 18%, transparent); }
+    .s-접수 { background: var(--blue-soft); color: var(--blue-deep); border-color: color-mix(in srgb, var(--blue-deep) 16%, transparent); }
+    .s-검토중 { background: #fff6dd; color: var(--orange); border-color: color-mix(in srgb, var(--orange) 20%, transparent); }
+    .s-상담예정 { background: #ede7ff; color: #5b3fc4; border-color: color-mix(in srgb, #5b3fc4 18%, transparent); }
+    .s-협력업체 { background: #e9f9f2; color: var(--green); border-color: color-mix(in srgb, var(--green) 22%, transparent); }
+    .s-보류 { background: #f0f4f7; color: #7c8f9e; border-color: #dbe4ea; }
+    /* 현황판 뷰포트: 최대 5행 + 헤더, 초과분은 로테이션 */
+    .board-viewport { max-height: 322px; overflow: hidden; position: relative; }
+    .board-viewport thead th { position: sticky; top: 0; z-index: 2; }
+    .board-viewport tbody tr { height: 55px; }
+    .board-viewport tbody { will-change: transform; }
+    .board-viewport tbody.rotating { transition: transform .6s cubic-bezier(.4,0,.2,1); }
     .board-empty { padding: 56px 24px; text-align: center; color: var(--muted); font-size: 15px; }
     .board-note { margin-top: 16px; font-size: 13px; color: var(--muted); position: relative; z-index: 1; }
 
@@ -365,6 +372,7 @@
       </div>
 
       <div class="table-wrap reveal">
+        <div class="board-viewport" id="boardViewport">
         <table>
           <thead>
             <tr>
@@ -380,6 +388,7 @@
             <tr><td colspan="6" class="board-empty">접수 현황을 불러오는 중입니다…</td></tr>
           </tbody>
         </table>
+        </div>
       </div>
       <p class="board-note">※ 업체명은 개인정보 보호를 위해 일부만 표시됩니다. 상세 내용은 공개되지 않습니다.</p>
     </div>
@@ -478,12 +487,8 @@
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
-  function renderBoard(items) {
-    if (!items || !items.length) {
-      boardBody.innerHTML = '<tr><td colspan="6" class="board-empty">아직 접수된 제안이 없습니다. 첫 번째 파트너가 되어주세요 🙌</td></tr>';
-      return;
-    }
-    boardBody.innerHTML = items.map((r) => `
+  function boardRowsHtml(items) {
+    return items.map((r) => `
       <tr>
         <td class="no">${esc(r.no)}</td>
         <td class="co">${esc(r.company)}</td>
@@ -492,6 +497,37 @@
         <td class="date">${esc(r.date)}</td>
         <td><span class="stat-pill s-${esc(r.status)}">${esc(r.status)}</span></td>
       </tr>`).join("");
+  }
+
+  function renderBoard(items) {
+    if (!items || !items.length) {
+      boardBody.innerHTML = '<tr><td colspan="6" class="board-empty">아직 접수된 제안이 없습니다. 첫 번째 파트너가 되어주세요 🙌</td></tr>';
+      return;
+    }
+    boardBody.innerHTML = boardRowsHtml(items);
+  }
+
+  /* 5행 초과 시 10초마다 한 줄씩 위로 밀어 올리는 로테이션 */
+  const VISIBLE_ROWS = 5;
+  let rotateTimer = null;
+  function startRotation(items) {
+    if (rotateTimer) { clearInterval(rotateTimer); rotateTimer = null; }
+    const queue = items.slice();
+    if (queue.length <= VISIBLE_ROWS) return;
+    rotateTimer = setInterval(() => {
+      if (document.hidden) return;
+      const rowH = boardBody.rows[0] ? boardBody.rows[0].offsetHeight : 55;
+      boardBody.classList.add("rotating");
+      boardBody.style.transform = `translateY(-${rowH}px)`;
+      const onEnd = () => {
+        boardBody.removeEventListener("transitionend", onEnd);
+        queue.push(queue.shift());
+        boardBody.classList.remove("rotating");
+        boardBody.style.transform = "none";
+        boardBody.innerHTML = boardRowsHtml(queue);
+      };
+      boardBody.addEventListener("transitionend", onEnd);
+    }, 10000);
   }
 
   function renderStats(items) {
@@ -521,6 +557,7 @@
       const items = out.items || [];
       renderBoard(items);
       renderStats(items);
+      startRotation(items);
     } catch (err) {
       boardBody.innerHTML = '<tr><td colspan="6" class="board-empty">접수 현황을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</td></tr>';
     }
