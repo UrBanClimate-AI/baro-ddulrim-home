@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>지원사업 소개 — 성남산업진흥원 지원 개발 | 바로 뚫림</title>
+  <title>지원사업 소개 — 성남산업진흥원 지원 개발 | 하수구랩</title>
   <meta name="description" content="성남산업진흥원 지원으로 개발한 문자·카카오톡·전화 기반 침수·하수구 막힘 AI 접수 에이전트. 앱 설치 없이 누구나 이용하는 생활밀착형 기후재난 대응 채널.">
   <link rel="icon" href="assets/logo-icon.png">
   <link rel="canonical" href="https://hasugulab.com/project.html">
-  <meta property="og:title" content="지원사업 소개 — 성남산업진흥원 지원 개발 | 바로 뚫림">
+  <meta property="og:title" content="지원사업 소개 — 성남산업진흥원 지원 개발 | 하수구랩">
   <meta property="og:description" content="앱 설치가 어려운 시민도 문자·카카오톡·전화만으로 침수와 하수구 막힘을 신고할 수 있는 AI 접수 채널을 개발했습니다.">
   <meta property="og:image" content="assets/character.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -116,16 +116,23 @@
     .reveal.on{opacity:1;transform:none}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
+    /* ---------- 브랜드 로크업 (하수구랩) ---------- */
+    .bi-mark { flex: none; }
+    .nav-logo .bi-wm { font-weight: 800; font-size: 18px; letter-spacing: -.045em; color: var(--ink); }
+    .nav-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
+    .foot-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .foot-logo .bi-wm { font-weight: 800; font-size: 19px; letter-spacing: -.045em; color: var(--ink); }
+    .foot-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
   </style>
 </head>
 <body>
 
   <header class="nav" id="nav">
     <div class="wrap nav-inner">
-      <a class="nav-logo" href="index.html"><img src="assets/logo-icon.png" alt="바로 뚫림 로고">바로 뚫림</a>
+      <a class="nav-logo" href="index.html"><svg class="bi-mark" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true"><defs><linearGradient id="hglg-n4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-n4)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span></a>
       <nav class="nav-links">
-        <a href="index.html#how">이용 방법</a>
-        <a href="index.html#features">주요 기능</a>
+        <a href="check.html">자가 진단</a>
+        <a href="business.html">식당·상가</a>
         <a href="public.html">공공·지자체</a>
         <a href="partners.html">협력사 모집</a>
         <a href="project.html" class="on">지원사업</a>
@@ -142,7 +149,7 @@
       <p class="lead">
         침수와 하수구 막힘은 가장 급할 때 생깁니다. 그런데 정작 그 순간에
         앱을 설치하고 회원가입을 하라고 하면, 신고를 포기하게 됩니다.
-        「바로 뚫림」은 성남산업진흥원의 지원을 받아, <b>문자·카카오톡·전화만으로</b>
+        하수구랩은 성남산업진흥원의 지원을 받아, <b>문자·카카오톡·전화만으로</b>
         누구나 문의하고 AI가 자동으로 접수·분류·응답하는 채널을 개발했습니다.
       </p>
     </div>
@@ -155,11 +162,10 @@
         <span class="chip">PROJECT</span>
         <h2>과제 개요</h2>
       </div>
-      <!-- ⚠️ 게시 전 아래 노란 표시 항목을 실제 값으로 바꿔주세요 -->
+      <!-- 과제명이 확정되면 아래 표에 <div class="fact-row"><dt>과제명</dt><dd>…</dd></div> 한 줄을 추가하세요 -->
       <dl class="fact-table reveal">
         <div class="fact-row"><dt>지원기관</dt><dd>성남산업진흥원</dd></div>
-        <div class="fact-row"><dt>과제명</dt><dd><span class="fill">과제명을 기입해 주세요</span></dd></div>
-        <div class="fact-row"><dt>수행기간</dt><dd><span class="fill">수행기간을 기입해 주세요</span></dd></div>
+        <div class="fact-row"><dt>수행기간</dt><dd>2026년 9월 30일 종료</dd></div>
         <div class="fact-row"><dt>수행기업</dt><dd>주식회사 어반클라이밋에이아이</dd></div>
         <div class="fact-row"><dt>개발 결과물</dt><dd>침수·하수구 막힘 문의 접수 AI 에이전트 및 운영 플랫폼</dd></div>
       </dl>
@@ -260,9 +266,10 @@
 
   <footer>
     <div class="wrap foot">
-      <img src="assets/logo-text.png" alt="바로 뚫림">
+      <span class="foot-logo"><svg class="bi-mark" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><defs><linearGradient id="hglg-f4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-f4)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span></span>
       <div class="links">
         <a href="index.html">홈</a>
+        <a href="business.html">식당·상가</a>
         <a href="https://report.hasugulab.com">신고하기</a>
         <a href="public.html">공공·지자체</a>
         <a href="partners.html">협력사 모집</a>
@@ -270,7 +277,7 @@
       <span class="copy">© 2026 주식회사 어반클라이밋에이아이. All rights reserved.</span>
     </div>
     <div class="wrap biz-info">
-      <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
+      <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>하수구랩(구 바로 뚫림)<span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
       본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0260830020">02-6083-0020</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
     </div>
   </footer>
@@ -281,6 +288,5 @@
     const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");io.unobserve(x.target)}})},{threshold:.1});
     document.querySelectorAll(".reveal").forEach((el,i)=>{el.style.transitionDelay=`${(i%4)*70}ms`;io.observe(el)});
   </script>
-
 </body>
 </html>

@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>공공·지자체 — 예방형 생활배수 관리 | 바로 뚫림</title>
-  <meta name="description" content="QR 자산화·내시경 사전진단·AI 분류·지역업체 신속조치·재발관리. 의정부 공공시설 실증을 시작으로 경기 전역과 전국으로 확장하는 예방형 생활배수 운영체계.">
+  <title>공공·지자체 — 예방형 생활배수 관리 | 하수구랩</title>
+  <meta name="description" content="QR 자산화·내시경 사전진단·AI 분류·지역업체 신속조치·재발관리. 의정부 공공시설 실증을 추진 중인 예방형 생활배수 운영체계.">
   <link rel="icon" href="assets/logo-icon.png">
   <link rel="canonical" href="https://hasugulab.com/public.html">
-  <meta property="og:title" content="공공·지자체 — 예방형 생활배수 관리 | 바로 뚫림">
+  <meta property="og:title" content="공공·지자체 — 예방형 생활배수 관리 | 하수구랩">
   <meta property="og:description" content="막힌 뒤 부르는 사후 수리에서, 우기 전에 어디를 먼저 봐야 할지 아는 도시로. 지자체·공공기관을 위한 생활배수 운영체계.">
   <meta property="og:image" content="assets/character.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -198,6 +198,14 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.on { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* ---------- 브랜드 로크업 (하수구랩) ---------- */
+    .bi-mark { flex: none; }
+    .nav-logo .bi-wm { font-weight: 800; font-size: 18px; letter-spacing: -.045em; color: var(--ink); }
+    .nav-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
+    .foot-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .foot-logo .bi-wm { font-weight: 800; font-size: 19px; letter-spacing: -.045em; color: var(--ink); }
+    .foot-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
   </style>
 </head>
 <body>
@@ -206,12 +214,11 @@
   <header class="nav" id="nav">
     <div class="wrap nav-inner">
       <a class="nav-logo" href="index.html">
-        <img src="assets/logo-icon.png" alt="바로 뚫림 로고">
-        바로 뚫림
+        <svg class="bi-mark" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true"><defs><linearGradient id="hglg-n2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-n2)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span>
       </a>
       <nav class="nav-links">
-        <a href="index.html#how">이용 방법</a>
-        <a href="index.html#features">주요 기능</a>
+        <a href="check.html">자가 진단</a>
+        <a href="business.html">식당·상가</a>
         <a href="public.html" class="on">공공·지자체</a>
         <a href="partners.html">협력사 모집</a>
         <a href="project.html">지원사업</a>
@@ -228,9 +235,9 @@
       <h1>막힌 뒤 뚫는 도시에서,<br><span class="grad">막히기 전에 관리하는 도시</span>로</h1>
       <p class="lead">
         전화·민원 중심의 사후 수리는 반복 원인도, 조치 이력도 남기지 않습니다.
-        「바로 뚫림」은 공공시설의 배수지점을 자산으로 등록하고, 사전에 진단하고,
+        하수구랩은 공공시설의 배수지점을 자산으로 등록하고, 사전에 진단하고,
         조치와 결과를 기록으로 남기는 운영체계입니다.
-        현재 <b>의정부시 공공시설 실증을 추진</b>하고 있으며, 경기 전역과 전국으로 확장을 준비하고 있습니다.
+        현재 <b>의정부시 공공시설 실증을 추진</b>하고 있습니다.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#contact">협업 문의하기 →</a>
@@ -333,8 +340,8 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="chip">EXPANSION ROADMAP</span>
-        <h2>의정부에서 검증하고,<br>경기에서 넓히고, 전국으로 엽니다</h2>
-        <p>한 도시에 머무는 서비스가 아닙니다. 검증된 운영모델을 지역 파트너와 함께 이식하는 구조입니다.</p>
+        <h2>의정부에서 검증하고,<br>확인된 것만 넓힙니다</h2>
+        <p>공공 실증은 운영모델을 증명하는 축입니다. 검증되지 않은 범위를 미리 약속하지 않습니다.</p>
       </div>
 
       <div class="road">
@@ -353,11 +360,11 @@
 
         <div class="road-card reveal">
           <span class="road-num">STEP 02</span>
-          <span class="road-tag">2026~2027 · 확산</span>
-          <h3>경기 전역</h3>
-          <p>성남 본점과 경기 파트너망을 축으로 인접 시·군으로 넓힙니다.</p>
+          <span class="road-tag">2026~2027 · 계획</span>
+          <h3>경기 북부·인접 서울권</h3>
+          <p>파트너 밀도가 확보된 권역부터 순차적으로 넓힙니다.</p>
           <ul>
-            <li>경기 지역 협력 설비업체 10개사 기반 권역 운영</li>
+            <li>권역별 협력 설비업체 확보 후 개시</li>
             <li>저지대 상가·반지하·골목 빗물받이 위험지도 연계</li>
             <li>시설관리 주체 대상 정기 진단 구독(B2B) 전환</li>
             <li>권역별 대표 파트너사 선정 및 표준 작업이력 공유</li>
@@ -366,12 +373,12 @@
 
         <div class="road-card reveal">
           <span class="road-num">STEP 03</span>
-          <span class="road-tag">2027~ · 전국</span>
-          <h3>전국</h3>
-          <p>지자체 조달과 협력사 네트워크로 전국 단위 운영체계를 준비합니다.</p>
+          <span class="road-tag">2027~ · 중장기 목표</span>
+          <h3>타 지자체 확산</h3>
+          <p>의정부 실증 결과를 레퍼런스로 다른 지자체와 논의합니다.</p>
           <ul>
-            <li>타 지자체 생활배수 DaaS · 공공조달 · 녹색인증 연계</li>
-            <li>전국 시·도 단위 협력사 네트워크 구축 (현재 지원 접수 중)</li>
+            <li>생활배수 DaaS · 공공조달 · 녹색인증 연계 검토</li>
+            <li>시·도 단위 협력사 사전 등록 (현재 접수 중)</li>
             <li>지역 파트너 교육·표준 작업기준(K-Code) 공유</li>
             <li>전국 공통 대시보드와 위험지도 운영</li>
           </ul>
@@ -379,7 +386,7 @@
       </div>
 
       <p class="road-note reveal">
-        전국 확장은 <b>지역을 아는 설비 파트너</b> 없이는 불가능합니다.
+        ※ STEP 02·03은 목표이며 확정된 일정이 아닙니다. 확장은 <b>지역 파트너 확보 여부</b>에 따라 결정됩니다.<br>
         &nbsp;<a href="partners.html">협력사 모집 안내 보기 →</a>
       </p>
     </div>
@@ -458,9 +465,10 @@
   <!-- FOOTER -->
   <footer>
     <div class="wrap foot">
-      <img src="assets/logo-text.png" alt="바로 뚫림">
+      <span class="foot-logo"><svg class="bi-mark" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><defs><linearGradient id="hglg-f2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-f2)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span></span>
       <div class="links">
         <a href="index.html">홈</a>
+        <a href="business.html">식당·상가</a>
         <a href="https://report.hasugulab.com">신고하기</a>
         <a href="https://report.hasugulab.com/report/lookup">신고 조회</a>
         <a href="partners.html">협력사 모집</a>
@@ -470,7 +478,7 @@
       <span class="copy">© 2026 주식회사 어반클라이밋에이아이. All rights reserved.</span>
     </div>
     <div class="wrap biz-info">
-      <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
+      <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>하수구랩(구 바로 뚫림)<span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
       본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0260830020">02-6083-0020</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
     </div>
   </footer>

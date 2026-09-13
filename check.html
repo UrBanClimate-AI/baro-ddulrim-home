@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>배관 자가 진단 — 하수구랩</title>
+<meta name="description" content="7개 질문으로 내 배관 문제가 어느 급인지, 어떤 장비가 필요한지, 비용이 대략 어느 범위인지 확인해 보세요. 여러 곳이 동시에 막혔다면 공용관 문제일 수 있습니다.">
+<link rel="icon" href="assets/logo-icon.png">
+<link rel="canonical" href="https://hasugulab.com/check.html">
+<meta property="og:title" content="배관 자가 진단 — 하수구랩">
+<meta property="og:description" content="부르기 전에 먼저 확인하세요. 어느 급의 작업인지, 비용이 어느 범위인지, 혹시 공용관 문제는 아닌지.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--blue:#1e9bd7;--blue-deep:#0876aa;--blue-soft:#e8f5fb;--ink:#0f2438;--muted:#5b7186;--line:#dcebf4;--bg:#f6fbfe;--red:#e14b4b;--green:#159570;--orange:#e08a00;--radius:22px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;word-break:keep-all;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(720px,calc(100% - 36px));margin:0 auto}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(255,255,255,.82);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;height:62px;width:min(1120px,calc(100% - 36px));margin:0 auto}
+.lockup{display:inline-flex;align-items:center;gap:9px}
+.lockup .wm{font-weight:800;font-size:18px;letter-spacing:-.045em;color:var(--ink)}
+.lockup .wm i{font-style:normal;color:var(--blue-deep)}
+.nav-back{margin-left:auto;font-size:14.5px;font-weight:700;color:var(--muted)}
+.nav-back:hover{color:var(--blue-deep)}
+
+/* head */
+.head{padding:44px 0 26px;text-align:center}
+.head .chip{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.06em;color:var(--blue-deep);background:var(--blue-soft);border-radius:999px;padding:6px 14px;margin-bottom:14px}
+.head h1{font-size:clamp(25px,4.6vw,34px);font-weight:850;letter-spacing:-.03em;line-height:1.28}
+.head p{margin-top:12px;color:var(--muted);font-size:15.5px}
+
+/* progress */
+.prog{height:6px;background:#e6eff5;border-radius:999px;overflow:hidden;margin:6px 0 26px}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue-deep));border-radius:999px;transition:width .35s ease}
+
+/* card */
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;box-shadow:0 20px 50px -34px rgba(8,62,100,.4)}
+.qno{font-size:12.5px;font-weight:900;letter-spacing:.08em;color:var(--blue-deep)}
+.q{font-size:clamp(19px,3vw,23px);font-weight:850;letter-spacing:-.025em;margin:8px 0 6px;line-height:1.35}
+.qsub{font-size:14px;color:var(--muted);margin-bottom:20px}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:15px;padding:16px 18px;font:inherit;font-size:15.5px;font-weight:700;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s,transform .1s}
+.opt:hover{border-color:var(--blue);background:#fff}
+.opt:active{transform:scale(.995)}
+.opt .emo{font-size:20px;flex:none}
+.opt small{display:block;font-weight:600;font-size:13px;color:var(--muted);margin-top:2px}
+.opt.warn:hover{border-color:var(--orange)}
+.nav-row{display:flex;align-items:center;margin-top:20px;gap:12px}
+.back{background:none;border:0;font:inherit;font-size:14.5px;font-weight:700;color:var(--muted);cursor:pointer;padding:8px 0}
+.back:hover{color:var(--blue-deep)}
+
+/* result */
+.alert{border-radius:18px;padding:22px 24px;margin-bottom:16px}
+.alert.urgent{background:#fdeaea;border:1.5px solid #f4c4c4}
+.alert.shared{background:#fffdf5;border:1.5px solid #f2e3b8}
+.alert b{display:block;font-size:17px;font-weight:850;margin-bottom:7px}
+.alert.urgent b{color:#a12f2f}
+.alert.shared b{color:#9a6100}
+.alert p{font-size:14.5px;color:var(--muted)}
+.alert .act{display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px 18px;font-size:14.5px;font-weight:800;color:var(--blue-deep)}
+
+.res-head{display:flex;align-items:flex-start;gap:14px;padding-bottom:20px;border-bottom:1px dashed var(--line);margin-bottom:20px}
+.res-head .stage{flex:none;width:54px;height:54px;border-radius:16px;background:var(--blue-soft);color:var(--blue-deep);display:grid;place-items:center;font-weight:900;font-size:13px;line-height:1.15;text-align:center}
+.res-head h2{font-size:21px;font-weight:850;letter-spacing:-.02em}
+.res-head span{font-size:14px;color:var(--muted)}
+
+.kv{display:grid;grid-template-columns:98px 1fr;gap:11px 14px;font-size:14.5px;margin-bottom:22px}
+.kv dt{color:var(--muted);font-weight:700}
+.kv dd{font-weight:700}
+
+.money{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:16px}
+.money h3{font-size:15px;font-weight:850;margin-bottom:14px}
+.mrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.mrow:last-of-type{border-bottom:0}
+.mrow span{color:var(--muted);font-weight:700}
+.mrow b{font-weight:850;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mtotal{margin-top:14px;padding-top:16px;border-top:2px solid var(--line);display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.mtotal span{font-size:15px;font-weight:850}
+.mtotal b{font-size:clamp(19px,3.4vw,23px);font-weight:900;color:var(--blue-deep);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mnote{margin-top:13px;font-size:12.5px;color:#94a9ba;line-height:1.75}
+
+.why{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:16px}
+.why h3{font-size:15px;font-weight:850;margin-bottom:12px}
+.why ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.why li{font-size:13px;font-weight:700;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+.why p{margin-top:13px;font-size:13.5px;color:var(--muted);line-height:1.8}
+.why p b{color:var(--ink)}
+
+.cta-row{display:flex;gap:11px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:800;font-size:15.5px;border-radius:15px;padding:15px 24px;border:0;cursor:pointer;transition:transform .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;box-shadow:0 16px 30px -14px rgba(30,155,215,.65)}
+.btn-ghost{background:#fff;color:var(--blue-deep);border:1.5px solid var(--line)}
+.restart{display:block;margin:18px auto 0;background:none;border:0;font:inherit;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+.disclaim{margin:26px 0 0;font-size:12.5px;color:#94a9ba;line-height:1.85;text-align:center}
+footer{margin-top:56px;border-top:1px solid var(--line);background:#fff;padding:28px 0 40px}
+.foot{font-size:12.5px;color:var(--muted);line-height:1.9;text-align:center}
+.foot b{color:var(--ink)}
+.foot .sep{margin:0 8px;color:#c3d4e0}
+@media(max-width:520px){.kv{grid-template-columns:1fr;gap:3px 0}.kv dd{margin-bottom:9px}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="lockup" href="index.html">
+      <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#lg)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg>
+      <span class="wm">하수구<i>랩</i></span>
+    </a>
+    <a class="nav-back" href="index.html">← 홈으로</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="head">
+    <span class="chip">자가 진단</span>
+    <h1>부르기 전에,<br>먼저 확인해 보세요</h1>
+    <p>7개 질문이면 충분합니다. 어느 급의 작업인지, 비용이 어느 범위인지, 혹시 우리 집 문제가 아닌지까지.</p>
+  </div>
+
+  <div class="prog" aria-hidden="true"><i id="bar"></i></div>
+  <div id="stage"></div>
+
+  <p class="disclaim">
+    이 진단은 <b>현장 확인 전 참고용 안내</b>입니다. 실제 작업 범위와 금액은 방문 진단 후 확정되며,
+    확정 전에는 어떤 금액도 청구되지 않습니다.
+  </p>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
+    <a href="tel:0260830020">02-6083-0020</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════ 데이터 ═══════════════
+   금액은 「하수구랩 표준 정찰제 요금 테이블」 기준 · 모두 부가세 별도
+   수정하려면 아래 STAGES / EXTRA 만 고치면 화면 전체가 따라갑니다.
+   ═══════════════════════════════════ */
+const VISIT = { lo: 30000, hi: 50000 };           // 기본 출동·진단비 (시공 진행 시 면제)
+const STAGES = {
+  1: { name:"1단계 · 단순 관통", lo:70000,  hi:120000,  gear:"석션기, 수동·전동 관통기",              time:"30분 ~ 1시간", scope:"배관 훼손 없는 표면 이물질 제거 (5m 이내)" },
+  2: { name:"2단계 · 배관 스케일링", lo:180000, hi:300000,  gear:"플렉스샤프트, 배관 내시경 카메라",       time:"1 ~ 2시간",   scope:"유지방 슬러지·머리카락 제거 (10m 이내) · 내시경 통수 확인 포함" },
+  3: { name:"3단계 · 식당·상가 특화", lo:350000, hi:550000,  gear:"온수 플렉스샤프트, 소형 고압세척",      time:"2 ~ 3시간",   scope:"F&B 주방배관·트랩·집수정 연결관 (15m 기준, 초과 시 가산)" },
+  4: { name:"4단계 · 고압세척", lo:700000, hi:1200000, gear:"엔진형 고압세척기, 내시경, 관로탐지기",  time:"3 ~ 5시간",   scope:"다가구 오배수 메인관·상가 메인 배관 전체" }
+};
+const EXTRA = { night:{ label:"야간 할증 (21시~익일 7시)", rate:0.30 } };
+const won = n => n.toLocaleString("ko-KR");
+
+/* ═══════════════ 질문 ═══════════════ */
+const Q = [
+  { id:"place", q:"어디가 막혔나요?", sub:"장소에 따라 필요한 장비와 작업 방식이 완전히 달라집니다.",
+    opts:[
+      {v:"home",     e:"🏠", t:"집 · 아파트"},
+      {v:"shop",     e:"🏪", t:"가게 · 식당 · 상가"},
+      {v:"building", e:"🏢", t:"건물 · 기관", s:"관리사무소·시설 담당자"}
+    ]},
+  { id:"spot", q:"어느 곳인가요?", sub:"", dyn:true },
+  { id:"symptom", q:"지금 어떤 상태인가요?", sub:"",
+    opts:[
+      {v:"slow",     e:"🐢", t:"물이 천천히 빠짐"},
+      {v:"blocked",  e:"🛑", t:"전혀 안 내려감"},
+      {v:"backflow", e:"🔄", t:"물이 역류함", s:"다른 배수구에서 올라오는 경우 포함"},
+      {v:"odor",     e:"👃", t:"악취가 남"},
+      {v:"overflow", e:"🚨", t:"지금 물이 넘치는 중", s:"즉시 대응이 필요합니다", w:true}
+    ]},
+  { id:"scope", q:"막힌 곳이 한 군데인가요, 여러 군데인가요?",
+    sub:"이 질문이 가장 중요합니다. 원인이 우리 집 안에 있는지, 건물 공용 배관에 있는지가 갈립니다.",
+    opts:[
+      {v:"one",      e:"1️⃣", t:"한 군데만"},
+      {v:"multiple", e:"⚠️", t:"두 군데 이상 동시에", s:"예: 싱크대와 화장실이 같이 / 아랫집도 같이", w:true}
+    ]},
+  { id:"history", q:"전에 같은 곳을 작업한 적이 있나요?",
+    sub:"이미 해본 작업을 또 하면 돈만 나가고 안 뚫립니다.",
+    opts:[
+      {v:"none",     e:"🆕", t:"처음입니다"},
+      {v:"recurred", e:"🔁", t:"뚫었는데 또 막혔습니다", s:"스프링·관통기 작업만 했던 경우"},
+      {v:"high",     e:"💦", t:"고압세척까지 해봤습니다", s:"그런데도 재발", w:true}
+    ]},
+  { id:"biz", q:"업종이 어떻게 되나요?", sub:"기름 사용량에 따라 배관에 쌓이는 정도가 크게 다릅니다.",
+    only:"shop",
+    opts:[
+      {v:"greasy",   e:"🍖", t:"중식 · 치킨 · 고깃집 · 분식", s:"기름 사용이 많은 업종"},
+      {v:"normal",   e:"🍚", t:"한식 · 일식 · 양식"},
+      {v:"cafe",     e:"☕", t:"카페 · 베이커리"},
+      {v:"other",    e:"🏬", t:"그 외 상가"}
+    ]},
+  { id:"time", q:"언제 작업하면 좋을까요?", sub:"", only:"shop",
+    opts:[
+      {v:"now",      e:"⏱️", t:"지금 당장", s:"영업 중이라도"},
+      {v:"break",    e:"🕒", t:"브레이크타임"},
+      {v:"night",    e:"🌙", t:"마감 후 야간", s:"21시 이후는 할증이 붙습니다"}
+    ]}
+];
+
+const SPOTS = {
+  home: [
+    {v:"toilet", e:"🚽", t:"변기"},
+    {v:"sink",   e:"🚰", t:"싱크대"},
+    {v:"bath",   e:"🛁", t:"욕실 · 세면대"},
+    {v:"veranda",e:"🧺", t:"베란다 · 세탁실"}
+  ],
+  shop: [
+    {v:"ksink",  e:"🍳", t:"주방 싱크대"},
+    {v:"trench", e:"〰️", t:"바닥 트렌치 · 배수구"},
+    {v:"grease", e:"🛢️", t:"그리스트랩 (집수정)"},
+    {v:"stoilet",e:"🚻", t:"화장실"},
+    {v:"smain",  e:"🏗️", t:"건물 메인 배관", w:true}
+  ],
+  building: [
+    {v:"hoenju", e:"🏢", t:"횡주관 · 오배수 메인관"},
+    {v:"sump",   e:"🕳️", t:"집수정"},
+    {v:"storm",  e:"🌧️", t:"우수관 · 빗물받이"},
+    {v:"btoilet",e:"🚻", t:"공용 화장실"}
+  ]
+};
+
+/* ═══════════════ 진행 ═══════════════ */
+const A = {};
+let step = 0;
+const el = document.getElementById("stage");
+const bar = document.getElementById("bar");
+
+function active(){ return Q.filter(q => !q.only || q.only === A.place); }
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function render(){
+  const list = active();
+  if (step >= list.length) { showResult(); return; }
+  const q = list[step];
+  const opts = q.dyn ? SPOTS[A.place] : q.opts;
+  bar.style.width = ((step)/(list.length))*100 + "%";
+  el.innerHTML = `
+    <div class="card">
+      <span class="qno">STEP ${step+1} / ${list.length}</span>
+      <p class="q">${esc(q.q)}</p>
+      ${q.sub ? `<p class="qsub">${esc(q.sub)}</p>` : ""}
+      <div class="opts">
+        ${opts.map(o=>`<button class="opt${o.w?" warn":""}" data-v="${esc(o.v)}">
+            <span class="emo">${o.e}</span>
+            <span>${esc(o.t)}${o.s?`<small>${esc(o.s)}</small>`:""}</span>
+          </button>`).join("")}
+      </div>
+      ${step>0 ? `<div class="nav-row"><button class="back" id="back">← 이전</button></div>` : ""}
+    </div>`;
+  el.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    A[q.id]=b.dataset.v;
+    if(q.id==="place"){ ["spot","biz","time"].forEach(k=>delete A[k]); }
+    step++; render(); window.scrollTo({top:0,behavior:"smooth"});
+  });
+  const bk = document.getElementById("back");
+  if(bk) bk.onclick=()=>{ step--; render(); };
+}
+
+/* ═══════════════ 판정 ═══════════════ */
+function judge(){
+  let s = 1;
+  if (A.place === "shop") s = 2;
+  if (A.place === "building") s = 4;
+  if (["grease","trench"].includes(A.spot)) s = Math.max(s,3);
+  if (["smain","hoenju","sump","storm"].includes(A.spot)) s = 4;
+  if (["backflow","overflow"].includes(A.symptom)) s = Math.max(s,2);
+  if (A.scope === "multiple") s = Math.max(s,2);
+  if (A.history === "recurred") s = Math.max(s,2);
+  if (A.history === "high") s = 4;
+  if (A.place === "shop" && A.biz === "greasy") s = Math.max(s,3);
+  if (A.place === "shop" && A.spot === "ksink" && A.history === "recurred") s = Math.max(s,3);
+  return Math.min(s,4);
+}
+
+function showResult(){
+  bar.style.width = "100%";
+  const s = judge(), st = STAGES[s];
+  const urgent = A.symptom === "overflow";
+  const shared = A.scope === "multiple";
+  const night  = A.time === "night";
+
+  let lo = st.lo, hi = st.hi;
+  const rows = [`<div class="mrow"><span>${esc(st.name)}</span><b>${won(st.lo)} ~ ${won(st.hi)}원</b></div>`];
+  if (night){
+    const nlo = Math.round(st.lo*EXTRA.night.rate), nhi = Math.round(st.hi*EXTRA.night.rate);
+    lo += nlo; hi += nhi;
+    rows.push(`<div class="mrow"><span>${esc(EXTRA.night.label)} +30%</span><b>+ ${won(nlo)} ~ ${won(nhi)}원</b></div>`);
+  }
+
+  const factors = ["관 굵기","작업 길이","접근 난이도","층수","오염 정도",...(night?["야간 작업"]:[]),"작업 인원"];
+
+  el.innerHTML = `
+    ${urgent ? `<div class="alert urgent">
+      <b>🚨 지금 물이 넘치는 중이라면 진단보다 전화가 빠릅니다</b>
+      <p>수도 밸브를 잠그고, 물이 닿는 곳의 전원을 차단하신 뒤 바로 연락 주세요. 통화하면서 상황을 정리해 드립니다.</p>
+      <a class="act" href="tel:0260830020">📞 02-6083-0020 지금 통화하기</a>
+    </div>` : ""}
+
+    ${shared ? `<div class="alert shared">
+      <b>⚠️ 우리 집(가게) 문제가 아닐 수 있습니다</b>
+      <p><b>두 군데 이상이 동시에 막혔다면 건물 공용 배관이 원인일 가능성이 높습니다.</b>
+      이 경우 개인 비용으로 뚫어도 얼마 지나지 않아 다시 막힙니다. 비용 부담 주체도 달라집니다.<br><br>
+      먼저 <b>관리사무소나 건물주에게 확인</b>하시기를 권합니다. 필요하시면 저희가
+      <b>관리주체에 제출할 진단 자료</b>를 만들어 드립니다. 이 확인만으로 불필요한 지출을 막을 수 있습니다.</p>
+    </div>` : ""}
+
+    <div class="card">
+      <div class="res-head">
+        <span class="stage">${s}단계</span>
+        <div>
+          <h2>${esc(st.name.split(" · ")[1])}</h2>
+          <span>${esc(st.scope)}</span>
+        </div>
+      </div>
+
+      <dl class="kv">
+        <dt>필요 장비</dt><dd>${esc(st.gear)}</dd>
+        <dt>예상 소요</dt><dd>${esc(st.time)}</dd>
+        <dt>진단 근거</dt><dd>${esc(summary())}</dd>
+      </dl>
+
+      <div class="money">
+        <h3>비용은 이 범위 안에서 정해집니다</h3>
+        <div class="mrow"><span>기본 출동·진단비</span><b>${won(VISIT.lo)} ~ ${won(VISIT.hi)}원</b></div>
+        ${rows.join("")}
+        <div class="mtotal"><span>작업 진행 시 예상 범위</span><b>${won(lo)} ~ ${won(hi)}원</b></div>
+        <p class="mnote">
+          · 모든 금액은 <b>부가세 별도</b>이며, 작업을 진행하시면 <b>출동·진단비는 전액 면제</b>됩니다.<br>
+          · 위 범위는 <b>현장 확인 전 참고용</b>입니다. 방문 진단 후 작업 범위와 금액을 확정해 알려드리고,
+            <b>동의하신 뒤에</b> 시작합니다.<br>
+          · 진행 중 추가가 필요하면 <b>사유·금액·사진</b>을 보내드리고 승인받은 뒤에만 진행합니다.
+            <b>승인하지 않은 금액은 청구되지 않습니다.</b>
+        </p>
+      </div>
+
+      <div class="why">
+        <h3>범위 안에서 금액을 정하는 것들</h3>
+        <ul>${factors.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>
+        <p><b>왜 하나의 금액으로 못 알려드리나요?</b> 같은 "싱크대 막힘"이라도 관이 얼마나 굵은지,
+        몇 미터를 작업해야 하는지, 지하인지, 기름때가 얼마나 굳었는지에 따라 실제 원가가 크게 다릅니다.
+        <b>하나의 숫자를 먼저 말하고 현장에서 올리는 방식</b>이야말로 지금 가장 많은 분쟁을 만드는 원인입니다.</p>
+      </div>
+
+      ${s>=3 ? `<div class="why" style="background:var(--bg)">
+        <h3>이 작업은 장비를 갖춘 곳만 가능합니다</h3>
+        <p>${s===4?"엔진형 고압세척기와 관로탐지기":"온수 플렉스샤프트와 고압세척 장비"}가 없는 업체가 방문하면
+        <b>작업에 실패하고 출동비만 나갑니다.</b> 하수구랩은 장비 보유가 확인된 업체에만 배정합니다.</p>
+      </div>`:""}
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://report.hasugulab.com">이대로 접수하기 →</a>
+        <button class="btn btn-ghost" id="copy">결과 복사하기</button>
+      </div>
+      <button class="restart" id="restart">처음부터 다시 하기</button>
+    </div>`;
+
+  document.getElementById("restart").onclick=()=>{ Object.keys(A).forEach(k=>delete A[k]); step=0; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+  document.getElementById("copy").onclick=async(e)=>{
+    const txt = `[하수구랩 자가 진단 결과]
+${st.name}
+작업 범위: ${st.scope}
+필요 장비: ${st.gear}
+예상 소요: ${st.time}
+예상 범위: ${won(lo)} ~ ${won(hi)}원 (부가세 별도, 출동·진단비 ${won(VISIT.lo)}~${won(VISIT.hi)}원 별도 / 작업 시 면제)
+진단 근거: ${summary()}${shared ? "\n\n⚠️ 두 곳 이상 동시 막힘 — 건물 공용 배관 문제일 수 있어 관리주체 확인이 필요합니다." : ""}
+
+※ 현장 확인 전 참고용 안내입니다. hasugulab.com`;
+    try { await navigator.clipboard.writeText(txt); e.target.textContent="복사되었습니다 ✓"; }
+    catch { e.target.textContent="복사할 수 없습니다"; }
+    setTimeout(()=>e.target.textContent="결과 복사하기",2200);
+  };
+}
+
+function summary(){
+  const L = {
+    home:"집·아파트", shop:"가게·식당", building:"건물·기관",
+    toilet:"변기", sink:"싱크대", bath:"욕실·세면대", veranda:"베란다·세탁실",
+    ksink:"주방 싱크대", trench:"바닥 트렌치", grease:"그리스트랩", stoilet:"화장실", smain:"건물 메인 배관",
+    hoenju:"횡주관·메인관", sump:"집수정", storm:"우수관", btoilet:"공용 화장실",
+    slow:"천천히 빠짐", blocked:"전혀 안 내려감", backflow:"역류", odor:"악취", overflow:"물 넘침",
+    one:"한 곳", multiple:"두 곳 이상 동시",
+    none:"작업 이력 없음", recurred:"작업 후 재발", high:"고압세척 후에도 재발",
+    greasy:"기름 많은 업종", normal:"일반 음식점", cafe:"카페·베이커리", other:"기타 상가",
+    now:"즉시", break:"브레이크타임", night:"마감 후 야간"
+  };
+  return active().map(q=>L[A[q.id]]).filter(Boolean).join(" · ");
+}
+
+render();
+</script>
+</body>
+</html>
