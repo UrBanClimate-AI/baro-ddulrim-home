@@ -47,7 +47,9 @@
     .nav-links a.on { color: var(--blue-deep); font-weight: 800; }
     .nav-cta { margin-left: 8px; background: linear-gradient(135deg, var(--blue), var(--blue-deep)); color: #fff; font-weight: 700; font-size: 14.5px; padding: 10px 20px; border-radius: 999px; box-shadow: 0 10px 24px -8px rgba(30,155,215,.55); transition: transform .2s; white-space: nowrap; }
     .nav-cta:hover { transform: translateY(-2px); }
-    @media (max-width: 900px) { .nav-links { display: none; } .nav-cta { margin-left: auto; } }
+    .nav-login { margin-left: 8px; background: #fff; color: var(--blue-deep); font-weight: 700; font-size: 14.5px; padding: 10px 20px; border-radius: 999px; border: 1.5px solid var(--line); white-space: nowrap; transition: transform .2s, border-color .2s; }
+    .nav-login:hover { transform: translateY(-2px); border-color: var(--blue); }
+    @media (max-width: 900px) { .nav-links { display: none; } .nav-login { margin-left: auto; } .nav-cta { margin-left: 8px; } }
 
     /* hero */
     .phero { padding: 152px 0 72px; }
@@ -269,6 +271,7 @@ a:not([href]){cursor:default}
         <a href="partners.html" class="on">협력사 모집</a>
         <a href="project.html">지원사업</a>
       </nav>
+      <a class="nav-login" href="https://partner.hasugulab.com/login">협력사 로그인</a>
       <a class="nav-cta" href="#apply">협력 제안하기</a>
     </div>
   </header>
