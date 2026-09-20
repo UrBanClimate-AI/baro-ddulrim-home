@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>지원사업 소개 — 성남산업진흥원 지원 개발 | 하수구랩</title>
   <meta name="description" content="성남산업진흥원 지원으로 개발한 문자·카카오톡·전화 기반 침수·하수구 막힘 AI 접수 에이전트. 앱 설치 없이 누구나 이용하는 생활밀착형 기후재난 대응 채널.">
-  <link rel="icon" href="assets/logo-icon.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/hasugulab-mark-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/hasugulab-mark-180.png">
   <link rel="canonical" href="https://hasugulab.com/project.html">
+  <meta property="og:url" content="https://hasugulab.com/project.html">
   <meta property="og:title" content="지원사업 소개 — 성남산업진흥원 지원 개발 | 하수구랩">
   <meta property="og:description" content="앱 설치가 어려운 시민도 문자·카카오톡·전화만으로 침수와 하수구 막힘을 신고할 수 있는 AI 접수 채널을 개발했습니다.">
-  <meta property="og:image" content="assets/character.png">
+  <meta property="og:image" content="https://hasugulab.com/assets/character.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <style>
     :root{--blue:#1e9bd7;--blue-deep:#0876aa;--blue-soft:#e8f5fb;--ink:#0f2438;--muted:#5b7186;--line:#dcebf4;--bg:#f6fbfe;--card:#fff;--yellow:#f7c948;--red:#e14b4b;--green:#159570;--orange:#e08a00;--radius:24px;--shadow:0 24px 60px -20px rgba(8,62,100,.18)}
@@ -123,17 +126,48 @@
     .foot-logo { display: inline-flex; align-items: center; gap: 10px; }
     .foot-logo .bi-wm { font-weight: 800; font-size: 19px; letter-spacing: -.045em; color: var(--ink); }
     .foot-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
-  </style>
+  
+    /* hero illustration */
+    .phero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:48px;align-items:center;position:relative;z-index:1}
+    .phero-art{width:100%;max-width:500px;justify-self:end}
+    .phero-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 44px rgba(8,118,170,.16))}
+    @media (max-width: 920px){.phero .wrap{grid-template-columns:1fr;gap:28px}.phero-art{max-width:420px;justify-self:center}}
+
+    /* ---------- 모바일 메뉴 (햄버거) ---------- */
+    .nav-toggle{display:none;width:42px;height:42px;border:1.5px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;align-items:center;justify-content:center;flex:none;padding:0}
+    .nav-toggle i{position:relative;display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:background .15s}
+    .nav-toggle i::before,.nav-toggle i::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,top .2s}
+    .nav-toggle i::before{top:-6px}.nav-toggle i::after{top:6px}
+    .nav-toggle[aria-expanded="true"] i{background:transparent}
+    .nav-toggle[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] i::after{top:0;transform:rotate(-45deg)}
+    @media (max-width:940px){
+      .nav-toggle{display:inline-flex;margin-left:auto}
+      .nav-cta{margin-left:0}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;margin:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:6px 0 10px;box-shadow:0 24px 40px -24px rgba(8,62,100,.35)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:13px 24px;font-size:16px;border-top:1px solid #f0f5f9}
+      .nav-links a.on{background:var(--blue-soft)}
+    }
+
+    /* ---------- 미리보기 표시 (검토용 · 배포 시 삭제) ---------- */
+    .preview-flag{position:fixed;left:14px;bottom:14px;z-index:99;background:#0f2438;color:#fff;font-size:12.5px;font-weight:700;padding:9px 15px;border-radius:999px;opacity:.93;box-shadow:0 12px 34px -12px rgba(8,62,100,.7);display:flex;gap:9px;align-items:center;pointer-events:none}
+    .preview-flag b{color:#f7c948;font-weight:900}
+    @media (max-width:600px){.preview-flag{font-size:11px;padding:7px 12px;left:10px;bottom:10px}}
+a:not([href]){cursor:default}
+</style>
 </head>
 <body>
 
   <header class="nav" id="nav">
     <div class="wrap nav-inner">
       <a class="nav-logo" href="index.html"><svg class="bi-mark" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true"><defs><linearGradient id="hglg-n4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-n4)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span></a>
-      <nav class="nav-links">
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks"><i></i></button>
+      <nav class="nav-links" id="navLinks">
         <a href="check.html">자가 진단</a>
         <a href="business.html">식당·상가</a>
-        <a href="public.html">공공·지자체</a>
+        <a>아파트·건물</a>
+        <a>공공·지자체</a>
         <a href="partners.html">협력사 모집</a>
         <a href="project.html" class="on">지원사업</a>
       </nav>
@@ -144,6 +178,7 @@
   <section class="phero">
     <div class="blob b1"></div><div class="blob b2"></div>
     <div class="wrap">
+      <div class="phero-copy">
       <span class="badge"><span class="dot"></span>성남산업진흥원 지원 개발 과제</span>
       <h1>앱을 깔지 않아도,<br><span class="grad">전화 한 통이면 접수됩니다</span></h1>
       <p class="lead">
@@ -152,6 +187,96 @@
         하수구랩은 성남산업진흥원의 지원을 받아, <b>문자·카카오톡·전화만으로</b>
         누구나 문의하고 AI가 자동으로 접수·분류·응답하는 채널을 개발했습니다.
       </p>
+      </div>
+      <div class="phero-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" role="img" aria-label="문자·카톡·전화로 들어온 제보를 AI 에이전트가 분류하고 대시보드에서 목표 달성률을 보는 일러스트">
+  <defs>
+    <linearGradient id="pj-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8f5fb"/><stop offset="1" stop-color="#dbeafc"/></linearGradient>
+    <linearGradient id="pj-mark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2AA9E0"/><stop offset="1" stop-color="#0876AA"/></linearGradient>
+  </defs>
+  <rect width="520" height="400" rx="32" fill="url(#pj-bg)"/>
+  <circle cx="64" cy="336" r="34" fill="#fff" opacity=".5"/>
+
+  <!-- channels (left) -->
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800" font-size="12">
+    <g transform="translate(36 56)">
+      <rect width="130" height="46" rx="16" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+      <rect x="12" y="13" width="20" height="20" rx="6" fill="#1e9bd7"/><path d="M16 20 h12 M16 26 h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="42" y="28" fill="#0f2438">문자로 제보</text>
+    </g>
+    <g transform="translate(36 120)">
+      <rect width="130" height="46" rx="16" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+      <path d="M22 13 c-7 0-12 4.5-12 10 0 3.5 2 6.5 5 8.3 l-1.5 5.2 5.5-3 c1 .2 2 .3 3 .3 7 0 12-4.5 12-10s-5-10.8-12-10.8z" fill="#e08a00"/>
+      <text x="42" y="28" fill="#0f2438">카톡으로 제보</text>
+    </g>
+    <g transform="translate(36 184)">
+      <rect width="130" height="46" rx="16" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+      <path d="M14 18 c0-2 1.5-4 4-4 l4 1 2 6-3 3 c1.5 4 4.5 7 8.5 8.5 l3-3 6 2 1 4c0 2.5-2 4-4 4 C24 39 14 29 14 18z" fill="#159570"/>
+      <text x="42" y="28" fill="#0f2438">전화로 제보</text>
+    </g>
+  </g>
+  <!-- arrows to AI -->
+  <g stroke="#94a9ba" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="6 6">
+    <path d="M168 79 q40 0 60 50"/><path d="M168 143 h60"/><path d="M168 207 q40 0 60-50"/>
+  </g>
+  <!-- AI agent chip -->
+  <g transform="translate(228 108)" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="900">
+    <rect width="86" height="70" rx="20" fill="url(#pj-mark)"/>
+    <text x="43" y="32" font-size="18" text-anchor="middle" fill="#fff">AI</text>
+    <text x="43" y="54" font-size="11" text-anchor="middle" fill="#dff3fc">접수 · 분류</text>
+    <circle cx="74" cy="12" r="8" fill="#159570" stroke="#fff" stroke-width="3"/>
+  </g>
+  <!-- classified tags -->
+  <g transform="translate(228 194)" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800" font-size="11">
+    <rect width="86" height="24" rx="12" fill="#ffe1e1"/><text x="43" y="16" text-anchor="middle" fill="#c23b3b">침수 · 긴급</text>
+    <rect y="30" width="86" height="24" rx="12" fill="#e9f9f2"/><text x="43" y="46" text-anchor="middle" fill="#0d6d51">막힘 · 보통</text>
+  </g>
+  <!-- arrow to dashboard -->
+  <path d="M320 143 h30" stroke="#94a9ba" stroke-width="3" stroke-linecap="round"/>
+  <path d="M344 137 l8 6 -8 6" stroke="#94a9ba" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- dashboard monitor -->
+  <g transform="translate(358 60)" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800">
+    <rect width="134" height="176" rx="16" fill="#fff" stroke="#9fbfd0" stroke-width="3"/>
+    <text x="14" y="24" font-size="11" fill="#94a9ba">정량 목표 달성</text>
+    <!-- ring -->
+    <circle cx="44" cy="66" r="24" fill="none" stroke="#dcebf4" stroke-width="8"/>
+    <circle cx="44" cy="66" r="24" fill="none" stroke="#1e9bd7" stroke-width="8" stroke-dasharray="128 151" stroke-linecap="round" transform="rotate(-90 44 66)"/>
+    <text x="44" y="70" font-size="11" text-anchor="middle" fill="#0876aa">85%</text>
+    <text x="78" y="58" font-size="10" fill="#5b7186">분류 정확도</text>
+    <text x="78" y="74" font-size="10" fill="#5b7186">목표 85%</text>
+    <!-- bars -->
+    <g transform="translate(14 104)">
+      <rect x="0" y="0" width="106" height="8" rx="4" fill="#dcebf4"/><rect x="0" y="0" width="80" height="8" rx="4" fill="#159570"/>
+      <rect x="0" y="16" width="106" height="8" rx="4" fill="#dcebf4"/><rect x="0" y="16" width="56" height="8" rx="4" fill="#1e9bd7"/>
+      <rect x="0" y="32" width="106" height="8" rx="4" fill="#dcebf4"/><rect x="0" y="32" width="96" height="8" rx="4" fill="#e08a00"/>
+      <text x="0" y="58" font-size="10" fill="#94a9ba">제보 · 응답 · PoC</text>
+    </g>
+    <rect x="52" y="176" width="30" height="16" rx="4" fill="#9fbfd0"/>
+    <rect x="34" y="190" width="66" height="8" rx="4" fill="#9fbfd0"/>
+  </g>
+
+  <!-- checklist -->
+  <g transform="translate(36 262)" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800" font-size="12">
+    <rect width="300" height="104" rx="18" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+    <text x="18" y="26" fill="#94a9ba" font-size="11">성남산업진흥원 과제 · 결과물</text>
+    <g transform="translate(18 40)">
+      <rect width="18" height="18" rx="5" fill="#e9f9f2" stroke="#159570" stroke-width="2"/><path d="M4 9 l4 4 l7-8" stroke="#159570" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <text x="28" y="14" fill="#0f2438">제보 접수 웹 · 조회</text>
+    </g>
+    <g transform="translate(18 66)">
+      <rect width="18" height="18" rx="5" fill="#e9f9f2" stroke="#159570" stroke-width="2"/><path d="M4 9 l4 4 l7-8" stroke="#159570" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <text x="28" y="14" fill="#0f2438">배정 · 완료 기록</text>
+    </g>
+    <g transform="translate(160 40)">
+      <rect width="18" height="18" rx="5" fill="#e9f9f2" stroke="#159570" stroke-width="2"/><path d="M4 9 l4 4 l7-8" stroke="#159570" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <text x="28" y="14" fill="#0f2438">AI 접수 에이전트</text>
+    </g>
+    <g transform="translate(160 66)">
+      <rect width="18" height="18" rx="5" fill="#e9f9f2" stroke="#159570" stroke-width="2"/><path d="M4 9 l4 4 l7-8" stroke="#159570" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <text x="28" y="14" fill="#0f2438">관리자 대시보드</text>
+    </g>
+  </g>
+</svg></div>
     </div>
   </section>
 
@@ -258,7 +383,7 @@
         <p>문자, 카카오톡, 전화, 웹 — 어느 쪽이든 같은 시스템으로 접수되고 검증된 지역 업체가 연락드립니다.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://report.hasugulab.com">배수 문제 신고하기 →</a>
-          <a class="btn btn-ghost" href="tel:0260830020">전화로 문의 02-6083-0020</a>
+          <a class="btn btn-ghost" href="tel:0318240023">전화로 문의 031-824-0023</a>
         </div>
       </div>
     </div>
@@ -271,14 +396,15 @@
         <a href="index.html">홈</a>
         <a href="business.html">식당·상가</a>
         <a href="https://report.hasugulab.com">신고하기</a>
-        <a href="public.html">공공·지자체</a>
+        <a>아파트·건물</a>
+        <a>공공·지자체</a>
         <a href="partners.html">협력사 모집</a>
       </div>
       <span class="copy">© 2026 주식회사 어반클라이밋에이아이. All rights reserved.</span>
     </div>
     <div class="wrap biz-info">
       <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>하수구랩(구 바로 뚫림)<span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
-      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0260830020">02-6083-0020</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
+      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0318240023">031-824-0023</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
     </div>
   </footer>
 
@@ -288,5 +414,14 @@
     const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");io.unobserve(x.target)}})},{threshold:.1});
     document.querySelectorAll(".reveal").forEach((el,i)=>{el.style.transitionDelay=`${(i%4)*70}ms`;io.observe(el)});
   </script>
+
+  <script>
+    (function(){var t=document.getElementById("navToggle"),l=document.getElementById("navLinks");if(!t||!l)return;
+      t.addEventListener("click",function(){var o=!l.classList.contains("open");l.classList.toggle("open",o);t.setAttribute("aria-expanded",o);t.setAttribute("aria-label",o?"메뉴 닫기":"메뉴 열기");});
+      l.addEventListener("click",function(e){if(e.target.tagName==="A"){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+      addEventListener("resize",function(){if(innerWidth>940){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+    })();
+  </script>
+
 </body>
 </html>

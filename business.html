@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>식당·상가 주방배관 — 하수구랩</title>
-  <meta name="description" content="영업시간을 피해 방문하고, 승인 없이 추가 금액을 청구하지 않습니다. 작업 전후를 사진으로 남기는 식당·상가 주방배관 관리. 경기 북부·인접 서울권.">
-  <link rel="icon" href="assets/logo-icon.png">
+  <meta name="description" content="영업시간을 피해 방문하고, 승인 없이 추가 금액을 청구하지 않습니다. 작업 전후를 사진으로 남기는 식당·상가 주방배관 관리. 경기 북부·성남·인접 서울권.">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/hasugulab-mark-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/hasugulab-mark-180.png">
   <link rel="canonical" href="https://hasugulab.com/business.html">
+  <meta property="og:url" content="https://hasugulab.com/business.html">
   <meta property="og:title" content="식당·상가 주방배관 — 하수구랩">
   <meta property="og:description" content="부르는 게 값이 아니라, 무엇을 얼마에 하는지 먼저 정합니다. 승인 없는 추가 금액 없음 · 작업 전후 사진 기록 · 같은 범위 하자는 무상 재작업.">
-  <meta property="og:image" content="assets/character.png">
+  <meta property="og:image" content="https://hasugulab.com/assets/character.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <style>
     :root{--blue:#1e9bd7;--blue-deep:#0876aa;--blue-soft:#e8f5fb;--ink:#0f2438;--muted:#5b7186;--line:#dcebf4;--bg:#f6fbfe;--card:#fff;--yellow:#f7c948;--red:#e14b4b;--green:#159570;--orange:#e08a00;--radius:24px;--shadow:0 24px 60px -20px rgba(8,62,100,.18)}
@@ -74,7 +77,8 @@
     .promise-item{display:flex;gap:18px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:26px 28px;transition:transform .25s,box-shadow .25s}
     .promise-item:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
     .promise-item .n{flex:none;width:44px;height:44px;border-radius:14px;background:#e9f9f2;color:var(--green);display:grid;place-items:center;font-weight:900;font-size:17px}
-    .promise-item b{display:block;font-size:17.5px;font-weight:850;margin-bottom:6px}
+    .promise-item>div>b{display:block;font-size:17.5px;font-weight:850;margin-bottom:6px}
+    .promise-item p b{color:var(--ink);font-weight:800}
     .promise-item p{font-size:14.5px;color:var(--muted)}
     .promise-item .why{display:block;margin-top:8px;font-size:13px;color:#94a9ba}
 
@@ -89,6 +93,14 @@
     .price-note b{color:var(--ink)}
     @media(max-width:760px){.formula{flex-direction:column}.f-op{transform:rotate(90deg)}}
 
+    .rate-mini{display:grid;gap:8px;margin:0 0 22px}
+    .rate-mini>div{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--bg);font-size:14.5px}
+    .rate-mini>div span{color:var(--muted);font-weight:700}
+    .rate-mini>div span small{display:block;font-size:12px;font-weight:600;color:#94a9ba}
+    .rate-mini>div b{font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .rate-mini>div.hot{background:#e9f9f2;border-color:#bfe9d6}
+    .rate-mini>div.hot span{color:#0d6d51}
+    @media(max-width:520px){.rate-mini>div{flex-direction:column;gap:4px}}
     /* 완료 기준 / 예외 */
     .std-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;position:relative;z-index:1}
     .std-box{border-radius:var(--radius);padding:30px;border:1px solid var(--line);background:#fff}
@@ -177,17 +189,48 @@
     .foot-logo { display: inline-flex; align-items: center; gap: 10px; }
     .foot-logo .bi-wm { font-weight: 800; font-size: 19px; letter-spacing: -.045em; color: var(--ink); }
     .foot-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
-  </style>
+  
+    /* hero illustration */
+    .phero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:48px;align-items:center;position:relative;z-index:1}
+    .phero-art{width:100%;max-width:500px;justify-self:end}
+    .phero-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 44px rgba(8,118,170,.16))}
+    @media (max-width: 920px){.phero .wrap{grid-template-columns:1fr;gap:28px}.phero-art{max-width:420px;justify-self:center}}
+
+    /* ---------- 모바일 메뉴 (햄버거) ---------- */
+    .nav-toggle{display:none;width:42px;height:42px;border:1.5px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;align-items:center;justify-content:center;flex:none;padding:0}
+    .nav-toggle i{position:relative;display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:background .15s}
+    .nav-toggle i::before,.nav-toggle i::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,top .2s}
+    .nav-toggle i::before{top:-6px}.nav-toggle i::after{top:6px}
+    .nav-toggle[aria-expanded="true"] i{background:transparent}
+    .nav-toggle[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] i::after{top:0;transform:rotate(-45deg)}
+    @media (max-width:960px){
+      .nav-toggle{display:inline-flex;margin-left:auto}
+      .nav-cta{margin-left:0}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;margin:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:6px 0 10px;box-shadow:0 24px 40px -24px rgba(8,62,100,.35)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:13px 24px;font-size:16px;border-top:1px solid #f0f5f9}
+      .nav-links a.on{background:var(--blue-soft)}
+    }
+
+    /* ---------- 미리보기 표시 (검토용 · 배포 시 삭제) ---------- */
+    .preview-flag{position:fixed;left:14px;bottom:14px;z-index:99;background:#0f2438;color:#fff;font-size:12.5px;font-weight:700;padding:9px 15px;border-radius:999px;opacity:.93;box-shadow:0 12px 34px -12px rgba(8,62,100,.7);display:flex;gap:9px;align-items:center;pointer-events:none}
+    .preview-flag b{color:#f7c948;font-weight:900}
+    @media (max-width:600px){.preview-flag{font-size:11px;padding:7px 12px;left:10px;bottom:10px}}
+a:not([href]){cursor:default}
+</style>
 </head>
 <body>
 
   <header class="nav" id="nav">
     <div class="wrap nav-inner">
       <a class="nav-logo" href="index.html"><svg class="bi-mark" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true"><defs><linearGradient id="hglg-n1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-n1)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span></a>
-      <nav class="nav-links">
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks"><i></i></button>
+      <nav class="nav-links" id="navLinks">
         <a href="check.html">자가 진단</a>
         <a href="business.html" class="on">식당·상가</a>
-        <a href="public.html">공공·지자체</a>
+        <a>아파트·건물</a>
+        <a>공공·지자체</a>
         <a href="partners.html">협력사 모집</a>
         <a href="project.html">지원사업</a>
       </nav>
@@ -198,7 +241,8 @@
   <section class="phero">
     <div class="blob b1"></div><div class="blob b2"></div>
     <div class="wrap">
-      <span class="badge"><span class="dot"></span>식당·상가 주방배관 · 경기 북부·인접 서울권</span>
+      <div class="phero-copy">
+      <span class="badge"><span class="dot"></span>식당·상가 주방배관 · 경기 북부·성남·인접 서울권</span>
       <h1>부르는 게 값이 아니라,<br><span class="grad">무엇을 얼마에 하는지 먼저 정합니다</span></h1>
       <p class="lead">
         주방 배관은 기름때가 굳어 <b>같은 자리에서 반복해서 막힙니다.</b>
@@ -210,6 +254,70 @@
         <a class="btn btn-primary" href="https://report.hasugulab.com">주방배관 접수하기 →</a>
         <a class="btn btn-ghost" href="#price">가격이 정해지는 방식 보기</a>
       </div>
+      </div>
+      <div class="phero-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" role="img" aria-label="식당 주방 싱크대 아래 배관에 기름때가 쌓인 모습과 정찰제 가격표 일러스트">
+  <defs>
+    <linearGradient id="bz-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9f9f2"/><stop offset="1" stop-color="#d7f3e7"/></linearGradient>
+    <linearGradient id="bz-steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f8fb"/><stop offset="1" stop-color="#c9d8e2"/></linearGradient>
+    <linearGradient id="bz-pipe" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b9d2df"/><stop offset=".5" stop-color="#eef6fa"/><stop offset="1" stop-color="#b9d2df"/></linearGradient>
+  </defs>
+  <rect width="520" height="400" rx="32" fill="url(#bz-bg)"/>
+  <circle cx="452" cy="62" r="44" fill="#fff" opacity=".5"/>
+
+  <!-- wall tiles -->
+  <g stroke="#fff" stroke-width="2" opacity=".55">
+    <line x1="40" y1="70" x2="480" y2="70"/><line x1="40" y1="110" x2="480" y2="110"/>
+    <line x1="120" y1="40" x2="120" y2="150"/><line x1="240" y1="40" x2="240" y2="150"/><line x1="360" y1="40" x2="360" y2="150"/>
+  </g>
+
+  <!-- cabinet -->
+  <rect x="48" y="176" width="424" height="190" rx="14" fill="#fff" stroke="#dcebf4" stroke-width="3"/>
+  <rect x="60" y="188" width="86" height="166" rx="10" fill="#f3f8fb"/>
+  <rect x="374" y="188" width="86" height="166" rx="10" fill="#f3f8fb"/>
+  <circle cx="132" cy="270" r="5" fill="#94a9ba"/><circle cx="388" cy="270" r="5" fill="#94a9ba"/>
+
+  <!-- countertop + sink -->
+  <rect x="48" y="150" width="424" height="26" rx="8" fill="url(#bz-steel)" stroke="#9fbfd0" stroke-width="3"/>
+  <rect x="150" y="160" width="220" height="70" rx="14" fill="#dfe9ef" stroke="#9fbfd0" stroke-width="3"/>
+  <rect x="164" y="168" width="192" height="54" rx="10" fill="#c9d8e2"/>
+  <!-- water in sink (standing) -->
+  <rect x="164" y="196" width="192" height="26" rx="8" fill="#1e9bd7" opacity=".85"/>
+  <ellipse cx="260" cy="200" rx="60" ry="5" fill="#fff" opacity=".35"/>
+  <!-- faucet -->
+  <path d="M260 150 V118 q0-26 26-26 h20" stroke="#5b7186" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <circle cx="306" cy="92" r="9" fill="#5b7186"/>
+  <!-- drop -->
+  <path d="M260 160c0 0 5 5.5 5 8.7a5 5 0 0 1-10 0c0-3.2 5-8.7 5-8.7z" fill="#0876aa"/>
+
+  <!-- drain pipe with grease -->
+  <rect x="244" y="230" width="32" height="60" rx="10" fill="url(#bz-pipe)" stroke="#9fbfd0" stroke-width="3"/>
+  <path d="M244 290 q0 30 30 30 h50 q30 0 30 30 v14" stroke="#9fbfd0" stroke-width="38" fill="none" stroke-linecap="round"/>
+  <path d="M244 290 q0 30 30 30 h50 q30 0 30 30 v14" stroke="#eef6fa" stroke-width="30" fill="none" stroke-linecap="round"/>
+  <!-- grease buildup -->
+  <path d="M250 262c8-6 18-6 22 2 4 7 2 18-6 20-8 3-16 1-18-6-2-6-2-12 2-16z" fill="#f6b64a"/>
+  <path d="M262 300c10-8 30-8 44-2 12 5 22 12 22 22-14 4-30 6-46 2-12-3-24-14-20-22z" fill="#e08a00"/>
+  <path d="M290 306c8-3 18-3 26 1" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7" fill="none"/>
+  <!-- wrench -->
+  <g transform="translate(322 236) rotate(-35)">
+    <rect x="0" y="0" width="70" height="14" rx="7" fill="#0876aa"/>
+    <circle cx="70" cy="7" r="15" fill="#0876aa"/><circle cx="72" cy="7" r="6" fill="#e9f9f2"/>
+  </g>
+
+  <!-- price tag -->
+  <g transform="translate(58 44) rotate(-6)" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800">
+    <path d="M0 22 L22 0 H152 a12 12 0 0 1 12 12 V64 a12 12 0 0 1-12 12 H22 L0 54 Z" fill="#159570"/>
+    <circle cx="20" cy="38" r="6" fill="#e9f9f2"/>
+    <text x="42" y="32" font-size="12" fill="#c9f2e4">부가세 별도 · 정찰제</text>
+    <text x="42" y="58" font-size="19" fill="#fff">18만~30만원</text>
+  </g>
+  <!-- clock (영업시간 피해) -->
+  <g transform="translate(410 96)" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800">
+    <circle cx="0" cy="0" r="30" fill="#fff" stroke="#dcebf4" stroke-width="3"/>
+    <path d="M0 0 V-18 M0 0 L12 8" stroke="#0f2438" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="3" fill="#159570"/>
+    <text x="0" y="52" font-size="12" text-anchor="middle" fill="#0f2438">브레이크타임</text>
+  </g>
+</svg></div>
     </div>
   </section>
 
@@ -292,24 +400,29 @@
       <div class="sec-head reveal">
         <span class="chip">PRICING</span>
         <h2>가격이 정해지는 방식</h2>
-        <p>현장 상황에 따라 금액은 달라집니다. 대신 <b>어떻게 계산되는지</b>를 미리 공개합니다.</p>
+        <p>부르는 사람마다 값이 달라지지 않도록, <b>단계별 범위와 계산 방식</b>을 미리 공개합니다.</p>
       </div>
       <div class="price-box reveal">
         <div class="formula">
-          <div class="f-part"><b>고정 진단비</b><span>방문·확인 비용<br>미리 알려드립니다</span></div>
+          <div class="f-part"><b>출동·진단비</b><span>30,000~50,000원<br>작업 진행 시 <b style="display:inline;font-size:inherit;margin:0">전액 면제</b></span></div>
           <span class="f-op">+</span>
-          <div class="f-part"><b>작업단위 가산</b><span>관경·길이·접근성·층수<br>오염도·야간 여부</span></div>
+          <div class="f-part"><b>정찰제 단계 금액</b><span>아래 4단계 범위 안에서<br>관경·길이·접근성으로 확정</span></div>
           <span class="f-op">=</span>
           <div class="f-part"><b>승인 상한</b><span>이 금액을 넘으면<br>반드시 다시 여쭙니다</span></div>
         </div>
+        <div class="rate-mini">
+          <div><span>1단계 · 단순 관통</span><b>70,000 ~ 120,000원</b></div>
+          <div><span>2단계 · 배관 스케일링</span><b>180,000 ~ 300,000원</b></div>
+          <div class="hot"><span>3단계 · 식당·상가 특화 <small>주방배관·트랩·집수정 연결관, 15m 기준</small></span><b>350,000 ~ 550,000원</b></div>
+          <div><span>4단계 · 고압세척 <small>상가 메인 배관 전체</small></span><b>700,000 ~ 1,200,000원</b></div>
+        </div>
         <p class="price-note">
-          <b>왜 정찰 금액표를 걸지 않나요?</b><br>
-          같은 "주방배관 뚫음"이라도 관 굵기, 작업 길이, 지하 여부, 기름때가 쌓인 정도에 따라 실제 원가가 크게 다릅니다.
-          범위만 넓은 가격표는 결국 현장 설명에 의존하게 만들어, 지금 사장님들이 겪는 문제와 똑같아집니다.
+          모든 금액은 <b>부가세 별도</b>이며, 야간(21시~익일 7시)은 <b>30% 할증</b>입니다.
+          범위 안에서 최종 금액을 정하는 것은 관 굵기, 작업 길이, 지하 여부, 기름때가 굳은 정도처럼 <b>현장에서 측정 가능한 항목</b>뿐입니다.
+          그 항목을 진단 후 먼저 알려드리고, <b>승인 상한을 넘는 금액은 사장님 승인 없이 진행하지 않습니다.</b>
           <br><br>
-          그래서 <b>고정 진단비를 먼저 확정</b>하고, <b>측정 가능한 항목으로만 가산</b>하며,
-          <b>승인 상한을 넘는 금액은 사장님 승인 없이 진행하지 않습니다.</b>
-          실제 거래 자료가 쌓이면 작업 유형별 표준 금액을 공개할 계획입니다.
+          우리 가게가 몇 단계인지 미리 보시려면 → <a href="check.html" style="color:var(--green);font-weight:800;border-bottom:1.5px solid currentColor">자가 진단</a>
+          · 다른 곳 견적이 있으시면 → <a href="check.html#quote" style="color:var(--green);font-weight:800;border-bottom:1.5px solid currentColor">받은 견적 점검</a>
         </p>
       </div>
     </div>
@@ -421,7 +534,7 @@
       <div class="pills">
         <span class="pill hot">의정부</span><span class="pill">양주</span><span class="pill">동두천</span>
         <span class="pill">포천</span><span class="pill">남양주</span><span class="pill">구리</span>
-        <span class="pill">고양</span><span class="pill">파주</span>
+        <span class="pill">고양</span><span class="pill">파주</span><span class="pill">성남</span>
         <span class="pill">서울 도봉·노원·강북·성북·중랑·은평</span>
       </div>
       <span style="font-size:13px;color:#94a9ba">그 밖의 지역은 접수 시 안내드리며, 무리해서 배정하지 않습니다.</span>
@@ -471,11 +584,11 @@
         <p>접수는 1분이면 됩니다. 영업시간을 피해 방문하고, 무엇을 얼마에 하는지 먼저 알려드립니다.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://report.hasugulab.com">주방배관 접수하기 →</a>
-          <a class="btn btn-ghost" href="tel:0260830020">전화로 문의 02-6083-0020</a>
+          <a class="btn btn-ghost" href="tel:0318240023">전화로 문의 031-824-0023</a>
         </div>
         <p class="final-contact">
           <span>평일 상담</span>
-          <a href="tel:0260830020">02-6083-0020</a>
+          <a href="tel:0318240023">031-824-0023</a>
           <span class="divider">·</span>
           <a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
         </p>
@@ -490,14 +603,15 @@
         <a href="index.html">홈</a>
         <a href="https://report.hasugulab.com">접수하기</a>
         <a href="https://report.hasugulab.com/report/lookup">접수 조회</a>
-        <a href="public.html">공공·지자체</a>
+        <a>아파트·건물</a>
+        <a>공공·지자체</a>
         <a href="partners.html">협력사 모집</a>
       </div>
       <span class="copy">© 2026 주식회사 어반클라이밋에이아이. All rights reserved.</span>
     </div>
     <div class="wrap biz-info">
       <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>하수구랩(구 바로 뚫림)<span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
-      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0260830020">02-6083-0020</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
+      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0318240023">031-824-0023</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
     </div>
   </footer>
 
@@ -507,5 +621,14 @@
     const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");io.unobserve(x.target)}})},{threshold:.1});
     document.querySelectorAll(".reveal").forEach((el,i)=>{el.style.transitionDelay=`${(i%4)*70}ms`;io.observe(el)});
   </script>
+
+  <script>
+    (function(){var t=document.getElementById("navToggle"),l=document.getElementById("navLinks");if(!t||!l)return;
+      t.addEventListener("click",function(){var o=!l.classList.contains("open");l.classList.toggle("open",o);t.setAttribute("aria-expanded",o);t.setAttribute("aria-label",o?"메뉴 닫기":"메뉴 열기");});
+      l.addEventListener("click",function(e){if(e.target.tagName==="A"){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+      addEventListener("resize",function(){if(innerWidth>960){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+    })();
+  </script>
+
 </body>
 </html>

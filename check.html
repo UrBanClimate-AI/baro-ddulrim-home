@@ -3,11 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>배관 자가 진단 — 하수구랩</title>
-<meta name="description" content="7개 질문으로 내 배관 문제가 어느 급인지, 어떤 장비가 필요한지, 비용이 대략 어느 범위인지 확인해 보세요. 여러 곳이 동시에 막혔다면 공용관 문제일 수 있습니다.">
-<link rel="icon" href="assets/logo-icon.png">
+  <meta name="robots" content="noindex, nofollow">
+<title>배관 자가 진단 · 받은 견적 점검 — 하수구랩</title>
+<meta name="description" content="7개 질문으로 내 배관 문제가 어느 급인지, 어떤 장비가 필요한지, 비용이 어느 범위인지 확인해 보세요. 다른 곳에서 받은 견적이 정찰제 범위 안인지도 바로 점검할 수 있습니다.">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/hasugulab-mark-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/hasugulab-mark-180.png">
 <link rel="canonical" href="https://hasugulab.com/check.html">
-<meta property="og:title" content="배관 자가 진단 — 하수구랩">
+<meta property="og:url" content="https://hasugulab.com/check.html">
+  <meta property="og:title" content="배관 자가 진단 — 하수구랩">
+<meta property="og:image" content="https://hasugulab.com/assets/character.png">
 <meta property="og:description" content="부르기 전에 먼저 확인하세요. 어느 급의 작업인지, 비용이 어느 범위인지, 혹시 공용관 문제는 아닌지.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
@@ -28,7 +32,34 @@ a{color:inherit;text-decoration:none}
 .nav-back:hover{color:var(--blue-deep)}
 
 /* head */
-.head{padding:44px 0 26px;text-align:center}
+.head{display:grid;grid-template-columns:minmax(0,1fr) 236px;gap:26px;align-items:center;text-align:left;padding:36px 0 22px}
+.head-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 16px 30px rgba(8,118,170,.16))}
+@media(max-width:640px){.head{grid-template-columns:1fr;text-align:center;padding-top:28px}.head-art{max-width:250px;margin:0 auto}}
+.modes{display:flex;gap:6px;background:#e6eff5;border-radius:14px;padding:5px;margin:0 0 14px}
+.modes button{flex:1;font:inherit;font-weight:800;font-size:14.5px;border:0;border-radius:10px;padding:11px 8px;background:transparent;color:var(--muted);cursor:pointer;transition:background .15s,color .15s}
+.modes button.on{background:#fff;color:var(--blue-deep);box-shadow:0 6px 16px -10px rgba(8,62,100,.5)}
+.pos-line{margin:0 0 20px;font-size:13px;color:var(--muted);text-align:center;line-height:1.7}
+.pos-line b{color:var(--ink)}
+.fld{margin-bottom:18px}
+.fld .t{display:block;font-size:14.5px;font-weight:800;margin-bottom:8px}
+.fld .hint{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.7}
+.fld input[type=number]{width:100%;font:inherit;font-size:17px;font-weight:800;padding:13px 16px;border:1.5px solid var(--line);border-radius:13px;background:var(--bg);color:var(--ink);-moz-appearance:textfield}
+.fld input[type=number]:focus{outline:2px solid var(--blue);border-color:transparent}
+.chk{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:700;padding:11px 14px;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;cursor:pointer;margin-top:8px}
+.chk input{width:18px;height:18px;accent-color:var(--blue-deep);flex:none}
+.chk input[type=number]{width:120px;font-size:14px;padding:7px 10px;margin-left:auto;border-radius:9px}
+.opt.sel{border-color:var(--blue-deep);background:#fff;box-shadow:0 0 0 3px rgba(30,155,215,.16)}
+.gauge{position:relative;height:14px;background:#e6eff5;border-radius:999px;margin:18px 0 6px}
+.gauge .band{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,var(--blue),var(--blue-deep));border-radius:999px;opacity:.85}
+.gauge .pin{position:absolute;top:-6px;width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--ink);transform:translateX(-50%);box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
+.gauge .pin.over{border-color:var(--red)}.gauge .pin.under{border-color:var(--orange)}.gauge .pin.in{border-color:var(--green)}
+.gl{display:flex;justify-content:space-between;font-size:12px;color:#94a9ba;font-weight:700}
+.verdict{font-size:clamp(18px,3vw,21px);font-weight:900;letter-spacing:-.02em;margin-bottom:6px;line-height:1.35}
+.verdict.over{color:#a12f2f}.verdict.under{color:#9a6100}.verdict.in{color:#0d6d51}
+.tips{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.why .tips li{background:none;border:0;border-radius:0;position:relative;padding:0 0 0 22px;font-size:14px;color:var(--muted);line-height:1.7}
+.tips li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:var(--blue)}
+.tips li b{color:var(--ink)}
 .head .chip{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.06em;color:var(--blue-deep);background:var(--blue-soft);border-radius:999px;padding:6px 14px;margin-bottom:14px}
 .head h1{font-size:clamp(25px,4.6vw,34px);font-weight:850;letter-spacing:-.03em;line-height:1.28}
 .head p{margin-top:12px;color:var(--muted);font-size:15.5px}
@@ -103,6 +134,14 @@ footer{margin-top:56px;border-top:1px solid var(--line);background:#fff;padding:
 .foot b{color:var(--ink)}
 .foot .sep{margin:0 8px;color:#c3d4e0}
 @media(max-width:520px){.kv{grid-template-columns:1fr;gap:3px 0}.kv dd{margin-bottom:9px}}
+
+    /* ---------- 미리보기 표시 (검토용 · 배포 시 삭제) ---------- */
+    .preview-flag{position:fixed;left:14px;bottom:14px;z-index:99;background:#0f2438;color:#fff;font-size:12.5px;font-weight:700;padding:9px 15px;border-radius:999px;opacity:.93;box-shadow:0 12px 34px -12px rgba(8,62,100,.7);display:flex;gap:9px;align-items:center;pointer-events:none}
+    .preview-flag b{color:#f7c948;font-weight:900}
+    @media (max-width:600px){.preview-flag{font-size:11px;padding:7px 12px;left:10px;bottom:10px}}
+.opts .grp{margin:10px 0 -1px;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:var(--muted)}
+.opts .grp:first-child{margin-top:0}
+a:not([href]){cursor:default}
 </style>
 </head>
 <body>
@@ -119,10 +158,83 @@ footer{margin-top:56px;border-top:1px solid var(--line);background:#fff;padding:
 
 <div class="wrap">
   <div class="head">
-    <span class="chip">자가 진단</span>
-    <h1>부르기 전에,<br>먼저 확인해 보세요</h1>
-    <p>7개 질문이면 충분합니다. 어느 급의 작업인지, 비용이 어느 범위인지, 혹시 우리 집 문제가 아닌지까지.</p>
+    <div>
+      <span class="chip" id="chip">자가 진단</span>
+      <h1 id="h1">부르기 전에,<br>먼저 확인해 보세요</h1>
+      <p id="h1p">7개 질문이면 충분합니다. 어느 급의 작업인지, 비용이 어느 범위인지, 혹시 우리 집 문제가 아닌지까지.</p>
+    </div>
+    <div class="head-art"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400">
+  <defs>
+    <linearGradient id="ck-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8f5fb"/><stop offset="1" stop-color="#d4edf9"/></linearGradient>
+    <linearGradient id="ck-pipe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe3ee"/><stop offset=".5" stop-color="#eef6fa"/><stop offset="1" stop-color="#b9d2df"/></linearGradient>
+    <linearGradient id="ck-water" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1e9bd7"/><stop offset="1" stop-color="#0876aa"/></linearGradient>
+    <clipPath id="ck-lens"><circle cx="300" cy="182" r="74"/></clipPath>
+  </defs>
+  <rect x="0" y="0" width="520" height="400" rx="32" fill="url(#ck-bg)"/>
+  <circle cx="440" cy="70" r="46" fill="#fff" opacity=".5"/>
+  <circle cx="70" cy="330" r="30" fill="#fff" opacity=".5"/>
+
+  <!-- pipe -->
+  <rect x="40" y="150" width="440" height="64" rx="32" fill="url(#ck-pipe)" stroke="#9fbfd0" stroke-width="3"/>
+  <rect x="40" y="163" width="440" height="6" rx="3" fill="#fff" opacity=".7"/>
+  <!-- water flow -->
+  <path d="M52 194 Q120 176 190 194 T330 194 T468 194 V206 H52 Z" fill="url(#ck-water)" opacity=".85"/>
+  <!-- clog -->
+  <path d="M245 166c14-10 34-12 54-6 18 5 34 14 40 28 6 14-6 22-24 20-22-3-40 2-58-2-16-4-26-30-12-40z" fill="#e08a00"/>
+  <path d="M258 176c10-6 24-7 36-3 10 3 18 9 20 17-10 3-22 4-34 2-10-2-20-8-22-16z" fill="#f6b64a"/>
+
+  <!-- magnifier lens -->
+  <circle cx="300" cy="182" r="74" fill="#fff" opacity=".35"/>
+  <g clip-path="url(#ck-lens)">
+    <rect x="40" y="130" width="440" height="104" rx="40" fill="url(#ck-pipe)" transform="translate(-40 -20) scale(1.14)"/>
+    <path d="M225 160c20-14 48-16 74-8 24 7 46 20 54 40 8 20-8 30-32 27-30-4-54 3-78-3-22-6-36-42-18-56z" fill="#e08a00"/>
+    <path d="M244 172c14-8 34-10 50-4 14 4 26 12 28 24-14 4-30 5-48 3-14-3-28-12-30-23z" fill="#f6b64a"/>
+    <path d="M262 176c10-4 22-4 32 0" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7" fill="none"/>
+  </g>
+  <circle cx="300" cy="182" r="74" fill="none" stroke="#0876aa" stroke-width="10"/>
+  <circle cx="300" cy="182" r="74" fill="none" stroke="#fff" stroke-width="3" opacity=".6"/>
+  <path d="M352 236 L404 288" stroke="#0876aa" stroke-width="22" stroke-linecap="round"/>
+  <path d="M356 240 L400 284" stroke="#1e9bd7" stroke-width="10" stroke-linecap="round"/>
+  <path d="M258 140 q18-22 44-24" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity=".9"/>
+
+  <!-- stage bar -->
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800">
+    <rect x="64" y="292" width="392" height="70" rx="18" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+    <text x="84" y="316" font-size="13" fill="#5b7186">추정 작업 단계</text>
+    <g transform="translate(84 324)">
+      <rect x="0" y="0" width="84" height="14" rx="7" fill="#dcebf4"/>
+      <rect x="92" y="0" width="84" height="14" rx="7" fill="#1e9bd7"/>
+      <rect x="184" y="0" width="84" height="14" rx="7" fill="#dcebf4"/>
+      <rect x="276" y="0" width="84" height="14" rx="7" fill="#dcebf4"/>
+      <text x="42" y="26" font-size="11" text-anchor="middle" fill="#94a9ba">1단계</text>
+      <text x="134" y="26" font-size="11" text-anchor="middle" fill="#0876aa">2단계 · 스케일링</text>
+      <text x="226" y="26" font-size="11" text-anchor="middle" fill="#94a9ba">3단계</text>
+      <text x="318" y="26" font-size="11" text-anchor="middle" fill="#94a9ba">4단계</text>
+    </g>
+    <!-- droplet chip -->
+    <g transform="translate(392 300)">
+      <circle cx="22" cy="22" r="22" fill="#e8f5fb"/>
+      <path d="M22 9c0 0 7 7.5 7 11.7A7 7 0 0 1 15 20.7C15 16.5 22 9 22 9z" fill="#1e9bd7"/>
+      <rect x="10" y="27" width="24" height="4" rx="2" fill="#0876aa" opacity=".8"/>
+      <rect x="13" y="34" width="18" height="4" rx="2" fill="#0876aa" opacity=".5"/>
+    </g>
+  </g>
+
+  <!-- floating tags -->
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800" font-size="13">
+    <rect x="52" y="52" width="150" height="40" rx="14" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+    <circle cx="74" cy="72" r="7" fill="#159570"/>
+    <text x="90" y="77" fill="#0f2438">두 곳 이상 동시?</text>
+    <rect x="322" y="322" width="0" height="0"/>
+  </g>
+</svg></div>
   </div>
+
+  <div class="modes" role="tablist" aria-label="도구 선택">
+    <button class="on" data-mode="diag" role="tab" aria-selected="true">내 상황 진단</button>
+    <button data-mode="quote" role="tab" aria-selected="false">받은 견적 점검</button>
+  </div>
+  <p class="pos-line">하수구랩은 검색 광고 대신 <b>가격표를 공개</b>합니다. 광고비는 결국 견적에 들어가기 때문입니다.</p>
 
   <div class="prog" aria-hidden="true"><i id="bar"></i></div>
   <div id="stage"></div>
@@ -136,7 +248,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);background:#fff;padding:
 <footer>
   <div class="wrap foot">
     <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
-    <a href="tel:0260830020">02-6083-0020</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
+    <a href="tel:0318240023">031-824-0023</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
   </div>
 </footer>
 
@@ -155,133 +267,207 @@ const STAGES = {
 const EXTRA = { night:{ label:"야간 할증 (21시~익일 7시)", rate:0.30 } };
 const won = n => n.toLocaleString("ko-KR");
 
-/* ═══════════════ 질문 ═══════════════ */
-const Q = [
-  { id:"place", q:"어디가 막혔나요?", sub:"장소에 따라 필요한 장비와 작업 방식이 완전히 달라집니다.",
-    opts:[
-      {v:"home",     e:"🏠", t:"집 · 아파트"},
-      {v:"shop",     e:"🏪", t:"가게 · 식당 · 상가"},
-      {v:"building", e:"🏢", t:"건물 · 기관", s:"관리사무소·시설 담당자"}
-    ]},
-  { id:"spot", q:"어느 곳인가요?", sub:"", dyn:true },
-  { id:"symptom", q:"지금 어떤 상태인가요?", sub:"",
-    opts:[
-      {v:"slow",     e:"🐢", t:"물이 천천히 빠짐"},
-      {v:"blocked",  e:"🛑", t:"전혀 안 내려감"},
-      {v:"backflow", e:"🔄", t:"물이 역류함", s:"다른 배수구에서 올라오는 경우 포함"},
-      {v:"odor",     e:"👃", t:"악취가 남"},
-      {v:"overflow", e:"🚨", t:"지금 물이 넘치는 중", s:"즉시 대응이 필요합니다", w:true}
-    ]},
-  { id:"scope", q:"막힌 곳이 한 군데인가요, 여러 군데인가요?",
-    sub:"이 질문이 가장 중요합니다. 원인이 우리 집 안에 있는지, 건물 공용 배관에 있는지가 갈립니다.",
-    opts:[
-      {v:"one",      e:"1️⃣", t:"한 군데만"},
-      {v:"multiple", e:"⚠️", t:"두 군데 이상 동시에", s:"예: 싱크대와 화장실이 같이 / 아랫집도 같이", w:true}
-    ]},
-  { id:"history", q:"전에 같은 곳을 작업한 적이 있나요?",
-    sub:"이미 해본 작업을 또 하면 돈만 나가고 안 뚫립니다.",
-    opts:[
-      {v:"none",     e:"🆕", t:"처음입니다"},
-      {v:"recurred", e:"🔁", t:"뚫었는데 또 막혔습니다", s:"스프링·관통기 작업만 했던 경우"},
-      {v:"high",     e:"💦", t:"고압세척까지 해봤습니다", s:"그런데도 재발", w:true}
-    ]},
-  { id:"biz", q:"업종이 어떻게 되나요?", sub:"기름 사용량에 따라 배관에 쌓이는 정도가 크게 다릅니다.",
-    only:"shop",
-    opts:[
-      {v:"greasy",   e:"🍖", t:"중식 · 치킨 · 고깃집 · 분식", s:"기름 사용이 많은 업종"},
-      {v:"normal",   e:"🍚", t:"한식 · 일식 · 양식"},
-      {v:"cafe",     e:"☕", t:"카페 · 베이커리"},
-      {v:"other",    e:"🏬", t:"그 외 상가"}
-    ]},
-  { id:"time", q:"언제 작업하면 좋을까요?", sub:"", only:"shop",
-    opts:[
-      {v:"now",      e:"⏱️", t:"지금 당장", s:"영업 중이라도"},
-      {v:"break",    e:"🕒", t:"브레이크타임"},
-      {v:"night",    e:"🌙", t:"마감 후 야간", s:"21시 이후는 할증이 붙습니다"}
-    ]}
+/* ═══════════════ 질문 데이터 — 자가진단_공용템플릿_v1 기준 ═══════════════
+   구조: 장소(L1) → 공간(L2) → 지점(L3) → 공통 질문.
+   코드(대문자)는 템플릿·접수 데이터가 공유하는 고정값이므로 바꾸지 않는다. label만 수정. */
+const TPL_VERSION = "v1 · 2026-09-20";
+
+const PLACES = [
+  { code:"HOME", label:"집 · 아파트", e:"🏠", spaces:[
+    { code:"TOILET", label:"화장실", points:[
+      { code:"BOWL",   label:"변기",        e:"🚽", floor:1 },
+      { code:"BASIN",  label:"세면대",      e:"🫧", floor:1 },
+      { code:"FDRAIN", label:"바닥 배수구", e:"🕳️", floor:1 } ]},
+    { code:"KITCHEN", label:"주방 · 부엌", points:[
+      { code:"SINK",   label:"싱크대",      e:"🚰", floor:1 } ]},
+    { code:"LAUNDRY", label:"베란다 · 세탁실", points:[
+      { code:"FDRAIN", label:"바닥 배수구", e:"🕳️", floor:1 },
+      { code:"WASHER", label:"세탁기 배수", e:"🧺", floor:1 } ]}
+  ]},
+  { code:"SHOP", label:"가게 · 식당 · 상가", e:"🏪", spaces:[
+    { code:"KITCHEN", label:"주방", points:[
+      { code:"SINK",   label:"주방 싱크대",        e:"🍳", floor:2 },
+      { code:"TRENCH", label:"바닥 트렌치",        e:"〰️", floor:3 },
+      { code:"GREASE", label:"그리스트랩 (집수정)", e:"🛢️", floor:3 } ]},
+    { code:"TOILET", label:"화장실", points:[
+      { code:"BOWL",   label:"변기",        e:"🚽", floor:2 },
+      { code:"BASIN",  label:"세면대",      e:"🫧", floor:2 },
+      { code:"FDRAIN", label:"바닥 배수구", e:"🕳️", floor:2 },
+      { code:"URINAL", label:"소변기",      e:"🚹", floor:2 } ]},
+    { code:"PIPE", label:"배관 설비", points:[
+      { code:"MAIN",   label:"건물 메인 배관", e:"🏗️", floor:4, w:true } ]}
+  ]},
+  { code:"OFFICE", label:"사무실 · 회사", e:"🏢", spaces:[
+    { code:"TOILET", label:"화장실", points:[
+      { code:"BOWL",   label:"변기",        e:"🚽", floor:2 },
+      { code:"BASIN",  label:"세면대",      e:"🫧", floor:2 },
+      { code:"FDRAIN", label:"바닥 배수구", e:"🕳️", floor:2 },
+      { code:"URINAL", label:"소변기",      e:"🚹", floor:2 } ]},
+    { code:"KITCHEN", label:"주방 · 탕비실", points:[
+      { code:"SINK",   label:"탕비실 싱크대", e:"🚰", floor:2 } ]},
+    { code:"PIPE", label:"배관 설비", points:[
+      { code:"MAIN",   label:"건물 메인 배관", e:"🏗️", floor:4, w:true } ]}
+  ]}
 ];
 
-const SPOTS = {
-  home: [
-    {v:"toilet", e:"🚽", t:"변기"},
-    {v:"sink",   e:"🚰", t:"싱크대"},
-    {v:"bath",   e:"🛁", t:"욕실 · 세면대"},
-    {v:"veranda",e:"🧺", t:"베란다 · 세탁실"}
-  ],
-  shop: [
-    {v:"ksink",  e:"🍳", t:"주방 싱크대"},
-    {v:"trench", e:"〰️", t:"바닥 트렌치 · 배수구"},
-    {v:"grease", e:"🛢️", t:"그리스트랩 (집수정)"},
-    {v:"stoilet",e:"🚻", t:"화장실"},
-    {v:"smain",  e:"🏗️", t:"건물 메인 배관", w:true}
-  ],
-  building: [
-    {v:"hoenju", e:"🏢", t:"횡주관 · 오배수 메인관"},
-    {v:"sump",   e:"🕳️", t:"집수정"},
-    {v:"storm",  e:"🌧️", t:"우수관 · 빗물받이"},
-    {v:"btoilet",e:"🚻", t:"공용 화장실"}
-  ]
+const QUESTIONS = [
+  { code:"SYMPTOM", label:"지금 어떤 상태인가요?", sub:"", applies:["ALL"], opts:[
+    { code:"SLOW",     label:"물이 천천히 빠짐",     e:"🐢" },
+    { code:"BLOCKED",  label:"전혀 안 내려감",       e:"🛑" },
+    { code:"BACKFLOW", label:"물이 역류함",          e:"🔄", s:"다른 배수구에서 올라오는 경우 포함" },
+    { code:"ODOR",     label:"악취가 남",            e:"👃" },
+    { code:"OVERFLOW", label:"지금 물이 넘치는 중",  e:"🚨", s:"즉시 대응이 필요합니다", w:true } ]},
+  { code:"SCOPE", label:"막힌 곳이 한 군데인가요, 여러 군데인가요?",
+    sub:"원인이 집(가게) 안에 있는지, 건물 공용 배관에 있는지가 갈립니다.", applies:["ALL"], opts:[
+    { code:"ONE",   label:"한 군데만",            e:"1️⃣" },
+    { code:"MULTI", label:"두 군데 이상 동시에",  e:"⚠️", s:"예: 싱크대와 화장실이 같이 / 아랫집도 같이", w:true } ]},
+  { code:"HISTORY", label:"전에 같은 곳을 작업한 적이 있나요?",
+    sub:"이미 해본 작업을 또 하면 돈만 나가고 안 뚫립니다.", applies:["ALL"], opts:[
+    { code:"NONE",      label:"처음입니다",             e:"🆕" },
+    { code:"RECURRED",  label:"뚫었는데 또 막혔습니다", e:"🔁", s:"스프링·관통기 작업만 했던 경우" },
+    { code:"HIGHPRESS", label:"고압세척까지 해봤습니다", e:"💦", s:"그런데도 재발", w:true } ]},
+  { code:"BIZ", label:"업종이 어떻게 되나요?",
+    sub:"기름 사용량에 따라 배관에 쌓이는 정도가 크게 다릅니다.", applies:["SHOP"], opts:[
+    { code:"GREASY", label:"중식 · 치킨 · 고깃집 · 분식", e:"🍖", s:"기름 사용이 많은 업종" },
+    { code:"NORMAL", label:"한식 · 일식 · 양식",          e:"🍚" },
+    { code:"CAFE",   label:"카페 · 베이커리",             e:"☕" },
+    { code:"OTHER",  label:"그 외 상가",                  e:"🏬" } ]},
+  { code:"TIME", label:"언제 작업하면 좋을까요?", sub:"", applies:["SHOP","OFFICE"], opts:[
+    { code:"NOW",   label:"지금 당장",      e:"⏱️", s:"영업 중이라도" },
+    { code:"BREAK", label:"브레이크타임",   e:"🕒" },
+    { code:"NIGHT", label:"마감 후 야간",   e:"🌙", s:"21시 이후는 할증이 붙습니다" } ]}
+];
+
+const placeOf = code => PLACES.find(p => p.code === code);
+
+/* ═══════════════ 모드 (진단 / 견적 점검) ═══════════════ */
+let MODE = "diag";
+const HEAD = {
+  diag:  { chip:"자가 진단", h1:"부르기 전에,<br>먼저 확인해 보세요",
+           p:"7개 질문이면 충분합니다. 어느 급의 작업인지, 비용이 어느 범위인지, 혹시 우리 집 문제가 아닌지까지." },
+  quote: { chip:"받은 견적 점검", h1:"받은 견적,<br>정찰제 범위와 비교해 보세요",
+           p:"다른 곳에서 들은 금액을 넣으면 같은 작업의 정찰제 범위 어디쯤인지 보여드립니다. 현장에서 추가금을 요구받았을 때 대응법도 함께." }
 };
+document.querySelectorAll(".modes button").forEach(b=>b.onclick=()=>{
+  MODE = b.dataset.mode;
+  document.querySelectorAll(".modes button").forEach(x=>{ const on = x===b; x.classList.toggle("on",on); x.setAttribute("aria-selected",on); });
+  document.getElementById("chip").textContent = HEAD[MODE].chip;
+  document.getElementById("h1").innerHTML = HEAD[MODE].h1;
+  document.getElementById("h1p").textContent = HEAD[MODE].p;
+  if (MODE === "quote") renderQuote(); else { step = 0; render(); }
+  if (location.hash !== "#"+MODE) history.replaceState(null, "", "#"+MODE);
+});
 
 /* ═══════════════ 진행 ═══════════════ */
-const A = {};
+const A = {};            // { place, point:{space,spaceLabel,code,label,floor}, SYMPTOM, SCOPE, HISTORY, BIZ, TIME }
 let step = 0;
 const el = document.getElementById("stage");
 const bar = document.getElementById("bar");
 
-function active(){ return Q.filter(q => !q.only || q.only === A.place); }
+function steps(){
+  const list = [ {kind:"place"}, {kind:"point"} ];
+  QUESTIONS.forEach(q => {
+    if (q.applies.includes("ALL") || q.applies.includes(A.place)) list.push({kind:"q", q});
+  });
+  return list;
+}
 function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+const optBtn = (o, extra="") => `<button class="opt${o.w?" warn":""}" ${extra}>
+    <span class="emo">${o.e||""}</span>
+    <span>${esc(o.label)}${o.s?`<small>${esc(o.s)}</small>`:""}</span>
+  </button>`;
 
 function render(){
-  const list = active();
+  const list = steps();
   if (step >= list.length) { showResult(); return; }
-  const q = list[step];
-  const opts = q.dyn ? SPOTS[A.place] : q.opts;
+  const cur = list[step];
   bar.style.width = ((step)/(list.length))*100 + "%";
+
+  let title = "", sub = "", body = "";
+  if (cur.kind === "place"){
+    title = "어디가 막혔나요?";
+    sub = "장소에 따라 필요한 장비와 작업 방식이 완전히 달라집니다.";
+    body = `<div class="opts">${PLACES.map(p=>optBtn({e:p.e,label:p.label},`data-place="${p.code}"`)).join("")}</div>`;
+  } else if (cur.kind === "point"){
+    const place = placeOf(A.place);
+    title = "어느 곳인가요?";
+    body = `<div class="opts">${place.spaces.map(sp=>
+      `<p class="grp">${esc(sp.label)}</p>` +
+      sp.points.map(pt=>optBtn(pt,`data-space="${sp.code}" data-point="${pt.code}"`)).join("")
+    ).join("")}</div>`;
+  } else {
+    const q = cur.q;
+    title = q.label; sub = q.sub;
+    body = `<div class="opts">${q.opts.map(o=>optBtn(o,`data-q="${q.code}" data-v="${o.code}"`)).join("")}</div>`;
+  }
+
   el.innerHTML = `
     <div class="card">
       <span class="qno">STEP ${step+1} / ${list.length}</span>
-      <p class="q">${esc(q.q)}</p>
-      ${q.sub ? `<p class="qsub">${esc(q.sub)}</p>` : ""}
-      <div class="opts">
-        ${opts.map(o=>`<button class="opt${o.w?" warn":""}" data-v="${esc(o.v)}">
-            <span class="emo">${o.e}</span>
-            <span>${esc(o.t)}${o.s?`<small>${esc(o.s)}</small>`:""}</span>
-          </button>`).join("")}
-      </div>
+      <p class="q">${esc(title)}</p>
+      ${sub ? `<p class="qsub">${esc(sub)}</p>` : ""}
+      ${body}
       ${step>0 ? `<div class="nav-row"><button class="back" id="back">← 이전</button></div>` : ""}
     </div>`;
+
   el.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
-    A[q.id]=b.dataset.v;
-    if(q.id==="place"){ ["spot","biz","time"].forEach(k=>delete A[k]); }
+    if (b.dataset.place){
+      if (A.place !== b.dataset.place){ delete A.point; delete A.BIZ; delete A.TIME; }
+      A.place = b.dataset.place;
+    } else if (b.dataset.point){
+      const place = placeOf(A.place);
+      const sp = place.spaces.find(s=>s.code===b.dataset.space);
+      const pt = sp.points.find(p=>p.code===b.dataset.point);
+      A.point = { space:sp.code, spaceLabel:sp.label, code:pt.code, label:pt.label, floor:pt.floor };
+    } else {
+      A[b.dataset.q] = b.dataset.v;
+    }
     step++; render(); window.scrollTo({top:0,behavior:"smooth"});
   });
   const bk = document.getElementById("back");
   if(bk) bk.onclick=()=>{ step--; render(); };
 }
 
-/* ═══════════════ 판정 ═══════════════ */
+/* ═══════════════ 판정 — 템플릿 시트4 stage_floor + 시트7 규칙 ═══════════════
+   stage = min(4, max(point.stage_floor, 걸린 규칙들의 STAGE_MIN)) */
 function judge(){
-  let s = 1;
-  if (A.place === "shop") s = 2;
-  if (A.place === "building") s = 4;
-  if (["grease","trench"].includes(A.spot)) s = Math.max(s,3);
-  if (["smain","hoenju","sump","storm"].includes(A.spot)) s = 4;
-  if (["backflow","overflow"].includes(A.symptom)) s = Math.max(s,2);
-  if (A.scope === "multiple") s = Math.max(s,2);
-  if (A.history === "recurred") s = Math.max(s,2);
-  if (A.history === "high") s = 4;
-  if (A.place === "shop" && A.biz === "greasy") s = Math.max(s,3);
-  if (A.place === "shop" && A.spot === "ksink" && A.history === "recurred") s = Math.max(s,3);
+  let s = A.point ? A.point.floor : 1;                                       // 지점 최소 단계
+  if (A.place === "SHOP" || A.place === "OFFICE") s = Math.max(s,2);         // R01 · R02
+  if (A.SYMPTOM === "BACKFLOW" || A.SYMPTOM === "OVERFLOW") s = Math.max(s,2); // R06
+  if (A.SCOPE === "MULTI") s = Math.max(s,2);                                // R07
+  if (A.HISTORY === "RECURRED") s = Math.max(s,2);                           // R09
+  if (A.HISTORY === "HIGHPRESS") s = 4;                                      // R10
+  if (A.place === "SHOP" && A.BIZ === "GREASY") s = Math.max(s,3);           // R11
+  if (A.place === "SHOP" && A.point && A.point.code === "SINK" && A.HISTORY === "RECURRED") s = Math.max(s,3); // R12
   return Math.min(s,4);
+}
+
+function answeredQuestions(){
+  return QUESTIONS.filter(q => (q.applies.includes("ALL") || q.applies.includes(A.place)) && A[q.code]);
+}
+
+function diagPayload(s, st, lo, hi, flags){
+  const place = placeOf(A.place);
+  return {
+    v: 1, tpl: TPL_VERSION,
+    place: { code: A.place, label: place.label },
+    point: A.point ? { code: A.point.code, space: A.point.space, spaceLabel: A.point.spaceLabel, label: A.point.label } : null,
+    answers: answeredQuestions().map(q => {
+      const o = q.opts.find(x => x.code === A[q.code]);
+      return { code: q.code, value: A[q.code], q: q.label, label: o ? o.label : A[q.code] };
+    }),
+    stage: s, stageName: st.name, lo, hi,
+    visitLo: VISIT.lo, visitHi: VISIT.hi,
+    flags
+  };
 }
 
 function showResult(){
   bar.style.width = "100%";
   const s = judge(), st = STAGES[s];
-  const urgent = A.symptom === "overflow";
-  const shared = A.scope === "multiple";
-  const night  = A.time === "night";
+  const urgent = A.SYMPTOM === "OVERFLOW";   // R13 FLAG=URGENT
+  const shared = A.SCOPE === "MULTI";        // R08 FLAG=SHARED
+  const night  = A.TIME === "NIGHT";         // R14 FLAG=SURCHARGE
 
   let lo = st.lo, hi = st.hi;
   const rows = [`<div class="mrow"><span>${esc(st.name)}</span><b>${won(st.lo)} ~ ${won(st.hi)}원</b></div>`];
@@ -291,13 +477,17 @@ function showResult(){
     rows.push(`<div class="mrow"><span>${esc(EXTRA.night.label)} +30%</span><b>+ ${won(nlo)} ~ ${won(nhi)}원</b></div>`);
   }
 
+  const flags = [...(urgent?["URGENT"]:[]), ...(shared?["SHARED"]:[]), ...(night?["SURCHARGE"]:[])];
+  const reportHref = "https://report.hasugulab.com/report/new?diag=" +
+    encodeURIComponent(JSON.stringify(diagPayload(s, st, lo, hi, flags)));
+
   const factors = ["관 굵기","작업 길이","접근 난이도","층수","오염 정도",...(night?["야간 작업"]:[]),"작업 인원"];
 
   el.innerHTML = `
     ${urgent ? `<div class="alert urgent">
       <b>🚨 지금 물이 넘치는 중이라면 진단보다 전화가 빠릅니다</b>
       <p>수도 밸브를 잠그고, 물이 닿는 곳의 전원을 차단하신 뒤 바로 연락 주세요. 통화하면서 상황을 정리해 드립니다.</p>
-      <a class="act" href="tel:0260830020">📞 02-6083-0020 지금 통화하기</a>
+      <a class="act" href="tel:0318240023">📞 031-824-0023 지금 통화하기</a>
     </div>` : ""}
 
     ${shared ? `<div class="alert shared">
@@ -352,9 +542,10 @@ function showResult(){
       </div>`:""}
 
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://report.hasugulab.com">이대로 접수하기 →</a>
+        <a class="btn btn-primary" href="${reportHref}">이대로 접수하기 →</a>
         <button class="btn btn-ghost" id="copy">결과 복사하기</button>
       </div>
+      <p class="hint" style="margin-top:10px">"이대로 접수하기"를 누르면 방금 진단한 내용이 접수 화면에 그대로 담겨 넘어갑니다.</p>
       <button class="restart" id="restart">처음부터 다시 하기</button>
     </div>`;
 
@@ -375,22 +566,165 @@ ${st.name}
   };
 }
 
-function summary(){
-  const L = {
-    home:"집·아파트", shop:"가게·식당", building:"건물·기관",
-    toilet:"변기", sink:"싱크대", bath:"욕실·세면대", veranda:"베란다·세탁실",
-    ksink:"주방 싱크대", trench:"바닥 트렌치", grease:"그리스트랩", stoilet:"화장실", smain:"건물 메인 배관",
-    hoenju:"횡주관·메인관", sump:"집수정", storm:"우수관", btoilet:"공용 화장실",
-    slow:"천천히 빠짐", blocked:"전혀 안 내려감", backflow:"역류", odor:"악취", overflow:"물 넘침",
-    one:"한 곳", multiple:"두 곳 이상 동시",
-    none:"작업 이력 없음", recurred:"작업 후 재발", high:"고압세척 후에도 재발",
-    greasy:"기름 많은 업종", normal:"일반 음식점", cafe:"카페·베이커리", other:"기타 상가",
-    now:"즉시", break:"브레이크타임", night:"마감 후 야간"
+const QS = { stage:0, amount:"", vat:false, callout:false, calloutAmt:"", night:false, extra:false, extraAmt:"" };
+const STAGE_HINT = {
+  1:"스프링·전동 관통기로 뚫는 간단한 작업. \"관통\", \"스프링\", \"석션\" 같은 말을 들었다면 여기입니다.",
+  2:"플렉스샤프트로 관 벽의 기름때·머리카락을 긁어내고 내시경으로 확인. \"스케일링\", \"내시경\" 이라고 했다면 여기입니다.",
+  3:"온수 플렉스샤프트·소형 고압세척으로 식당 주방배관과 트랩·집수정 연결관까지. 식당·상가 주방이면 대개 여기입니다.",
+  4:"엔진형 고압세척차와 관로탐지기가 오는 작업. \"고압세척\", \"메인관\", \"횡주관\" 이면 여기입니다."
+};
+
+function renderQuote(){
+  bar.style.width = "0%";
+  el.innerHTML = `
+    <div class="card">
+      <span class="qno">받은 견적 점검</span>
+      <p class="q">어떤 작업이라고 하던가요?</p>
+      <p class="qsub">업체가 말한 장비나 표현으로 고르시면 됩니다. 정확히 몰라도 가장 비슷한 것을 고르세요.</p>
+      <div class="opts" id="qstages">
+        ${[1,2,3,4].map(n=>`<button class="opt${QS.stage===n?" sel":""}" data-n="${n}">
+            <span class="emo">${["","🔧","🌀","🍳","🚛"][n]}</span>
+            <span>${esc(STAGES[n].name)}<small>${esc(STAGE_HINT[n])}</small></span>
+          </button>`).join("")}
+      </div>
+
+      <div class="fld" style="margin-top:22px">
+        <label class="t" for="qamt">제시받은 금액 (원)</label>
+        <input type="number" id="qamt" inputmode="numeric" min="0" step="1000" placeholder="예: 250000" value="${esc(QS.amount)}">
+        <label class="chk"><input type="checkbox" id="qvat" ${QS.vat?"checked":""}> 부가세가 포함된 금액입니다</label>
+        <label class="chk"><input type="checkbox" id="qcall" ${QS.callout?"checked":""}> 출장비를 따로 받는다고 했습니다
+          <input type="number" id="qcallamt" inputmode="numeric" min="0" step="1000" placeholder="출장비 (원)" value="${esc(QS.calloutAmt)}"></label>
+        <label class="chk"><input type="checkbox" id="qnight" ${QS.night?"checked":""}> 야간(21시~익일 7시) 작업입니다</label>
+        <label class="chk"><input type="checkbox" id="qextra" ${QS.extra?"checked":""}> 현장에 와서 추가 금액을 요구했습니다
+          <input type="number" id="qextraamt" inputmode="numeric" min="0" step="1000" placeholder="추가금 (원)" value="${esc(QS.extraAmt)}"></label>
+        <p class="hint">금액은 이 화면에서만 계산되고 어디에도 전송되지 않습니다.</p>
+      </div>
+
+      <div class="cta-row" style="margin-top:6px">
+        <button class="btn btn-primary" id="qgo">정찰제 범위와 비교하기 →</button>
+      </div>
+    </div>`;
+
+  el.querySelectorAll("#qstages .opt").forEach(b=>b.onclick=()=>{
+    QS.stage = +b.dataset.n;
+    el.querySelectorAll("#qstages .opt").forEach(x=>x.classList.toggle("sel", x===b));
+  });
+  const bind = (id,key,type)=>{ const n=document.getElementById(id); n.oninput=n.onchange=()=>{ QS[key] = type==="b" ? n.checked : n.value; }; };
+  bind("qamt","amount"); bind("qvat","vat","b"); bind("qcall","callout","b"); bind("qcallamt","calloutAmt");
+  bind("qnight","night","b"); bind("qextra","extra","b"); bind("qextraamt","extraAmt");
+  document.getElementById("qgo").onclick=()=>{
+    if(!QS.stage){ alert("어떤 작업인지 먼저 골라 주세요."); return; }
+    const amt = Number(QS.amount);
+    if(!amt || amt<=0){ alert("제시받은 금액을 숫자로 넣어 주세요."); document.getElementById("qamt").focus(); return; }
+    showQuoteResult(); window.scrollTo({top:0,behavior:"smooth"});
   };
-  return active().map(q=>L[A[q.id]]).filter(Boolean).join(" · ");
 }
 
-render();
+function showQuoteResult(){
+  bar.style.width = "100%";
+  const st = STAGES[QS.stage];
+  const net = v => QS.vat ? Math.round(Number(v||0)/1.1) : Math.round(Number(v||0));   // 부가세 제외로 통일
+  let eff = net(QS.amount);
+  const parts = [`제시 금액 ${won(net(QS.amount))}원${QS.vat?" (부가세 제외 환산)":""}`];
+  if (QS.callout && Number(QS.calloutAmt)>0){ eff += net(QS.calloutAmt); parts.push(`출장비 별도 +${won(net(QS.calloutAmt))}원`); }
+  if (QS.extra && Number(QS.extraAmt)>0){ eff += net(QS.extraAmt); parts.push(`현장 추가금 +${won(net(QS.extraAmt))}원`); }
+  let lo = st.lo, hi = st.hi;
+  if (QS.night){ lo = Math.round(lo*(1+EXTRA.night.rate)); hi = Math.round(hi*(1+EXTRA.night.rate)); }
+
+  let cls, verdict, why;
+  if (eff > hi){
+    cls="over"; const pct = Math.round((eff/hi-1)*100);
+    verdict = `정찰제 상한보다 <u>약 ${pct}%</u> 높습니다`;
+    why = "현장 조건(관 굵기·길이·접근성)이 특별히 어렵다면 그럴 수 있습니다. 다만 그 사유가 <b>작업 범위와 함께 서면으로</b> 설명되지 않았다면, 확정 전에 한 번 더 확인하실 만합니다.";
+  } else if (eff < Math.round(lo*0.8)){
+    cls="under";
+    verdict = "정찰제 하한보다 낮습니다";
+    why = "낮은 금액이 나쁜 것은 아닙니다. 다만 <b>어디까지 작업하고 무엇으로 확인하는지</b>가 빠져 있으면, 현장에서 \"이건 다른 작업\"이라며 금액이 올라가는 경우가 가장 많습니다. 작업 범위와 완료 기준을 먼저 확인하세요.";
+  } else {
+    cls="in";
+    verdict = "정찰제 범위 안에 있습니다";
+    why = "금액 자체는 통상 범위입니다. 이제 확인할 것은 <b>작업 범위·완료 기준·추가금 조건</b>이 서면으로 있는지입니다. 그것이 있어야 이 금액이 끝까지 지켜집니다.";
+  }
+  const max = Math.max(eff, hi) * 1.18;
+  const pc = v => Math.min(100, Math.max(0, v/max*100)).toFixed(1);
+
+  el.innerHTML = `
+    <div class="card">
+      <div class="res-head">
+        <span class="stage">${QS.stage}단계</span>
+        <div><h2>${esc(st.name.split(" · ")[1])} 기준 비교</h2><span>${esc(st.scope)}</span></div>
+      </div>
+
+      <p class="verdict ${cls}">${verdict}</p>
+      <p style="font-size:14px;color:var(--muted)">${parts.map(esc).join(" · ")} → <b style="color:var(--ink)">비교 금액 ${won(eff)}원</b> (부가세 별도 기준)</p>
+
+      <div class="gauge" aria-hidden="true">
+        <div class="band" style="left:${pc(lo)}%;width:${(pc(hi)-pc(lo)).toFixed(1)}%"></div>
+        <div class="pin ${cls}" style="left:${pc(eff)}%"></div>
+      </div>
+      <div class="gl"><span>0원</span><span>정찰제 범위 ${won(lo)} ~ ${won(hi)}원${QS.night?" (야간 +30%)":""}</span><span>${won(Math.round(max))}원</span></div>
+
+      <div class="why" style="margin-top:20px">
+        <h3>이렇게 읽으시면 됩니다</h3>
+        <p>${why}</p>
+      </div>
+
+      <div class="why">
+        <h3>${QS.extra?"현장 추가금을 요구받았을 때":"확정 전에 확인할 것"}</h3>
+        <ul class="tips">
+          ${QS.extra?`<li><b>승인하지 않은 추가금은 지급 의무가 없습니다.</b> 사유·금액을 문자나 사진으로 남겨 달라고 요청하세요. 말로만 하는 추가금은 정리되지 않습니다.</li>`:""}
+          <li><b>작업 범위를 한 줄로 받으세요.</b> "싱크대 배관 ○m 스케일링, 내시경 확인 포함"처럼 어디까지인지가 있어야 나중에 다툼이 없습니다.</li>
+          <li><b>완료 기준을 물어보세요.</b> "물이 내려가면 끝"인지, "내시경으로 확인하고 끝"인지에 따라 같은 금액의 값어치가 다릅니다.</li>
+          <li><b>장비 이름을 확인하세요.</b> ${QS.stage}단계 작업은 보통 <b>${esc(st.gear)}</b>가 옵니다. 이 장비가 없이 오면 작업이 실패하고 출동비만 나갑니다.</li>
+          <li><b>전후 사진을 요구하세요.</b> 사진이 남는 작업은 재발했을 때 무상 재작업 근거가 됩니다.</li>
+        </ul>
+      </div>
+
+      <div class="money">
+        <h3>같은 작업의 하수구랩 정찰제</h3>
+        <div class="mrow"><span>기본 출동·진단비</span><b>${won(VISIT.lo)} ~ ${won(VISIT.hi)}원 (작업 시 면제)</b></div>
+        <div class="mrow"><span>${esc(st.name)}</span><b>${won(st.lo)} ~ ${won(st.hi)}원</b></div>
+        ${QS.night?`<div class="mrow"><span>${esc(EXTRA.night.label)}</span><b>+30%</b></div>`:""}
+        <p class="mnote">· 부가세 별도 · 승인 없는 추가 금액 없음 · 작업 전후 사진 · 같은 범위 재막힘 시 무상 재작업<br>
+        · 이 비교는 <b>참고용</b>이며 다른 업체의 견적이 잘못됐다는 뜻이 아닙니다. 현장 조건에 따라 정당한 차이가 있을 수 있습니다.</p>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://report.hasugulab.com">하수구랩 정찰제로 접수하기 →</a>
+        <button class="btn btn-ghost" id="qcopy">결과 복사하기</button>
+      </div>
+      <button class="restart" id="qback">← 다시 입력하기</button>
+    </div>`;
+
+  document.getElementById("qback").onclick=()=>{ renderQuote(); window.scrollTo({top:0,behavior:"smooth"}); };
+  document.getElementById("qcopy").onclick=async(e)=>{
+    const txt = `[하수구랩 견적 점검 결과]
+비교 기준: ${st.name}
+비교 금액: ${won(eff)}원 (부가세 별도 기준 · ${parts.join(" · ")})
+정찰제 범위: ${won(lo)} ~ ${won(hi)}원${QS.night?" (야간 +30%)":""}
+판정: ${verdict.replace(/<[^>]+>/g,"")}
+
+※ 참고용 비교입니다. hasugulab.com/check.html#quote`;
+    try { await navigator.clipboard.writeText(txt); e.target.textContent="복사되었습니다 ✓"; }
+    catch { e.target.textContent="복사할 수 없습니다"; }
+    setTimeout(()=>e.target.textContent="결과 복사하기",2200);
+  };
+}
+
+function summary(){
+  const parts = [];
+  const place = A.place ? placeOf(A.place) : null;
+  if (place) parts.push(place.label);
+  if (A.point) parts.push(`${A.point.spaceLabel} · ${A.point.label}`);
+  answeredQuestions().forEach(q => {
+    const o = q.opts.find(x => x.code === A[q.code]);
+    if (o) parts.push(o.label);
+  });
+  return parts.join(" · ");
+}
+
+if (location.hash === "#quote") { document.querySelector('.modes button[data-mode="quote"]').click(); } else { render(); }
 </script>
+
 </body>
 </html>

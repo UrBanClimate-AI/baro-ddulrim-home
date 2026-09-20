@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>하수구랩 — 막힌 배수, 신고 한 번에</title>
-  <meta name="description" content="경기 북부와 인접 서울권 배수 문제 해결. 회원가입 없이 1분 접수, 승인 없는 추가 금액 없음, 작업 전후 사진 기록. 하수구랩이 직접 책임집니다.">
-  <link rel="icon" href="assets/logo-icon.png">
+  <meta name="description" content="경기 북부·성남과 인접 서울권 배수 문제 해결. 회원가입 없이 1분 접수, 승인 없는 추가 금액 없음, 작업 전후 사진 기록. 하수구랩이 직접 책임집니다.">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/hasugulab-mark-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/hasugulab-mark-180.png">
   <link rel="canonical" href="https://hasugulab.com/">
+  <meta property="og:url" content="https://hasugulab.com/">
   <meta property="og:title" content="하수구랩 — 막힌 배수, 신고 한 번에">
-  <meta property="og:description" content="승인 없는 추가 금액 없음 · 작업 전후 사진 기록 · 같은 범위 하자는 무상 재작업. 경기 북부·인접 서울권에서 하수구랩이 직접 책임집니다.">
-  <meta property="og:image" content="assets/character.png">
+  <meta property="og:description" content="승인 없는 추가 금액 없음 · 작업 전후 사진 기록 · 같은 범위 하자는 무상 재작업. 경기 북부·성남·인접 서울권에서 하수구랩이 직접 책임집니다.">
+  <meta property="og:image" content="https://hasugulab.com/assets/character.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <style>
     :root {
@@ -171,6 +174,44 @@
     .sec-head p { margin-top: 14px; color: var(--muted); font-size: 17px; }
 
     /* ---------- 서비스 지역 ---------- */
+    /* 포지셔닝 밴드 */
+    .pos-band { background: linear-gradient(180deg,#f6fbfe,#eef7fc); border-bottom: 1px solid var(--line); padding: 40px 0; }
+    .pos-inner { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; justify-content: space-between; }
+    .pos-inner p { font-size: clamp(16px,1.7vw,19px); font-weight: 800; letter-spacing: -.02em; line-height: 1.5; max-width: 34em; }
+    .pos-inner p b { color: var(--blue-deep); }
+    .pos-inner small { display: block; margin-top: 6px; font-size: 13.5px; font-weight: 600; color: var(--muted); }
+    .pos-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pos-links a { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1.5px solid var(--line); border-radius: 999px; padding: 10px 18px; font-size: 14.5px; font-weight: 800; color: var(--blue-deep); transition: transform .2s, border-color .2s; white-space: nowrap; }
+    .pos-links a:hover { transform: translateY(-2px); border-color: #bfe6fa; }
+    .brand-note { margin-top: 22px; font-size: 12.5px; color: #94a9ba; text-align: center; position: relative; z-index: 1; }
+    .report-sec { background: var(--bg); }
+    .report-sec .sec-head p b { color: var(--ink); }
+    /* ---------- 완료보고서 예시 (공용) ---------- */
+    .report{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px;box-shadow:var(--shadow);position:relative;z-index:1;max-width:820px;margin:0 auto}
+    .rp-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-bottom:18px;border-bottom:2px solid var(--ink);margin-bottom:18px}
+    .rp-head b{font-size:20px;font-weight:900;letter-spacing:-.02em}
+    .rp-tag{font-size:11.5px;font-weight:900;letter-spacing:.06em;color:#7c8f9e;background:#f0f4f7;border-radius:999px;padding:5px 11px}
+    .rp-no{margin-left:auto;font-size:13px;color:#94a9ba;font-weight:700;font-variant-numeric:tabular-nums}
+    .rp-kv{display:grid;grid-template-columns:96px 1fr;gap:9px 16px;font-size:14.5px;margin-bottom:22px}
+    .rp-kv dt{color:var(--muted);font-weight:700}
+    .rp-kv dd{font-weight:700;color:var(--ink)}
+    .rp-sub{display:inline-block;margin-left:6px;font-size:12.5px;color:#94a9ba;font-weight:600}
+    .rp-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+    .rp-photos figure{margin:0}
+    .rp-photos svg{width:100%;height:auto;display:block;border-radius:12px}
+    .rp-photos figcaption{margin-top:8px;font-size:13px;font-weight:700;color:var(--muted)}
+    .rp-money{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+    .rp-money .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+    .rp-money .row span{color:var(--muted);font-weight:700}
+    .rp-money .row b{font-weight:850;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .rp-money .row.total{border-bottom:0;padding-top:12px;margin-top:4px;border-top:2px solid var(--line)}
+    .rp-money .row.total span{color:var(--ink);font-weight:850}
+    .rp-money .row.total b{font-size:19px;color:var(--blue-deep)}
+    .rp-foot{margin-top:16px;font-size:13px;color:var(--muted);line-height:1.8}
+    .rp-foot b{color:var(--ink)}
+    .rp-note{color:#94a9ba;font-size:12.5px}
+    @media(max-width:600px){.report{padding:22px 18px}.rp-kv{grid-template-columns:1fr;gap:2px 0}.rp-kv dd{margin-bottom:8px}.rp-photos{grid-template-columns:1fr}.rp-no{margin-left:0;width:100%}}
+
     .area { background: #fff; padding: 84px 0; }
     .area-inner { position: relative; z-index: 1; }
     .area-head { text-align: center; margin-bottom: 34px; }
@@ -273,7 +314,10 @@
     /* ---------- doors (티저) ---------- */
     .doors { background: #fff; padding: 92px 0; }
     .doors .blob.b1 { width: 420px; height: 420px; background: #d8f0ff; top: -80px; left: -180px; opacity: .5; }
-    .door-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; z-index: 1; }
+    .door-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; position: relative; z-index: 1; }
+    .door.indigo .ico { background: #eaeefc; }
+    .door.indigo .kicker, .door.indigo .go { color: #3d5bc9; }
+    .door.indigo li::before { background: #3d5bc9; }
     .door {
       display: block; border-radius: var(--radius); padding: 36px 34px;
       border: 1px solid var(--line); background: var(--bg);
@@ -297,7 +341,6 @@
     .door .go { font-size: 15.5px; font-weight: 850; color: var(--blue-deep); display: inline-flex; align-items: center; gap: 7px; }
     .door.gold .go { color: var(--orange); }
     .door:hover .go { gap: 12px; }
-    @media (max-width: 980px) { .door-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 680px) { .door-grid { grid-template-columns: 1fr; } }
 
     /* ---------- final CTA ---------- */
@@ -345,7 +388,45 @@
     .foot-logo { display: inline-flex; align-items: center; gap: 10px; }
     .foot-logo .bi-wm { font-weight: 800; font-size: 19px; letter-spacing: -.045em; color: var(--ink); }
     .foot-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
-  </style>
+  
+    /* ---------- 모바일 메뉴 (햄버거) ---------- */
+    .nav-toggle{display:none;width:42px;height:42px;border:1.5px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;align-items:center;justify-content:center;flex:none;padding:0}
+    .nav-toggle i{position:relative;display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:background .15s}
+    .nav-toggle i::before,.nav-toggle i::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,top .2s}
+    .nav-toggle i::before{top:-6px}.nav-toggle i::after{top:6px}
+    .nav-toggle[aria-expanded="true"] i{background:transparent}
+    .nav-toggle[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] i::after{top:0;transform:rotate(-45deg)}
+    @media (max-width:940px){
+      .nav-toggle{display:inline-flex;margin-left:auto}
+      .nav-cta{margin-left:0}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;margin:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:6px 0 10px;box-shadow:0 24px 40px -24px rgba(8,62,100,.35)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:13px 24px;font-size:16px;border-top:1px solid #f0f5f9}
+      .nav-links a.on{background:var(--blue-soft)}
+    }
+
+    /* ---------- 전체 페이지 안내 ---------- */
+    .sitemap { background: #fff; border-top: 1px solid var(--line); padding: 84px 0; }
+    .sitemap .sec-head { margin-bottom: 36px; }
+    .map-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; position: relative; z-index: 1; }
+    .map-card { display: flex; flex-direction: column; gap: 6px; background: var(--bg); border: 1px solid var(--line); border-radius: 18px; padding: 20px 20px 18px; transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .map-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: #bfe6fa; }
+    .map-card .k { font-size: 11.5px; font-weight: 900; letter-spacing: .06em; color: var(--blue-deep); }
+    .map-card b { font-size: 16.5px; font-weight: 850; letter-spacing: -.01em; }
+    .map-card span { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+    .map-card .go { margin-top: auto; padding-top: 8px; font-size: 13.5px; font-weight: 800; color: var(--blue-deep); }
+    .map-card.here { background: #fff; border-style: dashed; }
+    .map-card.here .go { color: #94a9ba; }
+    @media (max-width: 980px) { .map-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .map-grid { grid-template-columns: 1fr; } }
+
+    /* ---------- 미리보기 표시 (검토용 · 배포 시 삭제) ---------- */
+    .preview-flag{position:fixed;left:14px;bottom:14px;z-index:99;background:#0f2438;color:#fff;font-size:12.5px;font-weight:700;padding:9px 15px;border-radius:999px;opacity:.93;box-shadow:0 12px 34px -12px rgba(8,62,100,.7);display:flex;gap:9px;align-items:center;pointer-events:none}
+    .preview-flag b{color:#f7c948;font-weight:900}
+    @media (max-width:600px){.preview-flag{font-size:11px;padding:7px 12px;left:10px;bottom:10px}}
+a:not([href]){cursor:default}
+</style>
 </head>
 <body>
 
@@ -355,10 +436,12 @@
       <a class="nav-logo" href="index.html">
         <svg class="bi-mark" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true"><defs><linearGradient id="hglg-n0" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-n0)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span>
       </a>
-      <nav class="nav-links">
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks"><i></i></button>
+      <nav class="nav-links" id="navLinks">
         <a href="check.html">자가 진단</a>
         <a href="business.html">식당·상가</a>
-        <a href="public.html">공공·지자체</a>
+        <a>아파트·건물</a>
+        <a>공공·지자체</a>
         <a href="partners.html">협력사 모집</a>
         <a href="project.html">지원사업</a>
       </nav>
@@ -371,7 +454,7 @@
     <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
     <div class="wrap hero-grid">
       <div>
-        <span class="badge"><span class="dot"></span>경기 북부 · 인접 서울권 서비스 중</span>
+        <span class="badge"><span class="dot"></span>경기 북부 · 성남 · 인접 서울권 서비스 중</span>
         <h1>막힌 배수,<br>신고 한 번에 <span class="grad">끝냅니다</span></h1>
         <p class="lead">
           배수구 막힘·역류·침수·악취 — 회원가입 없이 1분이면 접수 끝.
@@ -380,8 +463,8 @@
           <b>하수구랩이 직접 책임집니다.</b>
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://report.hasugulab.com">배수 문제 신고하기 →</a>
-          <a class="btn btn-ghost" href="https://report.hasugulab.com/report/lookup">내 신고 확인</a>
+          <a class="btn btn-primary" href="check.html">내 상황부터 확인하기 →</a>
+          <a class="btn btn-ghost" href="https://report.hasugulab.com">바로 신고하기</a>
         </div>
         <div class="hero-stats">
           <div class="stat"><b>1분</b><span>회원가입 없는 간편 접수</span></div>
@@ -418,21 +501,33 @@
     </div>
   </div>
 
+  <!-- 포지셔닝 : 광고비 대신 정찰제 -->
+  <div class="pos-band">
+    <div class="wrap pos-inner">
+      <p>검색 맨 위에 뜨는 광고비는 결국 견적에 들어갑니다.<br>하수구랩은 광고 대신 <b>가격표를 공개</b>합니다.
+        <small>출동·진단 3~5만원(작업 시 면제) · 1단계 7~12만원 · 2단계 18~30만원 · 3단계 35~55만원 · 4단계 70~120만원 · 부가세 별도</small></p>
+      <div class="pos-links">
+        <a href="check.html">내 상황은 몇 단계? →</a>
+        <a href="check.html#quote">받은 견적 점검하기 →</a>
+      </div>
+    </div>
+  </div>
+
   <!-- 서비스 지역 -->
   <section class="area">
     <div class="wrap area-inner">
       <div class="area-head">
         <span class="chip">SERVICE AREA</span>
-        <h2>지금은 경기 북부와<br>인접 서울권에서 운영합니다</h2>
+        <h2>지금은 경기 북부·성남과<br>인접 서울권에서 운영합니다</h2>
         <p>넓게 벌리는 대신, 약속한 시간에 갈 수 있는 범위만 받습니다. 아래 지역 밖이라면 접수 시 알려드리고 무리해서 배정하지 않습니다.</p>
       </div>
       <div class="area-lists">
         <div class="area-group">
-          <b>경기 북부</b>
+          <b>경기 북부 · 성남</b>
           <div class="pills">
             <span class="pill hot">의정부</span><span class="pill">양주</span><span class="pill">동두천</span>
             <span class="pill">포천</span><span class="pill">남양주</span><span class="pill">구리</span>
-            <span class="pill">고양</span><span class="pill">파주</span>
+            <span class="pill">고양</span><span class="pill">파주</span><span class="pill">성남</span>
           </div>
         </div>
         <div class="area-group">
@@ -570,17 +665,82 @@
         </div>
 
       </div>
+      <p class="brand-note">※ 접수 화면에 보이는 「바로 뚫림」 표기는 하수구랩으로 순차 변경 중입니다. 같은 서비스입니다.</p>
     </div>
   </section>
 
-  <!-- DOORS : 다른 두 독자를 위한 입구 -->
+  <!-- 완료보고서 예시 -->
+  <section class="report-sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="chip">REPORT</span>
+        <h2>작업이 끝나면 이런 보고서를 받습니다</h2>
+        <p>무엇을 어디까지 했고, 얼마였고, 다시 막히면 어떻게 되는지 — <b>한 장에 남깁니다.</b> 다음에 부를 때 이 한 장에서 시작합니다.</p>
+      </div>
+<!-- 완료보고서 예시 · 공용 컴포넌트 (index.html · building.html 에 동일하게 삽입) -->
+<div class="report reveal" aria-label="작업 완료 보고서 예시">
+  <div class="rp-head">
+    <span class="rp-tag">예시</span>
+    <b>작업 완료 보고서</b>
+    <span class="rp-no">접수번호 R26-0000 · 2026.00.00</span>
+  </div>
+  <dl class="rp-kv">
+    <dt>장소</dt><dd>○○아파트 ○○동 지하 1층 횡주관 (관리사무소 접수)</dd>
+    <dt>작업 구간</dt><dd>입상관 합류점 → 집수정 연결부, 약 12m</dd>
+    <dt>작업 단계</dt><dd>2단계 · 배관 스케일링 <span class="rp-sub">플렉스샤프트 + 내시경 통수 확인</span></dd>
+    <dt>원인</dt><dd>유지방 슬러지 퇴적 (공용관) · 2세대 동시 역류의 원인으로 확인</dd>
+    <dt>소요</dt><dd>1시간 40분 · 주간</dd>
+  </dl>
+  <div class="rp-photos">
+    <figure>
+      <svg viewBox="0 0 200 130" aria-hidden="true">
+        <rect width="200" height="130" rx="10" fill="#1d2a36"/>
+        <circle cx="100" cy="66" r="52" fill="#2c3d4d"/>
+        <circle cx="100" cy="66" r="44" fill="#3a2a1a"/>
+        <circle cx="100" cy="66" r="30" fill="#5a4326"/>
+        <circle cx="100" cy="66" r="14" fill="#0e151c"/>
+        <path d="M60 40c10-12 30-16 46-10" stroke="#8a6a3a" stroke-width="6" stroke-linecap="round" fill="none" opacity=".7"/>
+        <path d="M70 100c14 8 36 6 52-4" stroke="#8a6a3a" stroke-width="5" stroke-linecap="round" fill="none" opacity=".6"/>
+        <text x="10" y="120" font-size="10" font-weight="800" fill="#c9d8e2" font-family="Pretendard, sans-serif">내시경 · 작업 전</text>
+      </svg>
+      <figcaption>작업 전 — 관 내경의 60% 이상 퇴적</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 200 130" aria-hidden="true">
+        <rect width="200" height="130" rx="10" fill="#1d2a36"/>
+        <circle cx="100" cy="66" r="52" fill="#2c3d4d"/>
+        <circle cx="100" cy="66" r="44" fill="#9fbfd0"/>
+        <circle cx="100" cy="66" r="36" fill="#dfe9ef"/>
+        <circle cx="100" cy="66" r="18" fill="#0e151c"/>
+        <path d="M64 92c12 8 40 10 72-2" stroke="#1e9bd7" stroke-width="7" stroke-linecap="round" fill="none" opacity=".85"/>
+        <text x="10" y="120" font-size="10" font-weight="800" fill="#c9d8e2" font-family="Pretendard, sans-serif">내시경 · 작업 후</text>
+      </svg>
+      <figcaption>작업 후 — 통수 확인 완료</figcaption>
+    </figure>
+  </div>
+  <div class="rp-money">
+    <div class="row"><span>출동·진단비</span><b>면제 (작업 진행)</b></div>
+    <div class="row"><span>2단계 · 배관 스케일링 (12m, 10m 초과 가산 포함)</span><b>240,000원</b></div>
+    <div class="row"><span>현장 추가 승인 금액</span><b>0원</b></div>
+    <div class="row total"><span>합계 (부가세 별도)</span><b>240,000원</b></div>
+  </div>
+  <p class="rp-foot">
+    <b>재작업 조건</b> 같은 구간이 시공 미흡으로 다시 막히면 무상 재작업 · <b>예외</b> 공용관 외 구간, 구배·구조 결함, 작업 후 새로 유입된 이물질
+    <br><span class="rp-note">※ 화면 구성을 보여드리기 위한 예시이며 실제 작업 건이 아닙니다. 실제 보고서에는 현장 사진과 내시경 영상 링크가 담깁니다.</span>
+  </p>
+</div>
+
+    </div>
+  </section>
+
+  <!-- DOORS : 다른 독자를 위한 입구 -->
   <section class="doors">
     <div class="blob b1"></div>
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="chip">MORE</span>
         <h2>어느 쪽이신가요?</h2>
-        <p>집·가게·공공시설은 급한 정도도, 필요한 것도 다릅니다. 각각 다른 방식으로 받습니다.</p>
+        <p>집·가게·아파트·공공시설은 급한 정도도, 결정하는 사람도, 필요한 것도 다릅니다. 각각 다른 방식으로 받습니다.</p>
       </div>
 
       <div class="door-grid">
@@ -597,7 +757,20 @@
           <span class="go">식당·상가 안내 보기 →</span>
         </a>
 
-        <a class="door reveal" href="public.html">
+        <a class="door indigo reveal">
+          <div class="ico">🏢</div>
+          <span class="kicker">FOR BUILDING MANAGERS</span>
+          <h3>아파트·건물<br>관리주체이신가요?</h3>
+          <p>두 세대 이상이 동시에 막혔다면 공용관일 가능성이 높습니다. 뚫기 전에 원인부터 가리고, 관리주체에 제출할 자료로 남깁니다.</p>
+          <ul>
+            <li>공용관 / 전용관 판별 진단</li>
+            <li>정찰제 범위 안에서 승인 후 작업</li>
+            <li>연간 예방 세척 · 단지 배관 이력 대장</li>
+          </ul>
+          <span class="go">아파트·건물 안내 보기 →</span>
+        </a>
+
+        <a class="door reveal">
           <div class="ico">🏛️</div>
           <span class="kicker">FOR PUBLIC SECTOR</span>
           <h3>지자체·공공기관<br>담당자이신가요?</h3>
@@ -614,7 +787,7 @@
           <div class="ico">🔧</div>
           <span class="kicker">FOR PARTNERS</span>
           <h3>배수·설비 업체<br>사장님이신가요?</h3>
-          <p>경기 북부·인접 서울권에서 함께 일할 파트너사를 먼저 찾습니다. 그 밖의 지역은 사전 등록으로 받습니다.</p>
+          <p>경기 북부·성남·인접 서울권에서 함께 일할 파트너사를 먼저 찾습니다. 그 밖의 지역은 사전 등록으로 받습니다.</p>
           <ul>
             <li>광고비 경쟁이 아닌 지역 기반 일감 배정</li>
             <li>단발 출동이 아닌 정기 관리 반복 매출</li>
@@ -644,6 +817,26 @@
   </section>
 
   <!-- FOOTER -->
+  <!-- 전체 페이지 안내 -->
+  <section class="sitemap" id="sitemap">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="chip">SITE MAP</span>
+        <h2>하수구랩 페이지 한눈에 보기</h2>
+        <p>일곱 페이지입니다. 필요한 곳으로 바로 가세요.</p>
+      </div>
+      <div class="map-grid">
+        <a class="map-card here reveal" href="#top"><span class="k">01 · 홈</span><b>막힌 배수, 신고 한 번에</b><span>서비스 소개 · 정찰제 · 서비스 지역 · 완료보고서 예시</span><span class="go">지금 보고 있는 페이지</span></a>
+        <a class="map-card reveal" href="check.html"><span class="k">02 · 도구</span><b>자가 진단 · 받은 견적 점검</b><span>내 문제가 몇 단계인지, 다른 곳 견적이 정찰제 범위 안인지 3분이면 확인</span><span class="go">확인해 보기 →</span></a>
+        <a class="map-card reveal" href="business.html"><span class="k">03 · 식당·상가</span><b>주방배관, 영업 안 끊고</b><span>브레이크타임·마감 후 방문, 4단계 정찰제, 무상 재작업 기준</span><span class="go">식당·상가 안내 →</span></a>
+        <a class="map-card reveal"><span class="k">04 · 아파트·건물</span><b>공용관 문제인지부터 판별</b><span>관리사무소·건물주용 — 판별 진단, 제출용 자료, 연간 예방 세척</span><span class="go">아파트·건물 안내 →</span></a>
+        <a class="map-card reveal"><span class="k">05 · 공공·지자체</span><b>막히기 전에 관리하는 도시</b><span>예방형 생활배수 운영체계, 의정부 실증, 회사·팀 소개</span><span class="go">공공·지자체 안내 →</span></a>
+        <a class="map-card reveal" href="partners.html"><span class="k">06 · 협력사</span><b>지역을 아는 회사와 함께</b><span>1인 사업자·연합체 모두 — 처리 단계·지역별 배정, 제안 등록</span><span class="go">협력사 모집 →</span></a>
+        <a class="map-card reveal" href="project.html"><span class="k">07 · 지원사업</span><b>성남산업진흥원 지원 개발</b><span>문자·카톡·전화 AI 접수 에이전트 개발 과제 소개</span><span class="go">지원사업 보기 →</span></a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="wrap foot">
       <span class="foot-logo"><svg class="bi-mark" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><defs><linearGradient id="hglg-f0" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-f0)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span></span>
@@ -652,7 +845,8 @@
         <a href="https://report.hasugulab.com/report/lookup">신고 조회</a>
         <!-- 비노출 유지: 지도 현황 <a href="https://report.hasugulab.com/map">지도 현황</a> -->
         <a href="business.html">식당·상가</a>
-        <a href="public.html">공공·지자체</a>
+        <a>아파트·건물</a>
+        <a>공공·지자체</a>
         <a href="partners.html">협력사 모집</a>
         <a href="project.html">지원사업</a>
         <a href="https://partner.hasugulab.com/login">업체 파트너</a>
@@ -661,7 +855,7 @@
     </div>
     <div class="wrap biz-info">
       <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>하수구랩(구 바로 뚫림)<span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
-      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0260830020">02-6083-0020</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
+      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0318240023">031-824-0023</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
     </div>
   </footer>
 
@@ -682,6 +876,15 @@
       el.style.transitionDelay = `${(i % 4) * 70}ms`;
       io.observe(el);
     });
+  </script>
+
+
+  <script>
+    (function(){var t=document.getElementById("navToggle"),l=document.getElementById("navLinks");if(!t||!l)return;
+      t.addEventListener("click",function(){var o=!l.classList.contains("open");l.classList.toggle("open",o);t.setAttribute("aria-expanded",o);t.setAttribute("aria-label",o?"메뉴 닫기":"메뉴 열기");});
+      l.addEventListener("click",function(e){if(e.target.tagName==="A"){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+      addEventListener("resize",function(){if(innerWidth>940){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+    })();
   </script>
 
 </body>

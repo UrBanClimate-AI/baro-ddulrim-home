@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>협력사 지원 — 하수구랩 파트너 모집</title>
-  <meta name="description" content="경기 북부·인접 서울권에서 함께 일할 설비·배관·준설 파트너를 먼저 찾습니다. 그 밖의 지역은 사전 등록으로 받습니다. 제안은 비공개로 접수됩니다.">
-  <link rel="icon" href="assets/logo-icon.png">
+  <meta name="description" content="경기 북부·성남·인접 서울권에서 함께 일할 설비·배관·준설 파트너를 먼저 찾습니다. 그 밖의 지역은 사전 등록으로 받습니다. 제안은 비공개로 접수됩니다.">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/hasugulab-mark-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/hasugulab-mark-180.png">
   <link rel="canonical" href="https://hasugulab.com/partners.html">
+  <meta property="og:url" content="https://hasugulab.com/partners.html">
   <meta property="og:title" content="협력사 지원 — 하수구랩 파트너 모집">
   <meta property="og:description" content="지역 설비·배관·준설 업체의 협력 제안을 비공개로 접수합니다. 접수 목록은 공개, 제안 내용은 대표이사만 열람합니다.">
-  <meta property="og:image" content="assets/character.png">
+  <meta property="og:image" content="https://hasugulab.com/assets/character.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <style>
     :root {
@@ -139,6 +142,12 @@
     .field.invalid input, .field.invalid select, .field.invalid textarea { border-color: var(--red); }
     .field.invalid .err { display: block; }
     .checks { display: flex; flex-wrap: wrap; gap: 8px; }
+    .checks.stages label { flex-direction: column; align-items: flex-start; gap: 4px; padding: 12px 14px; min-width: 200px; flex: 1 1 200px; }
+    .checks.stages label small { font-size: 12px; color: var(--muted); font-weight: 600; }
+    .checks label:has(input:checked) small { color: var(--blue-deep); }
+    .checks label input { margin-right: 4px; }
+    .checks.stages label b { display: inline-flex; align-items: center; gap: 8px; }
+    .field .sub-note { margin-top: 8px; font-size: 12.5px; color: var(--muted); line-height: 1.7; }
     .checks label {
       display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
       font-size: 13.5px; font-weight: 700; color: var(--muted);
@@ -173,19 +182,12 @@
     td.no { font-weight: 800; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
     td.co { font-weight: 800; }
     td.date { color: var(--muted); font-size: 13.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
-    .stat-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 800; padding: 5px 13px 5px 11px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; }
-    .stat-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 18%, transparent); }
-    .s-접수 { background: var(--blue-soft); color: var(--blue-deep); border-color: color-mix(in srgb, var(--blue-deep) 16%, transparent); }
-    .s-검토중 { background: #fff6dd; color: var(--orange); border-color: color-mix(in srgb, var(--orange) 20%, transparent); }
-    .s-상담예정 { background: #ede7ff; color: #5b3fc4; border-color: color-mix(in srgb, #5b3fc4 18%, transparent); }
-    .s-협력업체 { background: #e9f9f2; color: var(--green); border-color: color-mix(in srgb, var(--green) 22%, transparent); }
-    .s-보류 { background: #f0f4f7; color: #7c8f9e; border-color: #dbe4ea; }
-    /* 현황판 뷰포트: 최대 5행 + 헤더, 초과분은 로테이션 */
-    .board-viewport { max-height: 322px; overflow: hidden; position: relative; }
-    .board-viewport thead th { position: sticky; top: 0; z-index: 2; }
-    .board-viewport tbody tr { height: 55px; }
-    .board-viewport tbody { will-change: transform; }
-    .board-viewport tbody.rotating { transition: transform .6s cubic-bezier(.4,0,.2,1); }
+    .stat-pill { display: inline-block; font-size: 12px; font-weight: 800; padding: 5px 12px; border-radius: 999px; white-space: nowrap; }
+    .s-접수 { background: var(--blue-soft); color: var(--blue-deep); }
+    .s-검토중 { background: #fff6dd; color: var(--orange); }
+    .s-상담예정 { background: #ede7ff; color: #5b3fc4; }
+    .s-협력확정 { background: #e9f9f2; color: var(--green); }
+    .s-보류 { background: #f0f4f7; color: #7c8f9e; }
     .board-empty { padding: 56px 24px; text-align: center; color: var(--muted); font-size: 15px; }
     .board-note { margin-top: 16px; font-size: 13px; color: var(--muted); position: relative; z-index: 1; }
 
@@ -220,7 +222,36 @@
     .foot-logo { display: inline-flex; align-items: center; gap: 10px; }
     .foot-logo .bi-wm { font-weight: 800; font-size: 19px; letter-spacing: -.045em; color: var(--ink); }
     .foot-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
-  </style>
+  
+    /* hero illustration */
+    .phero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:48px;align-items:center;position:relative;z-index:1}
+    .phero-art{width:100%;max-width:500px;justify-self:end}
+    .phero-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 44px rgba(8,118,170,.16))}
+    @media (max-width: 920px){.phero .wrap{grid-template-columns:1fr;gap:28px}.phero-art{max-width:420px;justify-self:center}}
+
+    /* ---------- 모바일 메뉴 (햄버거) ---------- */
+    .nav-toggle{display:none;width:42px;height:42px;border:1.5px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;align-items:center;justify-content:center;flex:none;padding:0}
+    .nav-toggle i{position:relative;display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:background .15s}
+    .nav-toggle i::before,.nav-toggle i::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,top .2s}
+    .nav-toggle i::before{top:-6px}.nav-toggle i::after{top:6px}
+    .nav-toggle[aria-expanded="true"] i{background:transparent}
+    .nav-toggle[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] i::after{top:0;transform:rotate(-45deg)}
+    @media (max-width:900px){
+      .nav-toggle{display:inline-flex;margin-left:auto}
+      .nav-cta{margin-left:0}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;margin:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:6px 0 10px;box-shadow:0 24px 40px -24px rgba(8,62,100,.35)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:13px 24px;font-size:16px;border-top:1px solid #f0f5f9}
+      .nav-links a.on{background:var(--blue-soft)}
+    }
+
+    /* ---------- 미리보기 표시 (검토용 · 배포 시 삭제) ---------- */
+    .preview-flag{position:fixed;left:14px;bottom:14px;z-index:99;background:#0f2438;color:#fff;font-size:12.5px;font-weight:700;padding:9px 15px;border-radius:999px;opacity:.93;box-shadow:0 12px 34px -12px rgba(8,62,100,.7);display:flex;gap:9px;align-items:center;pointer-events:none}
+    .preview-flag b{color:#f7c948;font-weight:900}
+    @media (max-width:600px){.preview-flag{font-size:11px;padding:7px 12px;left:10px;bottom:10px}}
+a:not([href]){cursor:default}
+</style>
 </head>
 <body>
 
@@ -230,10 +261,12 @@
       <a class="nav-logo" href="index.html">
         <svg class="bi-mark" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true"><defs><linearGradient id="hglg-n3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-n3)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span>
       </a>
-      <nav class="nav-links">
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks"><i></i></button>
+      <nav class="nav-links" id="navLinks">
         <a href="check.html">자가 진단</a>
         <a href="business.html">식당·상가</a>
-        <a href="public.html">공공·지자체</a>
+        <a>아파트·건물</a>
+        <a>공공·지자체</a>
         <a href="partners.html" class="on">협력사 모집</a>
         <a href="project.html">지원사업</a>
       </nav>
@@ -245,18 +278,106 @@
   <section class="phero">
     <div class="blob b1"></div><div class="blob b2"></div>
     <div class="wrap">
-      <span class="badge"><span class="dot"></span>경기 북부·인접 서울권 우선 · 그 외 사전 등록</span>
+      <div class="phero-copy">
+      <span class="badge"><span class="dot"></span>경기 북부·성남·인접 서울권 우선 · 그 외 사전 등록</span>
       <h1>지역을 아는 회사와<br><span class="grad">함께 넓힙니다</span></h1>
       <p class="lead">
-        하수구랩은 <b>경기 북부와 인접 서울권</b>에서 먼저 운영합니다.
+        하수구랩은 <b>경기 북부·성남과 인접 서울권</b>에서 먼저 운영합니다.
         지금 찾는 것은 그 권역에서 실제로 출동하고 작업할 <b>설비·배관·준설 파트너사</b>입니다.
         그 밖의 지역은 사전 등록으로 받아두고, 해당 권역을 열 때 가장 먼저 연락드립니다.
-        제안 내용은 비공개로 접수되어 대표이사가 직접 검토합니다.
+        제안 내용은 비공개로 접수되어 대표이사가 직접 검토합니다. <b>1인 사업자든 여러 사업자 연합이든</b>, 처리 가능한 단계와 지역으로 배정합니다.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#apply">협력 제안 등록하기 →</a>
         <a class="btn btn-ghost" href="#board">접수 현황 보기</a>
       </div>
+      </div>
+      <div class="phero-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" role="img" aria-label="1인 사업자와 팀·연합체가 하수구랩을 통해 단계별 일감을 배정받는 모습의 일러스트">
+  <defs>
+    <linearGradient id="pt-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6dd"/><stop offset="1" stop-color="#ffeeba"/></linearGradient>
+    <linearGradient id="pt-mark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2AA9E0"/><stop offset="1" stop-color="#0876AA"/></linearGradient>
+  </defs>
+  <rect width="520" height="400" rx="32" fill="url(#pt-bg)"/>
+  <circle cx="460" cy="60" r="40" fill="#fff" opacity=".5"/>
+
+  <!-- center: hasugulab hub -->
+  <g transform="translate(260 188)">
+    <circle cx="0" cy="0" r="58" fill="#fff" opacity=".7"/>
+    <circle cx="0" cy="0" r="44" fill="url(#pt-mark)"/>
+    <path d="M0-26c0 0 11 11.8 11 18.4A11 11 0 0 1-11-7.6C-11-14.2 0-26 0-26z" fill="#fff"/>
+    <rect x="-20" y="6" width="40" height="7" rx="3.5" fill="#fff" opacity=".95"/>
+    <rect x="-16" y="18" width="32" height="7" rx="3.5" fill="#fff" opacity=".75"/>
+  </g>
+
+  <!-- demand cards (top) -->
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800" font-size="12">
+    <g transform="translate(66 36)">
+      <rect width="112" height="52" rx="12" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+      <text x="12" y="22" fill="#94a9ba" font-size="10">의정부 · 식당</text>
+      <text x="12" y="41" fill="#0f2438">3단계 · 야간</text>
+    </g>
+    <g transform="translate(204 22)">
+      <rect width="112" height="52" rx="12" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+      <text x="12" y="22" fill="#94a9ba" font-size="10">남양주 · 아파트</text>
+      <text x="12" y="41" fill="#0f2438">4단계 · 횡주관</text>
+    </g>
+    <g transform="translate(342 36)">
+      <rect width="112" height="52" rx="12" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+      <text x="12" y="22" fill="#94a9ba" font-size="10">노원 · 주택</text>
+      <text x="12" y="41" fill="#0f2438">1단계 · 주간</text>
+    </g>
+  </g>
+  <!-- arrows demand → hub -->
+  <g stroke="#e08a00" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8">
+    <path d="M122 92 q30 40 90 66"/><path d="M260 78 v52"/><path d="M398 92 q-30 40 -90 66"/>
+  </g>
+
+  <!-- supply (bottom): 1인 / 팀 -->
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800">
+    <!-- solo -->
+    <g transform="translate(70 262)">
+      <rect x="0" y="0" width="120" height="96" rx="16" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+      <circle cx="60" cy="30" r="14" fill="#1e9bd7"/>
+      <path d="M36 66 q24-24 48 0" fill="#1e9bd7"/>
+      <text x="60" y="86" font-size="12" text-anchor="middle" fill="#0f2438">1인 사업자</text>
+    </g>
+    <!-- team -->
+    <g transform="translate(330 262)">
+      <rect x="0" y="0" width="120" height="96" rx="16" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+      <circle cx="36" cy="32" r="11" fill="#0876aa"/><path d="M18 60 q18-20 36 0" fill="#0876aa"/>
+      <circle cx="60" cy="26" r="13" fill="#1e9bd7"/><path d="M38 60 q22-26 44 0" fill="#1e9bd7"/>
+      <circle cx="84" cy="32" r="11" fill="#0876aa"/><path d="M66 60 q18-20 36 0" fill="#0876aa"/>
+      <text x="60" y="86" font-size="12" text-anchor="middle" fill="#0f2438">사무실 + 팀·연합</text>
+    </g>
+  </g>
+  <!-- arrows hub → supply -->
+  <g stroke="#0876aa" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M214 214 q-40 20 -70 48"/><path d="M306 214 q40 20 70 48"/>
+    <path d="M150 252 l-6 10 M150 252 l-10 3" /><path d="M370 252 l6 10 M370 252 l10 3"/>
+  </g>
+  <!-- equipment strip -->
+  <g transform="translate(206 282)" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800" font-size="10">
+    <rect x="0" y="0" width="108" height="76" rx="14" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+    <text x="54" y="18" text-anchor="middle" fill="#94a9ba">보유 장비 · 단계</text>
+    <g transform="translate(12 28)">
+      <rect x="0" y="0" width="18" height="18" rx="5" fill="#e8f5fb" stroke="#1e9bd7" stroke-width="2"/><path d="M4 9 l4 4 l7-8" stroke="#0876aa" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <rect x="24" y="0" width="18" height="18" rx="5" fill="#e8f5fb" stroke="#1e9bd7" stroke-width="2"/><path d="M28 9 l4 4 l7-8" stroke="#0876aa" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <rect x="48" y="0" width="18" height="18" rx="5" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+      <rect x="72" y="0" width="18" height="18" rx="5" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+    </g>
+    <text x="54" y="66" text-anchor="middle" fill="#0f2438">1·2단계 가능</text>
+  </g>
+
+  <!-- van (small, right top) -->
+  <g transform="translate(404 118)">
+    <rect x="0" y="14" width="88" height="40" rx="10" fill="#fff" stroke="#9fbfd0" stroke-width="3"/>
+    <path d="M60 14 h16 q12 0 12 12 v28 h-28z" fill="#e8f5fb" stroke="#9fbfd0" stroke-width="3"/>
+    <rect x="66" y="22" width="14" height="12" rx="3" fill="#1e9bd7"/>
+    <circle cx="20" cy="56" r="9" fill="#0f2438"/><circle cx="20" cy="56" r="4" fill="#fff"/>
+    <circle cx="70" cy="56" r="9" fill="#0f2438"/><circle cx="70" cy="56" r="4" fill="#fff"/>
+    <rect x="10" y="26" width="40" height="8" rx="4" fill="#1e9bd7"/>
+  </g>
+</svg></div>
     </div>
   </section>
 
@@ -302,8 +423,9 @@
           <span class="pill hot">의정부</span>
           <span class="pill hot">양주 · 동두천 · 포천</span>
           <span class="pill hot">남양주 · 구리 · 고양 · 파주</span>
+          <span class="pill hot">성남</span>
           <span class="pill warm">서울 도봉 · 노원 · 강북 · 성북 · 중랑 · 은평</span>
-          <span class="pill">경기 남부 · 인천 — 사전 등록</span>
+          <span class="pill">그 외 경기 남부 · 인천 — 사전 등록</span>
           <span class="pill">그 외 전국 — 사전 등록</span>
         </div>
         <p class="region-note">사전 등록은 비용도 의무도 없습니다. 해당 권역을 열 때 등록 순서대로 연락드립니다.</p>
@@ -355,7 +477,7 @@
         <h2>제안부터 협력까지</h2>
       </div>
       <div class="proc">
-        <div class="proc-card reveal"><span class="proc-num">01</span><h3>제안 등록</h3><p>업체 파트너 가입 페이지에서 제안을 등록하시면 접수번호가 발급됩니다. 내용은 비공개입니다.</p><span class="when">즉시</span></div>
+        <div class="proc-card reveal"><span class="proc-num">01</span><h3>제안 등록</h3><p>아래 양식을 작성해 주시면 접수번호가 발급됩니다. 내용은 비공개입니다.</p><span class="when">즉시</span></div>
         <div class="proc-card reveal"><span class="proc-num">02</span><h3>대표이사 검토</h3><p>지역·장비·인력·실적을 기준으로 대표이사가 직접 검토합니다.</p><span class="when">영업일 3~5일</span></div>
         <div class="proc-card reveal"><span class="proc-num">03</span><h3>통화·미팅</h3><p>현장 여건과 협력 형태를 확인하기 위해 연락드립니다.</p><span class="when">검토 후</span></div>
         <div class="proc-card reveal"><span class="proc-num">04</span><h3>파트너 등록</h3><p>운영 규칙에 합의한 뒤 계정을 개설하고 지역 물량 배정이 시작됩니다.</p><span class="when">협의 완료 시</span></div>
@@ -370,12 +492,7 @@
       <div class="sec-head center reveal">
         <span class="chip">APPLY</span>
         <h2>협력 제안 등록</h2>
-        <p>
-          협력 제안은 업체 파트너 페이지에서 접수합니다.
-          회사 정보와 활동 지역, 보유 장비·수행 가능 업무, 제안 내용을 등록하시면
-          접수번호가 발급되고 대표이사가 직접 검토 후 연락드립니다.
-          작성해 주신 내용은 공개되지 않습니다. 게시판에는 지역·업종·접수일·상태만 표시됩니다.
-        </p>
+        <p>작성해 주신 내용은 공개되지 않습니다. 게시판에는 지역·업종·접수일·상태만 표시됩니다.</p>
       </div>
 
       <div class="privacy-note">
@@ -386,10 +503,216 @@
         </div>
       </div>
 
-      <div class="cta-row reveal" style="justify-content:center">
-        <a class="btn btn-primary" href="https://partner.hasugulab.com/signup">협력 제안 등록하러 가기 →</a>
-        <a class="btn btn-ghost" href="mailto:myhero.lee@gmail.com?subject=%5B%ED%98%91%EB%A0%A5%EC%97%85%EC%B2%B4%20%EC%A0%9C%EC%95%88%5D%20">✉️ 메일로 먼저 문의</a>
-      </div>
+      <form class="form-card reveal" id="partnerForm" novalidate>
+
+        <div class="fgroup">
+          <h3>1. 회사 정보</h3>
+          <div class="frow">
+            <div class="field" data-req>
+              <label>회사명(상호)<span class="req">*</span></label>
+              <input type="text" name="company" placeholder="예) 한빛설비" autocomplete="organization">
+              <span class="err">회사명을 입력해 주세요.</span>
+            </div>
+            <div class="field" data-req>
+              <label>대표자명<span class="req">*</span></label>
+              <input type="text" name="ceo" placeholder="예) 홍길동">
+              <span class="err">대표자명을 입력해 주세요.</span>
+            </div>
+          </div>
+          <div class="frow three">
+            <div class="field">
+              <label>사업자등록번호<span class="hint">선택</span></label>
+              <input type="text" name="bizno" placeholder="000-00-00000" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label>업력<span class="hint">선택</span></label>
+              <input type="text" name="years" placeholder="예) 12년">
+            </div>
+            <div class="field">
+              <label>상시 인력<span class="hint">선택</span></label>
+              <input type="text" name="staff" placeholder="예) 5명">
+            </div>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <h3>2. 담당자 연락처</h3>
+          <div class="frow three">
+            <div class="field" data-req>
+              <label>담당자명<span class="req">*</span></label>
+              <input type="text" name="manager" placeholder="예) 김철수" autocomplete="name">
+              <span class="err">담당자명을 입력해 주세요.</span>
+            </div>
+            <div class="field" data-req>
+              <label>연락처<span class="req">*</span></label>
+              <input type="tel" name="phone" placeholder="010-0000-0000" autocomplete="tel">
+              <span class="err">연락처를 입력해 주세요.</span>
+            </div>
+            <div class="field" data-req data-type="email">
+              <label>이메일<span class="req">*</span></label>
+              <input type="email" name="email" placeholder="name@company.com" autocomplete="email">
+              <span class="err">올바른 이메일 주소를 입력해 주세요.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <h3>3. 활동 지역 · 업종</h3>
+          <div class="frow three">
+            <div class="field" data-req>
+              <label>시·도<span class="req">*</span></label>
+              <select name="sido">
+                <option value="">선택하세요</option>
+                <option>경기</option><option>서울</option><option>인천</option>
+                <option>강원</option><option>충북</option><option>충남</option><option>대전</option><option>세종</option>
+                <option>전북</option><option>전남</option><option>광주</option>
+                <option>경북</option><option>경남</option><option>대구</option><option>울산</option><option>부산</option>
+                <option>제주</option>
+              </select>
+              <span class="err">시·도를 선택해 주세요.</span>
+            </div>
+            <div class="field" data-req>
+              <label>시·군·구<span class="req">*</span></label>
+              <input type="text" name="sigungu" placeholder="예) 의정부시">
+              <span class="err">시·군·구를 입력해 주세요.</span>
+            </div>
+            <div class="field" data-req>
+              <label>주요 업종<span class="req">*</span></label>
+              <select name="sector">
+                <option value="">선택하세요</option>
+                <option>설비·배관</option>
+                <option>준설·청소</option>
+                <option>하수도 공사</option>
+                <option>시설관리·위탁</option>
+                <option>방수·토목</option>
+                <option>기타</option>
+              </select>
+              <span class="err">업종을 선택해 주세요.</span>
+            </div>
+          </div>
+          <div class="frow one">
+            <div class="field">
+              <label>출동 가능 반경<span class="hint">선택</span></label>
+              <input type="text" name="radius" placeholder="예) 의정부 전역 및 인접 시·군 30km 이내, 평균 40분 내 도착">
+            </div>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <h3>4. 보유 역량</h3>
+          <div class="frow">
+            <div class="field" data-req>
+              <label>사업 형태<span class="req">*</span></label>
+              <select name="orgType">
+                <option value="">선택하세요</option>
+                <option>1인 사업자 (직접 출동)</option>
+                <option>사무실 + 소속 기사</option>
+                <option>여러 사업자 연합 (한 이름으로 받아 배분)</option>
+              </select>
+              <p class="sub-note">연합이시면 <b>대표 창구 한 곳</b>으로 등록해 주세요. 하수구랩이 단계·지역별로 배정하면 팀 안에서 나누시면 됩니다.</p>
+            </div>
+            <div class="field">
+              <label>출동 가능 인원(팀)<span class="hint">선택</span></label>
+              <input type="text" name="orgSize" placeholder="예) 기사 3명 / 2개 사업자">
+            </div>
+          </div>
+          <div class="frow one">
+            <div class="field">
+              <label>처리 가능 단계<span class="hint">해당하는 것 모두 선택 · 정찰제 4단계 기준</span></label>
+              <div class="checks stages" data-group="stages">
+                <label><b><input type="checkbox" value="1단계 단순 관통">1단계 · 단순 관통</b><small>석션기 · 수동/전동 관통기 · 5m 이내</small></label>
+                <label><b><input type="checkbox" value="2단계 배관 스케일링">2단계 · 배관 스케일링</b><small>플렉스샤프트 · 배관 내시경 · 10m 이내</small></label>
+                <label><b><input type="checkbox" value="3단계 식당·상가 특화">3단계 · 식당·상가 특화</b><small>온수 플렉스샤프트 · 소형 고압세척 · 15m 기준</small></label>
+                <label><b><input type="checkbox" value="4단계 고압세척">4단계 · 고압세척</b><small>엔진형 고압세척차 · 관로탐지기 · 메인관·횡주관</small></label>
+              </div>
+              <p class="sub-note">일감은 <b>단계 × 지역 × 시간</b>으로 배정됩니다. 장비가 확인된 단계에만 배정하므로, 갖춘 것만 표시해 주세요.</p>
+            </div>
+          </div>
+          <div class="frow one">
+            <div class="field">
+              <label>보유 장비<span class="hint">해당하는 것 모두 선택</span></label>
+              <div class="checks" data-group="equip">
+                <label><input type="checkbox" value="석션기/관통기">석션기 · 수동/전동 관통기</label>
+                <label><input type="checkbox" value="플렉스샤프트">플렉스샤프트</label>
+                <label><input type="checkbox" value="배관 내시경 카메라">배관 내시경 카메라</label>
+                <label><input type="checkbox" value="온수 플렉스샤프트">온수 플렉스샤프트</label>
+                <label><input type="checkbox" value="소형 고압세척기">소형 고압세척기</label>
+                <label><input type="checkbox" value="엔진형 고압세척차">엔진형 고압세척차</label>
+                <label><input type="checkbox" value="관로탐지기">관로탐지기</label>
+                <label><input type="checkbox" value="관로 CCTV">관로 CCTV</label>
+                <label><input type="checkbox" value="준설차/흡입식 진공차">준설차 · 흡입식 진공차</label>
+                <label><input type="checkbox" value="화물/작업차량">화물·작업차량</label>
+              </div>
+            </div>
+          </div>
+          <div class="frow one">
+            <div class="field">
+              <label>수행 가능 업무<span class="hint">해당하는 것 모두 선택</span></label>
+              <div class="checks" data-group="work">
+                <label><input type="checkbox" value="긴급출동">긴급출동</label>
+                <label><input type="checkbox" value="준설">준설</label>
+                <label><input type="checkbox" value="배관 보수">배관 보수</label>
+                <label><input type="checkbox" value="내시경 진단">내시경 진단</label>
+                <label><input type="checkbox" value="정기 점검">정기 점검</label>
+                <label><input type="checkbox" value="야간·주말 대응">야간·주말 대응</label>
+                <label><input type="checkbox" value="공공기관 시공 실적 보유">공공기관 시공 실적 보유</label>
+              </div>
+            </div>
+          </div>
+          <div class="frow">
+            <div class="field">
+              <label>희망 협력 형태<span class="hint">선택</span></label>
+              <select name="type">
+                <option value="">선택하세요</option>
+                <option>지역 배정 파트너 (건별 수행)</option>
+                <option>지역 총판·거점 파트너</option>
+                <option>공공 정기점검 수급</option>
+                <option>장비·인력 협력</option>
+                <option>기타 (제안 내용에 기재)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>배상책임보험 가입<span class="hint">선택</span></label>
+              <select name="insurance">
+                <option value="">선택하세요</option>
+                <option>가입</option>
+                <option>미가입</option>
+                <option>확인 필요</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <h3>5. 제안 내용</h3>
+          <div class="frow one">
+            <div class="field" data-req>
+              <label>협력 제안 및 소개<span class="req">*</span></label>
+              <textarea name="message" placeholder="회사 소개, 주요 실적, 어떤 방식으로 협력하고 싶은지 자유롭게 적어주세요.&#10;&#10;예시)&#10;- 의정부·양주 일대에서 12년간 상가·아파트 배관 준설을 해왔습니다.&#10;- 고압세척차 2대, 관로 CCTV 1식 보유. 상시 인력 4명.&#10;- 관공서 하수도 준설 용역 3건 수행 경험이 있습니다.&#10;- 공공시설 정기점검 물량을 안정적으로 받고 싶습니다."></textarea>
+              <span class="err">제안 내용을 입력해 주세요.</span>
+            </div>
+          </div>
+          <div class="frow one">
+            <div class="field" data-req data-check>
+              <label class="agree">
+                <input type="checkbox" name="agree">
+                <span><b>개인정보 수집·이용에 동의합니다.</b><br>
+                수집 항목: 회사명, 대표자명, 담당자명, 연락처, 이메일, 사업자등록번호, 활동지역, 제안 내용 ·
+                이용 목적: 협력업체 검토 및 연락 · 보유 기간: 검토 종료 후 3년(이후 파기).
+                동의를 거부하실 수 있으나 이 경우 협력 제안 접수가 불가합니다.</span>
+              </label>
+              <span class="err">개인정보 수집·이용에 동의해 주세요.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">협력 제안 등록하기 →</button>
+          <span class="note" id="submitNote">등록 즉시 접수번호와 파트너 계정이 만들어집니다. 아이디는 이메일, 초기 비밀번호는 연락처 숫자입니다.</span>
+        </div>
+
+        <div class="formmsg" id="formMsg"></div>
+      </form>
     </div>
   </section>
 
@@ -405,12 +728,11 @@
         <div class="board-stats">
           <div class="bstat"><b id="statTotal">–</b><span>누적 접수</span></div>
           <div class="bstat"><b id="statReview">–</b><span>검토 중</span></div>
-          <div class="bstat"><b id="statDone">–</b><span>협력 업체</span></div>
+          <div class="bstat"><b id="statDone">–</b><span>협력 확정</span></div>
         </div>
       </div>
 
       <div class="table-wrap reveal">
-        <div class="board-viewport" id="boardViewport">
         <table>
           <thead>
             <tr>
@@ -426,7 +748,6 @@
             <tr><td colspan="6" class="board-empty">접수 현황을 불러오는 중입니다…</td></tr>
           </tbody>
         </table>
-        </div>
       </div>
       <p class="board-note">※ 업체명은 개인정보 보호를 위해 일부만 표시됩니다. 상세 내용은 공개되지 않습니다.</p>
     </div>
@@ -467,9 +788,9 @@
       </div>
 
       <div style="text-align:center;margin-top:40px" class="reveal">
-        <p style="color:var(--muted);font-size:15px;margin-bottom:16px">온라인 등록이 어려우시면 전화나 메일로 먼저 연락 주셔도 됩니다.</p>
+        <p style="color:var(--muted);font-size:15px;margin-bottom:16px">양식 작성이 어려우시면 전화나 메일로 먼저 연락 주셔도 됩니다.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-          <a class="btn btn-ghost" href="tel:0260830020">📞 02-6083-0020</a>
+          <a class="btn btn-ghost" href="tel:0318240023">📞 031-824-0023</a>
           <a class="btn btn-ghost" href="mailto:myhero.lee@gmail.com?subject=%5B%ED%98%91%EB%A0%A5%EC%97%85%EC%B2%B4%20%EC%A0%9C%EC%95%88%5D%20">✉️ myhero.lee@gmail.com</a>
         </div>
       </div>
@@ -485,25 +806,25 @@
         <a href="business.html">식당·상가</a>
         <a href="https://report.hasugulab.com">신고하기</a>
         <a href="https://report.hasugulab.com/report/lookup">신고 조회</a>
-        <a href="public.html">공공·지자체</a>
+        <a>아파트·건물</a>
+        <a>공공·지자체</a>
         <a href="https://partner.hasugulab.com/login">업체 파트너</a>
       </div>
       <span class="copy">© 2026 주식회사 어반클라이밋에이아이. All rights reserved.</span>
     </div>
     <div class="wrap biz-info">
       <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>하수구랩(구 바로 뚫림)<span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
-      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0260830020">02-6083-0020</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
+      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0318240023">031-824-0023</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
     </div>
-  </footer>
-
   </footer>
 
   <script>
   /* =========================================================================
-     ⚙️ 설정 — 접수 현황 게시판 API (하수구랩 서버)
-     GET {API_BASE}/contractors/public-board 가
-     { items: [{ no, company, region, sector, date, status }] } 를 반환합니다.
-     (빈 문자열로 두면 게시판 대신 안내 문구가 표시됩니다.)
+     ⚙️ 설정 — 여기 한 줄만 바꾸면 게시판이 살아납니다.
+     Google Apps Script를 "웹 앱"으로 배포하면 아래 같은 주소가 나옵니다.
+       https://script.google.com/macros/s/AKfycb.....................​/exec
+     그 주소를 그대로 따옴표 안에 붙여넣으세요.
+     (배포 전에는 빈 문자열로 두시면, 폼이 자동으로 이메일 접수로 대체됩니다.)
      ========================================================================= */
   const API_BASE = "https://baro-ddulrimserver-production.up.railway.app";
 
@@ -521,6 +842,141 @@
     io.observe(el);
   });
 
+  /* ---------- 폼 검증 ---------- */
+  const form = document.getElementById("partnerForm");
+  const msg = document.getElementById("formMsg");
+  const submitBtn = document.getElementById("submitBtn");
+
+  function validate() {
+    let ok = true;
+    form.querySelectorAll(".field[data-req]").forEach((f) => {
+      const input = f.querySelector("input, select, textarea");
+      let valid;
+      if (f.hasAttribute("data-check")) {
+        valid = input.checked;
+      } else if (f.dataset.type === "email") {
+        valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+      } else {
+        valid = input.value.trim() !== "";
+      }
+      f.classList.toggle("invalid", !valid);
+      if (!valid && ok) { input.focus({ preventScroll: true }); input.scrollIntoView({ block: "center", behavior: "smooth" }); }
+      if (!valid) ok = false;
+    });
+    return ok;
+  }
+  form.addEventListener("input", (e) => {
+    const f = e.target.closest(".field[data-req]");
+    if (f && f.classList.contains("invalid")) validate();
+  });
+
+  function collect() {
+    const get = (n) => (form.querySelector(`[name="${n}"]`)?.value || "").trim();
+    const checks = (g) => [...form.querySelectorAll(`.checks[data-group="${g}"] input:checked`)].map((i) => i.value).join(", ");
+    return {
+      company: get("company"),
+      ceo: get("ceo"),
+      bizno: get("bizno"),
+      years: get("years"),
+      staff: get("staff"),
+      manager: get("manager"),
+      phone: get("phone"),
+      email: get("email"),
+      sido: get("sido"),
+      sigungu: get("sigungu"),
+      sector: get("sector"),
+      radius: get("radius"),
+      orgType: get("orgType"),
+      orgSize: get("orgSize"),
+      stages: checks("stages"),
+      equip: checks("equip"),
+      work: checks("work"),
+      type: get("type"),
+      insurance: get("insurance"),
+      message: get("message"),
+      agree: form.querySelector('[name="agree"]').checked ? "동의" : "",
+      page: location.href
+    };
+  }
+
+  function mailFallback(d) {
+    const body =
+`[협력업체 제안]
+
+■ 회사 정보
+회사명: ${d.company}
+대표자: ${d.ceo}
+사업자등록번호: ${d.bizno}
+업력: ${d.years} / 상시 인력: ${d.staff}
+
+■ 담당자
+담당자: ${d.manager}
+연락처: ${d.phone}
+이메일: ${d.email}
+
+■ 활동 지역·업종
+지역: ${d.sido} ${d.sigungu}
+업종: ${d.sector}
+출동 반경: ${d.radius}
+
+■ 보유 역량
+사업 형태: ${d.orgType} ${d.orgSize ? "(" + d.orgSize + ")" : ""}
+처리 가능 단계: ${d.stages}
+장비: ${d.equip}
+가능 업무: ${d.work}
+희망 협력 형태: ${d.type}
+배상책임보험: ${d.insurance}
+
+■ 제안 내용
+${d.message}
+
+(개인정보 수집·이용 동의: ${d.agree})`;
+    return `mailto:${ADMIN_EMAIL}?subject=${encodeURIComponent("[협력업체 제안] " + d.company + " (" + d.sido + " " + d.sigungu + ")")}&body=${encodeURIComponent(body)}`;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msg.className = "formmsg";
+    if (!validate()) return;
+
+    const data = collect();
+    submitBtn.disabled = true;
+    submitBtn.textContent = "등록하는 중…";
+
+    try {
+      const res = await fetch(API_BASE + "/contractors/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        const reason = Array.isArray(out.message) ? out.message.join(" ") : (out.message || "등록에 실패했습니다.");
+        msg.className = "formmsg bad";
+        msg.innerHTML = esc(reason) +
+          ` 문제가 계속되면 <a href="${mailFallback(data)}" style="text-decoration:underline">이메일로 바로 보내기</a>를 눌러주세요.`;
+        return;
+      }
+
+      msg.className = "formmsg ok";
+      msg.innerHTML = `협력 제안이 정상 접수되었습니다. 접수번호는 <b>${esc(out.no || "-")}</b> 입니다.<br><br>
+        파트너 계정이 함께 만들어졌습니다. <b><a href="https://partner.hasugulab.com/login" target="_blank" rel="noopener" style="text-decoration:underline">partner.hasugulab.com</a></b> 에서
+        아이디 <b>${esc(data.email)}</b>, 초기 비밀번호는 <b>등록하신 연락처 숫자(- 없이)</b>로 로그인하세요.<br>
+        보안을 위해 <b>첫 로그인 시 새 비밀번호를 설정</b>하시게 됩니다.<br><br>
+        영업일 기준 3~5일 내 검토 후 <b>${esc(data.phone)}</b> 또는 <b>${esc(data.email)}</b> 로 연락드리겠습니다.`;
+      form.reset();
+      loadBoard();
+      setTimeout(() => document.getElementById("board").scrollIntoView({ behavior: "smooth" }), 1200);
+    } catch (err) {
+      msg.className = "formmsg bad";
+      msg.innerHTML = "일시적인 오류로 등록에 실패했습니다. 잠시 후 다시 시도해 주시거나, " +
+        `<a href="${mailFallback(data)}" style="text-decoration:underline">이메일로 바로 보내기</a>를 눌러주세요.`;
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "협력 제안 등록하기 →";
+    }
+  });
+
   /* ---------- 접수 현황 ---------- */
   const boardBody = document.getElementById("boardBody");
 
@@ -528,8 +984,12 @@
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
-  function boardRowsHtml(items) {
-    return items.map((r) => `
+  function renderBoard(items) {
+    if (!items || !items.length) {
+      boardBody.innerHTML = '<tr><td colspan="6" class="board-empty">아직 접수된 제안이 없습니다. 첫 번째 파트너가 되어주세요 🙌</td></tr>';
+      return;
+    }
+    boardBody.innerHTML = items.map((r) => `
       <tr>
         <td class="no">${esc(r.no)}</td>
         <td class="co">${esc(r.company)}</td>
@@ -540,40 +1000,9 @@
       </tr>`).join("");
   }
 
-  function renderBoard(items) {
-    if (!items || !items.length) {
-      boardBody.innerHTML = '<tr><td colspan="6" class="board-empty">아직 접수된 제안이 없습니다. 첫 번째 파트너가 되어주세요 🙌</td></tr>';
-      return;
-    }
-    boardBody.innerHTML = boardRowsHtml(items);
-  }
-
-  /* 5행 초과 시 10초마다 한 줄씩 위로 밀어 올리는 로테이션 */
-  const VISIBLE_ROWS = 5;
-  let rotateTimer = null;
-  function startRotation(items) {
-    if (rotateTimer) { clearInterval(rotateTimer); rotateTimer = null; }
-    const queue = items.slice();
-    if (queue.length <= VISIBLE_ROWS) return;
-    rotateTimer = setInterval(() => {
-      if (document.hidden) return;
-      const rowH = boardBody.rows[0] ? boardBody.rows[0].offsetHeight : 55;
-      boardBody.classList.add("rotating");
-      boardBody.style.transform = `translateY(-${rowH}px)`;
-      const onEnd = () => {
-        boardBody.removeEventListener("transitionend", onEnd);
-        queue.push(queue.shift());
-        boardBody.classList.remove("rotating");
-        boardBody.style.transform = "none";
-        boardBody.innerHTML = boardRowsHtml(queue);
-      };
-      boardBody.addEventListener("transitionend", onEnd);
-    }, 10000);
-  }
-
   function renderStats(items) {
     const total = items.length;
-    const review = items.filter((r) => r.status === "검토중" || r.status === "상담예정").length;
+    const review = items.filter((r) => r.status === "검토중").length;
     const done = items.filter((r) => r.status === "협력업체").length;
     document.getElementById("statTotal").textContent = total;
     document.getElementById("statReview").textContent = review;
@@ -581,29 +1010,26 @@
   }
 
   async function loadBoard() {
-    if (!API_BASE) {
-      boardBody.innerHTML =
-        '<tr><td colspan="6" class="board-empty">' +
-        '<b style="color:var(--ink);font-size:16px">협력 제안은 정상적으로 접수되고 있습니다.</b><br>' +
-        '<a href="https://partner.hasugulab.com/signup" style="color:var(--blue-deep);text-decoration:underline">파트너 가입 페이지</a>에서 등록하시거나 <b style="color:var(--blue-deep)">' + ADMIN_EMAIL + '</b> 으로 보내주시면 대표이사가 직접 검토합니다.<br>' +
-        '<span style="font-size:13.5px;color:#94a9ba">접수 현황을 공개하는 게시판은 준비 중입니다.</span>' +
-        '</td></tr>';
-      ["statTotal", "statReview", "statDone"].forEach((id) => document.getElementById(id).textContent = "–");
-      return;
-    }
     try {
       const res = await fetch(API_BASE + "/contractors/public-board");
-      if (!res.ok) throw new Error("HTTP " + res.status);
       const out = await res.json();
       const items = out.items || [];
       renderBoard(items);
       renderStats(items);
-      startRotation(items);
     } catch (err) {
       boardBody.innerHTML = '<tr><td colspan="6" class="board-empty">접수 현황을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</td></tr>';
     }
   }
   loadBoard();
+  </script>
+
+
+  <script>
+    (function(){var t=document.getElementById("navToggle"),l=document.getElementById("navLinks");if(!t||!l)return;
+      t.addEventListener("click",function(){var o=!l.classList.contains("open");l.classList.toggle("open",o);t.setAttribute("aria-expanded",o);t.setAttribute("aria-label",o?"메뉴 닫기":"메뉴 열기");});
+      l.addEventListener("click",function(e){if(e.target.tagName==="A"){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+      addEventListener("resize",function(){if(innerWidth>900){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+    })();
   </script>
 
 </body>
