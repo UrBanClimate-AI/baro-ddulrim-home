@@ -159,6 +159,7 @@
     .agree { display: flex; gap: 10px; align-items: flex-start; background: var(--bg); border: 1.5px solid var(--line); border-radius: 16px; padding: 16px 18px; font-size: 13.5px; color: var(--muted); }
     .agree input { accent-color: var(--blue); width: 17px; height: 17px; margin-top: 2px; flex: none; }
     .agree b { color: var(--ink); }
+    .agree a { color: var(--blue-deep); text-decoration: underline; }
     .form-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
     .form-actions .note { font-size: 13px; color: var(--muted); }
     .formmsg { display: none; margin-top: 18px; border-radius: 16px; padding: 18px 20px; font-size: 14.5px; font-weight: 700; line-height: 1.7; }
@@ -696,9 +697,12 @@ a:not([href]){cursor:default}
             <div class="field" data-req data-check>
               <label class="agree">
                 <input type="checkbox" name="agree">
-                <span><b>개인정보 수집·이용에 동의합니다.</b><br>
+                <span><b><a href="https://partner.hasugulab.com/terms" target="_blank" rel="noopener">파트너 이용약관</a>,
+                <a href="https://partner.hasugulab.com/privacy" target="_blank" rel="noopener">개인정보 처리방침</a>,
+                <a href="https://partner.hasugulab.com/third-party" target="_blank" rel="noopener">제3자 정보 제공</a>에
+                모두 동의합니다. <em style="color:#e14b4b;font-style:normal">(필수)</em></b><br>
                 수집 항목: 회사명, 대표자명, 담당자명, 연락처, 이메일, 사업자등록번호, 활동지역, 제안 내용 ·
-                이용 목적: 협력업체 검토 및 연락 · 보유 기간: 검토 종료 후 3년(이후 파기).
+                이용 목적: 협력업체 검토 및 연락, 파트너 계정 생성·운영 · 보유 기간: 검토 종료 후 3년(이후 파기).
                 동의를 거부하실 수 있으나 이 경우 협력 제안 접수가 불가합니다.</span>
               </label>
               <span class="err">개인정보 수집·이용에 동의해 주세요.</span>
