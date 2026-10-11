@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>공공·지자체 — 예방형 생활배수 관리 | 하수구랩</title>
+  <meta name="description" content="QR 자산화·내시경 사전진단·AI 분류·지역업체 신속조치·재발관리. 의정부 공공시설 실증을 추진 중인 예방형 생활배수 운영체계.">
+  <link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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">
+  <link rel="canonical" href="https://hasugulab.com/public.html">
+  <meta property="og:url" content="https://hasugulab.com/public.html">
+  <meta property="og:title" content="공공·지자체 — 예방형 생활배수 관리 | 하수구랩">
+  <meta property="og:description" content="막힌 뒤 부르는 사후 수리에서, 우기 전에 어디를 먼저 봐야 할지 아는 도시로. 지자체·공공기관을 위한 생활배수 운영체계.">
+  <meta property="og:image" content="https://hasugulab.com/assets/character.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <style>
+    :root {
+      --blue: #1e9bd7; --blue-deep: #0876aa; --blue-soft: #e8f5fb;
+      --ink: #0f2438; --muted: #5b7186; --line: #dcebf4;
+      --bg: #f6fbfe; --card: #ffffff;
+      --yellow: #f7c948; --red: #e14b4b; --green: #159570; --orange: #e08a00;
+      --radius: 24px; --shadow: 0 24px 60px -20px rgba(8, 62, 100, 0.18);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color: var(--ink); background: var(--bg); line-height: 1.6;
+      word-break: keep-all; overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    section { position: relative; padding: 96px 0; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .55; pointer-events: none; z-index: 0; }
+
+    /* nav */
+    .nav { position: fixed; inset: 0 0 auto 0; z-index: 50; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(255,255,255,.72); border-bottom: 1px solid rgba(220,235,244,.8); transition: box-shadow .3s; }
+    .nav.scrolled { box-shadow: 0 8px 30px -12px rgba(8,62,100,.16); }
+    .nav-inner { display: flex; align-items: center; gap: 28px; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-links { display: flex; gap: 24px; margin-left: auto; font-size: 15px; font-weight: 600; color: var(--muted); }
+    .nav-links a:hover { color: var(--blue-deep); }
+    .nav-links a.on { color: var(--blue-deep); font-weight: 800; }
+    .nav-cta { margin-left: 8px; background: linear-gradient(135deg, var(--blue), var(--blue-deep)); color: #fff; font-weight: 700; font-size: 14.5px; padding: 10px 20px; border-radius: 999px; box-shadow: 0 10px 24px -8px rgba(30,155,215,.55); transition: transform .2s; white-space: nowrap; }
+    .nav-cta:hover { transform: translateY(-2px); }
+    @media (max-width: 940px) { .nav-links { display: none; } .nav-cta { margin-left: auto; } }
+
+    /* hero */
+    .phero { padding: 156px 0 76px; }
+    .phero .blob.b1 { width: 520px; height: 520px; background: #bfe6fa; top: -160px; left: -200px; }
+    .phero .blob.b2 { width: 400px; height: 400px; background: #c9f2e4; top: 40px; right: -170px; opacity: .45; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); padding: 8px 16px; border-radius: 999px; font-size: 13.5px; font-weight: 700; color: var(--blue-deep); box-shadow: 0 6px 18px -8px rgba(8,62,100,.18); margin-bottom: 20px; position: relative; z-index: 1; }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(21,149,112,.15); }
+    .phero h1 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.19; letter-spacing: -0.03em; font-weight: 850; position: relative; z-index: 1; }
+    .phero h1 .grad { background: linear-gradient(120deg, var(--blue) 10%, var(--blue-deep) 60%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .phero p.lead { margin: 20px 0 0; font-size: clamp(16px, 1.7vw, 18.5px); color: var(--muted); max-width: 40em; position: relative; z-index: 1; }
+    .cta-row { display: flex; gap: 13px; flex-wrap: wrap; position: relative; z-index: 1; }
+    .phero .cta-row { margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: 16px; border-radius: 16px; padding: 15px 26px; transition: transform .2s, box-shadow .2s; }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { background: linear-gradient(135deg, var(--blue), var(--blue-deep)); color: #fff; box-shadow: 0 18px 34px -12px rgba(30,155,215,.6); }
+    .btn-ghost { background: #fff; color: var(--blue-deep); border: 1.5px solid var(--line); box-shadow: 0 10px 24px -14px rgba(8,62,100,.25); }
+
+    /* section head */
+    .sec-head { text-align: center; margin-bottom: 54px; position: relative; z-index: 1; }
+    .sec-head.left { text-align: left; }
+    .chip { display: inline-block; font-size: 13px; font-weight: 800; letter-spacing: .06em; color: var(--blue-deep); background: var(--blue-soft); border-radius: 999px; padding: 7px 16px; margin-bottom: 14px; }
+    .sec-head h2 { font-size: clamp(27px, 3.4vw, 38px); font-weight: 850; letter-spacing: -0.025em; line-height: 1.26; }
+    .sec-head p { margin-top: 13px; color: var(--muted); font-size: 16.5px; }
+
+    /* problem */
+    .prob { background: #fff; }
+    .fig-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 44px; position: relative; z-index: 1; }
+    .fig { background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px; }
+    .fig b { display: block; font-size: 34px; font-weight: 900; letter-spacing: -0.04em; color: var(--blue-deep); line-height: 1.1; }
+    .fig strong { display: block; margin: 8px 0 5px; font-size: 15px; font-weight: 800; }
+    .fig span { font-size: 12.5px; color: var(--muted); }
+    @media (max-width: 920px) { .fig-row { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .fig-row { grid-template-columns: 1fr; } }
+
+    .gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 1; }
+    .gap-box { border-radius: var(--radius); padding: 30px; border: 1px solid var(--line); background: var(--bg); }
+    .gap-box.warn { background: #fffdf5; border-color: #f2e3b8; }
+    .gap-box h3 { font-size: 17.5px; font-weight: 850; margin-bottom: 16px; }
+    .gap-box ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .gap-box li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; }
+    .gap-box li i { flex: none; width: 22px; height: 22px; border-radius: 7px; display: grid; place-items: center; font-style: normal; font-size: 12px; font-weight: 900; background: #e9f9f2; color: var(--green); margin-top: 2px; }
+    .gap-box.warn li i { background: #fdeaea; color: var(--red); }
+    .gap-box li b { display: block; font-weight: 800; }
+    .gap-box li span { color: var(--muted); font-size: 13.5px; }
+    .prob-note { margin-top: 30px; text-align: center; font-size: 18px; font-weight: 800; color: var(--blue-deep); position: relative; z-index: 1; }
+    .src { margin-top: 22px; font-size: 12.5px; color: #94a9ba; line-height: 1.8; position: relative; z-index: 1; }
+    @media (max-width: 820px) { .gap-grid { grid-template-columns: 1fr; } }
+
+    /* flow */
+    .flowsec { background: linear-gradient(180deg, #0b2438, #0c2b42); color: #eaf4fb; }
+    .flowsec .chip { background: rgba(255,255,255,.1); color: #9fd8f5; }
+    .flowsec .sec-head h2 { color: #fff; }
+    .flowsec .sec-head p { color: #9db8ca; }
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; position: relative; z-index: 1; margin-bottom: 46px; }
+    .flow-item { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 26px 20px; text-align: center; transition: transform .25s, background .25s; }
+    .flow-item:hover { transform: translateY(-6px); background: rgba(255,255,255,.09); }
+    .flow-item .n { font-size: 12px; font-weight: 900; letter-spacing: .1em; color: #56c2f0; }
+    .flow-item .emo { font-size: 27px; margin: 10px 0 8px; }
+    .flow-item h3 { font-size: 16.5px; font-weight: 850; color: #fff; margin-bottom: 7px; }
+    .flow-item p { font-size: 13px; color: #9db8ca; }
+    @media (max-width: 920px) { .flow { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .flow { grid-template-columns: 1fr; } }
+
+    .biz-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 36px; align-items: start; position: relative; z-index: 1; }
+    .biz-box { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 30px; }
+    .biz-box h3 { font-size: 19px; font-weight: 850; color: #fff; margin-bottom: 18px; }
+    .rev { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px dashed rgba(255,255,255,.14); }
+    .rev:last-child { border-bottom: 0; padding-bottom: 0; }
+    .rev .kind { flex: none; width: 46px; font-size: 11.5px; font-weight: 900; letter-spacing: .04em; color: #56c2f0; padding-top: 3px; }
+    .rev b { display: block; font-size: 15px; font-weight: 800; color: #fff; }
+    .rev span { font-size: 13.5px; color: #9db8ca; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .kpi { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 20px; }
+    .kpi b { display: block; font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.02em; }
+    .kpi span { font-size: 13px; color: #9db8ca; font-weight: 600; }
+    .uij-note { margin-top: 18px; font-size: 13px; color: #7f9bb0; line-height: 1.8; }
+    .uij-note b { color: #cdeeff; }
+    @media (max-width: 920px) { .biz-grid { grid-template-columns: 1fr; } }
+
+    /* roadmap */
+    .scale { background: #fff; }
+    .scale .blob.b1 { width: 440px; height: 440px; background: #d8f0ff; top: -70px; left: -210px; opacity: .5; }
+    .road { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: relative; z-index: 1; }
+    .road-card { position: relative; border-radius: var(--radius); padding: 32px 28px 30px; border: 1px solid var(--line); background: var(--bg); overflow: hidden; transition: transform .25s, box-shadow .25s; }
+    .road-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .road-card.now { background: linear-gradient(160deg, #0f7bb0, #0b2438); border-color: transparent; color: #eaf4fb; }
+    .road-card.now h3, .road-card.now .road-num { color: #fff; }
+    .road-card.now p, .road-card.now li { color: #b6d4e6; }
+    .road-card.now .road-tag { background: rgba(255,255,255,.16); color: #cdeeff; }
+    .road-card.now li::before { background: #56c2f0; }
+    .road-num { font-size: 13px; font-weight: 900; letter-spacing: .12em; color: var(--blue); }
+    .road-tag { display: inline-block; margin-top: 12px; font-size: 12px; font-weight: 800; padding: 5px 12px; border-radius: 999px; background: var(--blue-soft); color: var(--blue-deep); }
+    .road-card h3 { margin: 14px 0 8px; font-size: 22px; font-weight: 850; letter-spacing: -0.02em; }
+    .road-card > p { font-size: 14.5px; color: var(--muted); margin-bottom: 16px; }
+    .road-card ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .road-card li { position: relative; padding-left: 18px; font-size: 14px; color: var(--muted); font-weight: 600; }
+    .road-card li::before { content: ""; position: absolute; left: 0; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    .road-note { margin-top: 26px; text-align: center; font-size: 13.5px; color: var(--muted); position: relative; z-index: 1; }
+    .road-note a { color: var(--blue-deep); font-weight: 800; border-bottom: 1px solid var(--line); }
+    @media (max-width: 920px) { .road { grid-template-columns: 1fr; } }
+
+    /* credibility */
+    .metric-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 50px; position: relative; z-index: 1; }
+    .metric { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 24px 18px; text-align: center; }
+    .metric b { display: block; font-size: 26px; font-weight: 900; letter-spacing: -0.03em; color: var(--blue-deep); }
+    .metric span { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+    @media (max-width: 920px) { .metric-row { grid-template-columns: repeat(3, 1fr) !important; } }
+    @media (max-width: 540px) { .metric-row { grid-template-columns: repeat(2, 1fr) !important; } }
+
+    .team { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; position: relative; z-index: 1; }
+    .member { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 24px 20px; transition: transform .25s, box-shadow .25s; }
+    .member:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .member .role { font-size: 11.5px; font-weight: 900; letter-spacing: .05em; color: var(--blue-deep); background: var(--blue-soft); border-radius: 999px; padding: 4px 10px; display: inline-block; }
+    .member h3 { margin: 12px 0 6px; font-size: 17px; font-weight: 850; }
+    .member h3 small { font-size: 12.5px; font-weight: 700; color: var(--muted); margin-left: 5px; }
+    .member p { font-size: 13.5px; color: var(--muted); }
+    .team-note { margin-top: 20px; font-size: 13px; color: #94a9ba; position: relative; z-index: 1; }
+    @media (max-width: 980px) { .team { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .team { grid-template-columns: 1fr; } }
+
+    /* final */
+    .final { padding: 110px 0; }
+    .final-card {
+      position: relative; z-index: 1; overflow: hidden;
+      background: linear-gradient(135deg, #1e9bd7 0%, #0b6ea3 55%, #0b2438 130%);
+      border-radius: 32px; padding: clamp(44px, 6vw, 72px);
+      color: #fff; text-align: center; box-shadow: 0 40px 80px -30px rgba(8,62,100,.55);
+    }
+    .final-card::before, .final-card::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,.12); filter: blur(2px); }
+    .final-card::before { width: 300px; height: 300px; top: -140px; right: -80px; }
+    .final-card::after { width: 220px; height: 220px; bottom: -120px; left: -60px; }
+    .final-card h2 { font-size: clamp(25px, 3.4vw, 37px); font-weight: 850; letter-spacing: -0.02em; line-height: 1.32; }
+    .final-card p { margin: 14px auto 30px; color: #cfeaf8; max-width: 38em; font-size: 16.5px; }
+    .final-card .btn-primary { background: #fff; color: var(--blue-deep); box-shadow: 0 18px 40px -12px rgba(0,0,0,.35); }
+    .final-card .btn-ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.3); }
+    .final-card .cta-row { justify-content: center; }
+    .final-contact { margin-top: 26px; font-size: 14px; color: #cfeaf8; position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; align-items: center; }
+    .final-contact a { font-weight: 800; border-bottom: 1px solid rgba(255,255,255,.4); white-space: nowrap; }
+    .final-contact .divider { opacity: .45; }
+
+    /* footer */
+    footer { border-top: 1px solid var(--line); background: #fff; padding: 40px 0 48px; }
+    .foot { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .foot img { height: 30px; }
+    .foot .links { display: flex; gap: 20px; font-size: 14px; font-weight: 600; color: var(--muted); flex-wrap: wrap; }
+    .foot .copy { margin-left: auto; font-size: 13px; color: #94a9ba; }
+    .biz-info { margin-top: 18px; font-size: 13px; color: var(--muted); line-height: 1.9; }
+    .biz-info b { color: var(--ink); font-weight: 700; }
+    .biz-info .sep { margin: 0 10px; color: #c3d4e0; }
+    @media (max-width: 640px) { .foot .copy { margin-left: 0; } .biz-info .sep { display: block; visibility: hidden; height: 0; margin: 0; } }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* ---------- 브랜드 로크업 (하수구랩) ---------- */
+    .bi-mark { flex: none; }
+    .nav-logo .bi-wm { font-weight: 800; font-size: 18px; letter-spacing: -.045em; color: var(--ink); }
+    .nav-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
+    .foot-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .foot-logo .bi-wm { font-weight: 800; font-size: 19px; letter-spacing: -.045em; color: var(--ink); }
+    .foot-logo .bi-wm i { font-style: normal; color: var(--blue-deep); }
+  
+    /* hero illustration */
+    .phero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:48px;align-items:center;position:relative;z-index:1}
+    .phero-art{width:100%;max-width:500px;justify-self:end}
+    .phero-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 44px rgba(8,118,170,.16))}
+    @media (max-width: 920px){.phero .wrap{grid-template-columns:1fr;gap:28px}.phero-art{max-width:420px;justify-self:center}}
+
+    /* ---------- 모바일 메뉴 (햄버거) ---------- */
+    .nav-toggle{display:none;width:42px;height:42px;border:1.5px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;align-items:center;justify-content:center;flex:none;padding:0}
+    .nav-toggle i{position:relative;display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:background .15s}
+    .nav-toggle i::before,.nav-toggle i::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,top .2s}
+    .nav-toggle i::before{top:-6px}.nav-toggle i::after{top:6px}
+    .nav-toggle[aria-expanded="true"] i{background:transparent}
+    .nav-toggle[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] i::after{top:0;transform:rotate(-45deg)}
+    @media (max-width:940px){
+      .nav-toggle{display:inline-flex;margin-left:auto}
+      .nav-cta{margin-left:0}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;margin:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:6px 0 10px;box-shadow:0 24px 40px -24px rgba(8,62,100,.35)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:13px 24px;font-size:16px;border-top:1px solid #f0f5f9}
+      .nav-links a.on{background:var(--blue-soft)}
+    }
+
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-logo" href="index.html">
+        <svg class="bi-mark" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true"><defs><linearGradient id="hglg-n2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-n2)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks"><i></i></button>
+      <nav class="nav-links" id="navLinks">
+        <a href="check.html">자가 진단</a>
+        <a href="business.html">식당·상가</a>
+        <a href="building.html">아파트·건물</a>
+        <a href="public.html" class="on">공공·지자체</a>
+        <a href="partners.html">협력사 모집</a>
+        <a href="project.html">지원사업</a>
+      </nav>
+      <a class="nav-cta" href="#contact">협업 문의</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="phero">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="wrap">
+      <div class="phero-copy">
+      <span class="badge"><span class="dot"></span>공공·지자체 제안 · 의정부 실증 추진 중</span>
+      <h1>막힌 뒤 뚫는 도시에서,<br><span class="grad">막히기 전에 관리하는 도시</span>로</h1>
+      <p class="lead">
+        전화·민원 중심의 사후 수리는 반복 원인도, 조치 이력도 남기지 않습니다.
+        하수구랩은 공공시설의 배수지점을 자산으로 등록하고, 사전에 진단하고,
+        조치와 결과를 기록으로 남기는 운영체계입니다.
+        현재 <b>의정부시 공공시설 실증을 추진</b>하고 있습니다.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">협업 문의하기 →</a>
+        <a class="btn btn-ghost" href="#flow">운영 방식 보기</a>
+      </div>
+      </div>
+      <div class="phero-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" role="img" aria-label="공공시설의 배수지점을 QR로 등록하고 배수건전성 카드로 관리하는 모습의 일러스트">
+  <defs>
+    <linearGradient id="pb-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8f5fb"/><stop offset="1" stop-color="#d6f0e6"/></linearGradient>
+  </defs>
+  <rect width="520" height="400" rx="32" fill="url(#pb-bg)"/>
+  <circle cx="70" cy="60" r="34" fill="#fff" opacity=".5"/>
+
+  <!-- ground / road -->
+  <rect x="0" y="286" width="520" height="114" fill="#c9d8e2" opacity=".45"/>
+  <rect x="0" y="300" width="520" height="8" fill="#fff" opacity=".6"/>
+  <g fill="#fff" opacity=".8"><rect x="40" y="344" width="50" height="6" rx="3"/><rect x="130" y="344" width="50" height="6" rx="3"/><rect x="220" y="344" width="50" height="6" rx="3"/><rect x="310" y="344" width="50" height="6" rx="3"/><rect x="400" y="344" width="50" height="6" rx="3"/></g>
+
+  <!-- civic building -->
+  <rect x="120" y="120" width="220" height="170" rx="10" fill="#fff" stroke="#9fbfd0" stroke-width="3"/>
+  <path d="M104 122 L230 66 L356 122 Z" fill="#0876aa"/>
+  <rect x="98" y="118" width="264" height="12" rx="6" fill="#0876aa"/>
+  <g fill="#e8f5fb" stroke="#bfe6fa" stroke-width="2">
+    <rect x="140" y="146" width="30" height="110" rx="6"/><rect x="186" y="146" width="30" height="110" rx="6"/>
+    <rect x="244" y="146" width="30" height="110" rx="6"/><rect x="290" y="146" width="30" height="110" rx="6"/>
+  </g>
+  <rect x="216" y="216" width="28" height="74" rx="6" fill="#0876aa" opacity=".85"/>
+  <!-- flag -->
+  <line x1="230" y1="66" x2="230" y2="26" stroke="#5b7186" stroke-width="4" stroke-linecap="round"/>
+  <path d="M232 28 h34 l-8 10 8 10 h-34z" fill="#1e9bd7"/>
+
+  <!-- trees -->
+  <g><rect x="62" y="248" width="8" height="40" rx="3" fill="#8a6a4a"/><circle cx="66" cy="238" r="26" fill="#159570"/><circle cx="52" cy="250" r="16" fill="#1fa77f"/></g>
+  <g><rect x="450" y="252" width="8" height="36" rx="3" fill="#8a6a4a"/><circle cx="454" cy="244" r="22" fill="#159570"/></g>
+
+  <!-- drain grates with QR tags -->
+  <g>
+    <rect x="86" y="306" width="54" height="16" rx="5" fill="#5b7186"/>
+    <g stroke="#fff" stroke-width="2" opacity=".8"><line x1="96" y1="308" x2="96" y2="320"/><line x1="106" y1="308" x2="106" y2="320"/><line x1="116" y1="308" x2="116" y2="320"/><line x1="126" y1="308" x2="126" y2="320"/></g>
+    <rect x="360" y="306" width="54" height="16" rx="5" fill="#5b7186"/>
+    <g stroke="#fff" stroke-width="2" opacity=".8"><line x1="370" y1="308" x2="370" y2="320"/><line x1="380" y1="308" x2="380" y2="320"/><line x1="390" y1="308" x2="390" y2="320"/><line x1="400" y1="308" x2="400" y2="320"/></g>
+  </g>
+  <!-- map pins -->
+  <g>
+    <path d="M113 296 c-12-14-16-22-16-30a16 16 0 0 1 32 0c0 8-4 16-16 30z" fill="#e14b4b"/><circle cx="113" cy="266" r="6" fill="#fff"/>
+    <path d="M387 296 c-12-14-16-22-16-30a16 16 0 0 1 32 0c0 8-4 16-16 30z" fill="#159570"/><circle cx="387" cy="266" r="6" fill="#fff"/>
+  </g>
+
+  <!-- QR tag card -->
+  <g transform="translate(24 96)">
+    <rect x="0" y="0" width="76" height="90" rx="12" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+    <g fill="#0f2438" transform="translate(12 10)">
+      <rect x="0" y="0" width="16" height="16"/><rect x="4" y="4" width="8" height="8" fill="#fff"/>
+      <rect x="36" y="0" width="16" height="16"/><rect x="40" y="4" width="8" height="8" fill="#fff"/>
+      <rect x="0" y="36" width="16" height="16"/><rect x="4" y="40" width="8" height="8" fill="#fff"/>
+      <rect x="22" y="2" width="4" height="4"/><rect x="28" y="8" width="4" height="4"/><rect x="22" y="14" width="4" height="4"/>
+      <rect x="2" y="22" width="4" height="4"/><rect x="10" y="26" width="4" height="4"/><rect x="26" y="22" width="4" height="4"/><rect x="34" y="28" width="4" height="4"/><rect x="44" y="22" width="4" height="4"/>
+      <rect x="24" y="36" width="4" height="4"/><rect x="30" y="42" width="4" height="4"/><rect x="40" y="38" width="4" height="4"/><rect x="48" y="46" width="4" height="4"/><rect x="24" y="48" width="4" height="4"/>
+    </g>
+    <text x="38" y="80" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800" font-size="10" text-anchor="middle" fill="#5b7186">배수지점 #A-014</text>
+  </g>
+
+  <!-- health card -->
+  <g transform="translate(372 40)" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-weight="800">
+    <rect x="0" y="0" width="128" height="128" rx="16" fill="#fff" stroke="#dcebf4" stroke-width="2"/>
+    <text x="14" y="24" font-size="12" fill="#0f2438">배수건전성 카드</text>
+    <text x="14" y="50" font-size="11" fill="#5b7186">통수</text><rect x="46" y="42" width="68" height="10" rx="5" fill="#dcebf4"/><rect x="46" y="42" width="60" height="10" rx="5" fill="#159570"/>
+    <text x="14" y="74" font-size="11" fill="#5b7186">퇴적</text><rect x="46" y="66" width="68" height="10" rx="5" fill="#dcebf4"/><rect x="46" y="66" width="36" height="10" rx="5" fill="#e08a00"/>
+    <text x="14" y="98" font-size="11" fill="#5b7186">역류</text><rect x="46" y="90" width="68" height="10" rx="5" fill="#dcebf4"/><rect x="46" y="90" width="14" height="10" rx="5" fill="#e14b4b"/>
+    <text x="14" y="118" font-size="10" fill="#94a9ba">우기 전 점검 대상 2곳</text>
+  </g>
+</svg></div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="prob">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="chip">THE GAP</span>
+        <h2>관리대상은 많고,<br>배수 기능 데이터는 흩어져 있습니다</h2>
+        <p>청결과 시설물은 관리되고 있지만, 배수가 실제로 잘 흐르는지는 기록으로 남지 않습니다.</p>
+      </div>
+
+      <div class="fig-row">
+        <div class="fig reveal"><b>52</b><strong>공중·간이화장실</strong><span>의정부시 관리 시설 (2026.6.1 기준)</span></div>
+        <div class="fig reveal"><b>49</b><strong>개방화장실</strong><span>민간 신청·건물주 동의로 지정</span></div>
+        <div class="fig reveal"><b>13.10</b><strong>저지대 침수 리스크</strong><span>국토 부문 1위 위험 항목</span></div>
+        <div class="fig reveal"><b>10.72</b><strong>배수시설 기능 저하</strong><span>강수패턴 변화 관련 주요 리스크</span></div>
+      </div>
+
+      <div class="gap-grid">
+        <div class="gap-box reveal">
+          <h3>✅ 지금 관리가 잘 되는 영역</h3>
+          <ul>
+            <li><i>✓</i><div><b>청결 상태</b><span>전담 인력과 정기 청소로 관리됩니다</span></div></li>
+            <li><i>✓</i><div><b>편의용품·표지</b><span>개방화장실 지도점검으로 확인됩니다</span></div></li>
+            <li><i>✓</i><div><b>시설물·비상벨</b><span>파손·작동 여부가 점검됩니다</span></div></li>
+          </ul>
+        </div>
+        <div class="gap-box warn reveal">
+          <h3>⚠️ 아직 남아 있는 관리의 빈틈</h3>
+          <ul>
+            <li><i>!</i><div><b>배수 기능</b><span>통수 저하·막힘·역류 위험이 사전에 보이지 않습니다</span></div></li>
+            <li><i>!</i><div><b>반복 고장</b><span>같은 시설이 왜 계속 막히는지 원인이 축적되지 않습니다</span></div></li>
+            <li><i>!</i><div><b>조치 이력</b><span>출동·준설·보수의 전후 증빙이 남지 않습니다</span></div></li>
+            <li><i>!</i><div><b>우기 우선순위</b><span>어디를 먼저 점검할지 판단할 근거가 없습니다</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="prob-note reveal">사전진단 + 신속조치 + 이력관리를 하나로 연결해야 합니다.</p>
+
+      <p class="src reveal">
+        자료: 의정부시 공중·개방화장실 현황(2026.6.1), 제3차 의정부시 기후위기 적응대책(2024~2028)
+      </p>
+    </div>
+  </section>
+
+  <!-- FLOW + MODEL -->
+  <section class="flowsec" id="flow">
+    <div class="blob b1" style="width:460px;height:460px;background:#134d74;top:-100px;left:-180px;opacity:.75"></div>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="chip">HOW IT RUNS</span>
+        <h2>다섯 단계로 도는 운영체계</h2>
+        <p>새 앱을 개발하는 것이 아니라, 이미 운영 중인 신고·검수·배정·이력 기능을 공공시설 현장에 배치합니다.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-item reveal"><span class="n">STEP 1</span><div class="emo">🏷️</div><h3>QR 자산화</h3><p>시설과 배수지점에 QR 자산번호를 부여해 대장을 만듭니다.</p></div>
+        <div class="flow-item reveal"><span class="n">STEP 2</span><div class="emo">🔍</div><h3>사전진단</h3><p>내시경·통수 점검으로 안전/주의/위험 배수건전성 카드를 발행합니다.</p></div>
+        <div class="flow-item reveal"><span class="n">STEP 3</span><div class="emo">🤖</div><h3>제보·분류</h3><p>QR 제보를 AI가 유형·긴급도로 분류하고 관리자가 검수합니다.</p></div>
+        <div class="flow-item reveal"><span class="n">STEP 4</span><div class="emo">🚚</div><h3>현장조치</h3><p>지역 협력사가 출동해 조치하고 작업 전후를 증빙으로 남깁니다.</p></div>
+        <div class="flow-item reveal"><span class="n">STEP 5</span><div class="emo">🗺️</div><h3>재발관리</h3><p>반복 원인을 추적해 위험지도와 우선정비 순서를 갱신합니다.</p></div>
+      </div>
+
+      <p class="reveal" style="position:relative;z-index:1;margin:-18px auto 40px;max-width:46em;text-align:center;font-size:14.5px;line-height:1.8;color:#b6d4e6">
+        <b style="color:#cdeeff">참여 방식</b> — 하수구랩은 실증·연구과제·공동수급·협력사 형태로 참여합니다. 대형 정비공사의 원도급은 맡지 않습니다.
+      </p>
+
+      <div class="biz-grid">
+        <div class="biz-box reveal">
+          <h3>수익·계약 모델</h3>
+          <div class="rev"><span class="kind">B2G</span><div><b>연간 점검 · 대시보드 이용료</b><span>지자체·공공기관 단위 연간 예방관리 계약</span></div></div>
+          <div class="rev"><span class="kind">B2B</span><div><b>관리주체·관리회사 대상 운영</b><span>아파트·건물 관리주체 대상 다사업장 배관 운영은 <a href="building.html" style="color:#9fd8f5;font-weight:800;border-bottom:1px solid currentColor">아파트·건물 페이지</a>에서 안내합니다</span></div></div>
+          <div class="rev"><span class="kind">건별</span><div><b>긴급출동 · 준설 · 보수</b><span>지역 협력사가 수행하고 매출을 분담하는 실행 매출</span></div></div>
+        </div>
+
+        <div class="reveal">
+          <div class="kpi-grid">
+            <div class="kpi"><b>15~20</b><span>실증 대상 시설(추진 중)</span></div>
+            <div class="kpi"><b>60+</b><span>관리 배수지점</span></div>
+            <div class="kpi"><b>85%+</b><span>AI 유형·긴급도 분류 정확도 목표</span></div>
+            <div class="kpi"><b>60분</b><span>긴급 건 배정 목표 시간</span></div>
+          </div>
+          <p class="uij-note">
+            실증 대상은 <b>공중·개방화장실 8~10개소</b>, <b>소방서·주민센터·복지/공원 등 공공시설 3~5개소</b>,
+            <b>저지대 상가·시설 3~5개소</b>를 상정하고 있습니다.
+            <br><br>
+            ※ 대상 시설과 KPI는 제안 기준의 목표안이며, 행정 협의 후 확정됩니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="scale" id="scale">
+    <div class="blob b1"></div>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="chip">EXPANSION ROADMAP</span>
+        <h2>의정부에서 검증하고,<br>확인된 것만 넓힙니다</h2>
+        <p>공공 실증은 운영모델을 증명하는 축입니다. 검증되지 않은 범위를 미리 약속하지 않습니다.</p>
+      </div>
+
+      <div class="road">
+        <div class="road-card now reveal">
+          <span class="road-num">STEP 01</span>
+          <span class="road-tag">현재 단계 · 추진 중</span>
+          <h3>의정부</h3>
+          <p>공공시설 생활배수 사전진단·신속조치 실증을 추진하고 있습니다.</p>
+          <ul>
+            <li>공중·개방화장실 및 공공시설 15~20개소, 배수지점 60개 이상</li>
+            <li>QR 자산화 · 내시경/통수 사전진단 · 배수건전성 카드 발행</li>
+            <li>제보 → AI 분류 → 지역업체 조치 → 전후 이력의 완결형 운영</li>
+            <li>지역 설비 파트너 3개사 이상과 공동 운영</li>
+          </ul>
+        </div>
+
+        <div class="road-card reveal">
+          <span class="road-num">STEP 02</span>
+          <span class="road-tag">2026~2027 · 계획</span>
+          <h3>경기 북부·서울 동북권</h3>
+          <p>파트너 밀도가 확보된 권역부터 순차적으로 넓힙니다.</p>
+          <ul>
+            <li>권역별 협력 설비업체 확보 후 개시</li>
+            <li>저지대 상가·반지하·골목 빗물받이 위험지도 연계</li>
+            <li>관리주체·관리회사 대상 운영은 <a href="building.html" style="color:var(--blue-deep);border-bottom:1px solid var(--line)">아파트·건물 페이지</a>에서</li>
+            <li>성남은 북부 핵심권과 분리해 별도 협의</li>
+            <li>권역별 대표 파트너사 선정 및 표준 작업이력 공유</li>
+          </ul>
+        </div>
+
+        <div class="road-card reveal">
+          <span class="road-num">STEP 03</span>
+          <span class="road-tag">2027~ · 중장기 목표</span>
+          <h3>타 지자체 확산</h3>
+          <p>의정부 실증 결과를 레퍼런스로 다른 지자체와 논의합니다.</p>
+          <ul>
+            <li>생활배수 DaaS · 공공조달 · 녹색인증 연계 검토</li>
+            <li>시·도 단위 협력사 사전 등록 (현재 접수 중)</li>
+            <li>지역 파트너 교육·표준 작업기준(K-Code) 공유</li>
+            <li>전국 공통 대시보드와 위험지도 운영</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="road-note reveal">
+        ※ STEP 02·03은 목표이며 확정된 일정이 아닙니다. 확장은 <b>지역 파트너 확보 여부</b>에 따라 결정됩니다.<br>
+        &nbsp;<a href="partners.html">협력사 모집 안내 보기 →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="chip">WHY US</span>
+        <h2>현장을 아는 사람과<br>데이터를 다루는 사람이 한 팀입니다</h2>
+        <p>15년 현장경험과 데이터 엔지니어링을 한 팀 안에서 연결합니다.</p>
+      </div>
+
+      <div class="metric-row" style="grid-template-columns:repeat(5,1fr)">
+        <div class="metric reveal"><b>15년</b><span>현장 경력<br><small style="color:#94a9ba">대표이사 보유</small></span></div>
+        <div class="metric reveal"><b>3,000건+</b><span>누적 작업<br><small style="color:#94a9ba">내부 집계</small></span></div>
+        <div class="metric reveal"><b>100TB+</b><span>배관 영상<br><small style="color:#94a9ba">내부 보유</small></span></div>
+        <div class="metric reveal"><b>10종</b><span>자체 진단 기준<br><small style="color:#94a9ba">K-Code</small></span></div>
+        <div class="metric reveal"><b>5개사</b><span>검증 협력사<br><small style="color:#94a9ba">서류 확인 기준 · 2026.09</small></span></div>
+      </div>
+      <p class="team-note reveal" style="margin:-34px 0 44px;text-align:center">※ 보유 수치는 내부 기준이며, 실증 결과보고 전까지 목표와 구분해 표기합니다. 상세 자료는 협의 시 제공합니다.</p>
+
+      <div class="team">
+        <div class="member reveal">
+          <span class="role">현장 도메인 · 총괄</span>
+          <h3>이재욱<small>대표이사</small></h3>
+          <p>15년 현장경험 기반의 대상시설 선정, 배수계통 진단, 위험등급·조치기준 수립과 공공시설 현장 총괄.</p>
+        </div>
+        <div class="member reveal">
+          <span class="role">제품 · 파트너 · 사업화</span>
+          <h3>장민석<small>이사</small></h3>
+          <p>서비스 기획, 지역 설비 파트너 운영, 수익모델 설계, 지자체·공공기관 확산과 후속 사업화.</p>
+        </div>
+        <div class="member reveal">
+          <span class="role">Computer Vision · MLOps</span>
+          <h3>김OO<small>팀장</small></h3>
+          <p>영상 AI 모델, 앱·플랫폼 연동, 현장 데이터 파이프라인, 모델 배포·운영·모니터링 체계 구축.</p>
+        </div>
+        <div class="member reveal">
+          <span class="role">데이터 검증 · 품질</span>
+          <h3>최OO<small>교수</small></h3>
+          <p>라벨링 기준과 데이터 품질관리, 성능지표 설계, 실증 결과의 객관적 검증 및 개선안 도출.</p>
+        </div>
+        <div class="member reveal">
+          <span class="role">연구기획 · 공공 실증</span>
+          <h3>이OO<small>교수</small></h3>
+          <p>공공 PoC 설계, 행정수요 연계, 성과확산 및 후속 R&amp;D·정부과제 기획.</p>
+        </div>
+      </div>
+
+      <p class="team-note reveal">※ 일부 구성원의 성명은 본인 동의 전까지 비공개로 표기합니다. 상세 이력은 협의 시 제공해 드립니다.</p>
+    </div>
+  </section>
+
+  <!-- FINAL / CONTACT -->
+  <section class="final" id="contact">
+    <div class="wrap">
+      <div class="final-card reveal">
+        <h2>의정부와 함께 시작해,<br>「막히기 전에 관리하는 생활배수 표준」을 만들겠습니다</h2>
+        <p>실증 협의, 연간 예방관리 계약, 공동수급·협력사 참여 — 어떤 단계든 먼저 이야기 나누고 싶습니다. 공공 담당자용 제안 자료도 요청하시면 보내드립니다.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:myhero.lee@gmail.com?subject=%5B%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98%20%EB%B0%8F%20%EC%A0%9C%EC%95%88%EC%9E%90%EB%A3%8C%20%EC%9A%94%EC%B2%AD%5D%20%EA%B8%B0%EA%B4%80%EB%AA%85%20/%20%EB%8B%B4%EB%8B%B9%20%EB%B6%80%EC%84%9C%20/%20%EC%8B%9C%EC%84%A4%20%EC%9C%A0%ED%98%95">협업 문의 및 제안자료 요청 →</a>
+        </div>
+        <p class="final-contact">
+          <span>주식회사 어반클라이밋에이아이 · 대표이사 이재욱</span>
+          <a href="tel:0318240023">031-824-0023</a>
+          <span class="divider">·</span>
+          <a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap foot">
+      <span class="foot-logo"><svg class="bi-mark" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><defs><linearGradient id="hglg-f2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2AA9E0"/><stop offset="100%" stop-color="#0876AA"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#hglg-f2)"/><path d="M32 12c0 0 8 8.6 8 13.4A8 8 0 0 1 24 25.4C24 20.6 32 12 32 12z" fill="#fff"/><rect x="17" y="38" width="30" height="5" rx="2.5" fill="#fff" opacity=".95"/><rect x="20" y="47" width="24" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg><span class="bi-wm">하수구<i>랩</i></span></span>
+      <div class="links">
+        <a href="index.html">홈</a>
+        <a href="business.html">식당·상가</a>
+        <a href="building.html">아파트·건물</a>
+        <a href="https://report.hasugulab.com">신고하기</a>
+        <a href="https://report.hasugulab.com/report/lookup">신고 조회</a>
+        <a href="partners.html">협력사 모집</a>
+        <a href="project.html">지원사업</a>
+        <a href="https://partner.hasugulab.com/login">업체 파트너</a>
+      </div>
+      <span class="copy">© 2026 주식회사 어반클라이밋에이아이. All rights reserved.</span>
+    </div>
+    <div class="wrap biz-info">
+      <b>주식회사 어반클라이밋에이아이</b><span class="sep">|</span>하수구랩(구 바로 뚫림)<span class="sep">|</span>대표이사 이재욱<span class="sep">|</span>사업자등록번호 157-88-03859<br>
+      본점 경기도 성남시 수정구 산성대로283번길 6-17, 3층 3113호(신흥동)<span class="sep">|</span><a href="tel:0318240023">031-824-0023</a><span class="sep">|</span><a href="mailto:myhero.lee@gmail.com">myhero.lee@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById("nav");
+    addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 8), { passive: true });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 4) * 70}ms`;
+      io.observe(el);
+    });
+  </script>
+
+
+  <script>
+    (function(){var t=document.getElementById("navToggle"),l=document.getElementById("navLinks");if(!t||!l)return;
+      t.addEventListener("click",function(){var o=!l.classList.contains("open");l.classList.toggle("open",o);t.setAttribute("aria-expanded",o);t.setAttribute("aria-label",o?"메뉴 닫기":"메뉴 열기");});
+      l.addEventListener("click",function(e){if(e.target.tagName==="A"){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+      addEventListener("resize",function(){if(innerWidth>940){l.classList.remove("open");t.setAttribute("aria-expanded","false");}});
+    })();
+  </script>
+</body>
+</html>
